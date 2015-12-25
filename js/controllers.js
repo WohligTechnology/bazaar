@@ -136,6 +136,185 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         $scope.menutitle = NavigationService.makeactive("About-us");
         TemplateService.title = $scope.menutitle;
         $scope.navigation = NavigationService.getnav();
+    }) 
+    .controller('ProductCtrl', function ($scope, TemplateService, NavigationService) {
+        $scope.template = TemplateService.changecontent("product");
+        $scope.menutitle = NavigationService.makeactive("Product");
+        TemplateService.title = $scope.menutitle;
+        $scope.navigation = NavigationService.getnav();
+    
+    
+      $scope.status4 = {
+            isFirstOpen: true,
+            isFirstDisabled: false
+        };
+            $scope.product = [{
+            image: "img/product/c1.jpg",
+            name: "Nikon D3300 (Body with AF-S 18-55 mm VR II Kit Lens) DS...",
+            price: "11,700.00",
+             spec: ["24.2 MP", "CMOS", "with 3 inch LCD"]
+
+
+    }, {
+            image: "img/product/c2.jpg",
+            name: "Nikon D3300 (Body with AF-S 18-55 mm VR II Kit Lens) DS...",
+            price: "11,700.00",
+             spec: ["24.2 MP", "CMOS", "with 3 inch LCD"]
+
+
+
+    }, {
+            image: "img/product/c3.jpg",
+            name: "Nikon D3300 (Body with AF-S 18-55 mm VR II Kit Lens) DS...",
+            price: "13,740.00",
+             spec: ["24.2 MP", "CMOS", "with 3 inch LCD"]
+
+    }, {
+            image: "img/product/c4.jpg",
+            name: "Nikon D3300 (Body with AF-S 18-55 mm VR II Kit Lens) DS...",
+            price: "12,540.00",
+             spec: ["24.2 MP", "CMOS", "with 3 inch LCD"]
+
+    }, {
+            image: "img/product/c1.jpg",
+            name: "Nikon D3300 (Body with AF-S 18-55 mm VR II Kit Lens) DS...",
+            price: "12,540.00",
+             spec: ["24.2 MP", "CMOS", "with 3 inch LCD"]
+
+    }, {
+            image: "img/product/c2.jpg",
+            name: "Nikon D3300 (Body with AF-S 18-55 mm VR II Kit Lens) DS...",
+            price: "13,740.00",
+            spec: ["24.2 MP", "CMOS", "with 3 inch LCD"]
+
+    }, {
+            image: "img/product/c3.jpg",
+            name: "Nikon D3300 (Body with AF-S 18-55 mm VR II Kit Lens) DS...",
+            price: "12,540.00",
+            spec: ["24.2 MP", "CMOS", "with 3 inch LCD"]
+
+    }, {
+            image: "img/product/c4.jpg",
+            name: "Nikon D3300 (Body with AF-S 18-55 mm VR II Kit Lens) DS...",
+            price: "12,540.00",
+            spec: ["24.2 MP", "CMOS", "with 3 inch LCD"]
+
+    }];
+
+    
+    })
+    .controller('CameraCtrl', function ($scope, TemplateService, NavigationService) {
+        $scope.template = TemplateService.changecontent("camera");
+        $scope.menutitle = NavigationService.makeactive("Camera");
+        TemplateService.title = $scope.menutitle;
+        $scope.navigation = NavigationService.getnav();
+
+        $scope.banners1 = [{
+            image: "img/camera/c1.jpg"
+
+
+
+    }, {
+            image: "img/camera/c2.jpg"
+
+
+
+    }];
+        $scope.banners2 = [{
+            image: "img/camera/c4.jpg"
+
+
+
+    }, {
+            image: "img/camera/c5.jpg"
+
+
+
+    }];
+
+        $scope.banner = [{
+            image: "img/camera/c3.jpg"
+
+
+
+    }];
+
+    })
+    .controller('InsuranceCtrl', function ($scope, TemplateService, NavigationService) {
+        $scope.template = TemplateService.changecontent("insurance");
+        $scope.menutitle = NavigationService.makeactive("Insurance");
+        TemplateService.title = $scope.menutitle;
+        $scope.navigation = NavigationService.getnav();
+
+        $scope.status = {
+            isFirstOpen: true,
+            isFirstDisabled: false
+        };
+        $scope.statuss = {
+            isFirstOpen: true,
+            isFirstDisabled: false
+        };
+        $scope.status2 = {
+            isFirstOpen: true,
+            isFirstDisabled: false
+        };
+        $scope.status3 = {
+            isFirstOpen: true,
+            isFirstDisabled: false
+        };
+        $scope.product = [{
+            image: "img/product/p1.jpg",
+            name: "Apple iPhone 6S (silver,16 GB)",
+            price: "11,700.00",
+            spec: ["Android v5.1.1 OS", "21 MP + 5 MP", "3000 mAh Battery", "Dual Nano Sim (4G+4G)"]
+
+
+    }, {
+            image: "img/product/p2.jpg",
+            name: "Apple iPhone 6S (Gold,16 GB)",
+            price: "11,700.00",
+            spec: ["Android v5.1.1 OS", "21 MP + 5 MP", "3000 mAh Battery", "Dual Nano Sim (4G+4G)"]
+
+
+
+    }, {
+            image: "img/product/p3.jpg",
+            name: "Apple iPhone 6S (Gold,16 GB)",
+            price: "13,740.00",
+            spec: ["Android v5.1.1 OS", "21 MP + 5 MP", "3000 mAh Battery", "Dual Nano Sim (4G+4G)"]
+
+    }, {
+            image: "img/product/p5.jpg",
+            name: "Apple iPhone 6S (Grey,16 GB)",
+            price: "12,540.00",
+            spec: ["Android v5.1.1 OS", "21 MP + 5 MP", "3000 mAh Battery", "Dual Nano Sim (4G+4G)"]
+
+    }, {
+            image: "img/product/p5.jpg",
+            name: "Lava Pixel V1 with Android one",
+            price: "12,540.00",
+            spec: ["Android v5.1.1 OS", "21 MP + 5 MP", "3000 mAh Battery", "Dual Nano Sim (4G+4G)"]
+
+    }, {
+            image: "img/product/p1.jpg",
+            name: "Apple iPhone 6S (silver,16 GB) ",
+            price: "13,740.00",
+            spec: ["Android v5.1.1 OS", "21 MP + 5 MP", "3000 mAh Battery", "Dual Nano Sim (4G+4G)"]
+
+    }, {
+            image: "img/product/p2.jpg",
+            name: "Apple iPhone 6S (gold,16 GB)",
+            price: "12,540.00",
+            spec: ["Android v5.1.1 OS", "21 MP + 5 MP", "3000 mAh Battery", "Dual Nano Sim (4G+4G)"]
+
+    }, {
+            image: "img/product/p3.jpg",
+            name: "Apple iPhone 6S (grey,16 GB)",
+            price: "12,540.00",
+            spec: ["Android v5.1.1 OS", "21 MP + 5 MP", "3000 mAh Battery", "Dual Nano Sim (4G+4G)"]
+
+    }];
+
     })
     .controller('BuybackvalueCtrl', function ($scope, TemplateService, NavigationService) {
         $scope.template = TemplateService.changecontent("buy-back-value");

@@ -22,6 +22,21 @@ firstapp.config(function($stateProvider, $urlRouterProvider,$httpProvider) {
         url: "/about-us",
         templateUrl: "views/template.html",
         controller: 'AboutusCtrl'
+    }) 
+        .state('insurance', {
+        url: "/insurance",
+        templateUrl: "views/template.html",
+        controller: 'InsuranceCtrl'
+    })   
+        .state('camera', {
+        url: "/camera",
+        templateUrl: "views/template.html",
+        controller: 'CameraCtrl'
+    })   
+        .state('product', {
+        url: "/product",
+        templateUrl: "views/template.html",
+        controller: 'ProductCtrl'
     })  
         .state('buy-back-value', {
         url: "/buy-back-value",

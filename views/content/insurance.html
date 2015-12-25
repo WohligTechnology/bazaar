@@ -1,0 +1,122 @@
+<section>
+    <div class="buy-banner">
+        <img src="img/product/Tag-Boss_Insurance-Page.jpg" class="img-responsive">
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-offset-1 col-md-10">
+                <div class="about">
+                    <div class="text-center">
+                        <img src="img/mini-logo.png">
+                        <h4>BENIFITS OF TAG BOSS INSURANCE</h4>
+                    </div>
+                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+
+                </div>
+            </div>
+        </div>
+        <section>
+            <div class="row">
+                <div class="col-md-3">
+                    <div class="product-acc">
+                        <uib-accordion close-others="oneAtATime">
+
+                            <uib-accordion-group is-open="status.open">
+                                <uib-accordion-heading>
+                                    CATEGORY <i class="pull-right fa" ng-class="{'fa-chevron-down': status.open, 'fa-chevron-right': !status.open}"></i>
+                                </uib-accordion-heading>
+                                <div class="pro-cat">
+                                    <form action="demo_form.asp" method="get">
+                                        <input type="checkbox" name="Cellphone" value="Cellphone"> Cellphone
+                                        <br>
+                                        <input type="checkbox" name="Camera" value="Camera" checked> Camera
+                                        <br>
+                                        <input type="checkbox" name="Computer" value="Computer" checked> Computer
+                                        <br>
+                                        <input type="checkbox" name="Accessories" value="Accessories" checked> Accessories
+                                        <br>
+
+                                    </form>
+                                </div>
+                            </uib-accordion-group>
+                            <uib-accordion-group is-open="statuss.open">
+                                <uib-accordion-heading>
+                                    BRAND <i class="pull-right fa" ng-class="{'fa-chevron-down': statuss.open, 'fa-chevron-right': !statuss.open}"></i>
+                                </uib-accordion-heading>
+                                        <div class="pro-cat">
+                                    <form action="demo_form.asp" method="get">
+                                        <input type="checkbox" name="Cellphone" value="Cellphone"> Apple
+                                        <br>
+                                        <input type="checkbox" name="Camera" value="Camera" checked> Samsung
+                                        <br>
+                                        <input type="checkbox" name="Computer" value="Computer" checked> Lenovo
+                                        <br>
+                                        <input type="checkbox" name="Accessories" value="Accessories" checked> Micromax
+                                        <br>
+                                        <input type="checkbox" name="Accessories" value="Accessories" checked> Lava
+                                        
+
+                                    </form>
+                                </div>
+                            </uib-accordion-group>
+                            <uib-accordion-group is-open="status2.open">
+                                <uib-accordion-heading>
+                                    INSURANCE <i class="pull-right fa" ng-class="{'fa-chevron-down': status2.open, 'fa-chevron-right': !status2.open}"></i>
+                                </uib-accordion-heading>
+                                          <div class="pro-cat">
+                                    <form action="demo_form.asp" method="get">
+                                        <input type="checkbox" name="Cellphone" value="Cellphone"> Syska
+                                        <br>
+                                        <input type="checkbox" name="Camera" value="Camera" checked> Tagboss
+                                        <br>
+                                        <input type="checkbox" name="Computer" value="Computer" checked> Appsdaily
+                                       
+                                    </form>
+                                </div>
+                            </uib-accordion-group>
+                        
+                        </uib-accordion>
+                    </div>
+                </div>
+                <div class="col-md-9">
+                    <section>
+                        <div class="row">
+                            <div class="col-md-3" ng-repeat="pro in product track by $index">
+                                <div class="product-detail">
+                                    <div class="product-img-hold">
+                                       <a href="">
+                                        <img src="{{pro.image}}" class="img-responsive">
+                                        </a>
+                                    </div>
+                                    <div class="product-title">
+                                       <a href="">{{pro.name}}</a>
+                                    </div>
+                                    <div class="product-price">
+                                        <div class="pro-border-top">
+                                            <div class="pro-final">
+                                                <span><i class="fa fa-inr"></i>{{pro.price}}</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="pro-border-top">
+                                        <div class="pro-usp">
+                                            <ul>
+                                                <li ng-repeat="sp in pro.spec"><span>{{sp}}</span></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="pro-border-top">
+                                       <input type="checkbox" name="Computer" value="Computer" checked><span>Add to compare </span> 
+                                    </div>
+                                    <div class="buy-now">
+                                         <button type="button" class="btn btn-default btn-primary btn-strong">Buy Now</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </section>
+    </div>
+</section>
