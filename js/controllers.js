@@ -166,6 +166,12 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         $scope.menutitle = NavigationService.makeactive("Orders");
         TemplateService.title = $scope.menutitle;
         $scope.navigation = NavigationService.getnav();
+    })    
+    .controller('HistoryCtrl', function ($scope, TemplateService, NavigationService) {
+        $scope.template = TemplateService.changecontent("history");
+        $scope.menutitle = NavigationService.makeactive("History");
+        TemplateService.title = $scope.menutitle;
+        $scope.navigation = NavigationService.getnav();
     })  
     .controller('CompareProductCtrl', function ($scope, TemplateService, NavigationService) {
         $scope.template = TemplateService.changecontent("compare-product");
