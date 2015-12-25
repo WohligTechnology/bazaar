@@ -1,0 +1,137 @@
+<!--
+<div class="container">
+
+    <ks-swiper-container slides-per-view="3" slides-per-column="1" space-between="0" pagination-is-active="true" pagination-clickable="false" show-nav-buttons="false" loop="false" autoplay="5000" initial-slide="0" direction="vertical" on-ready="onReadySwiper(swiper)">
+        <ks-swiper-slide class="swiper-slide">
+            <img src="img/slider/1.jpg" class="img-responsive">
+
+        </ks-swiper-slide>
+        <ks-swiper-slide class="swiper-slide">
+            <img src="img/slider/1.jpg" class="img-responsive">
+
+        </ks-swiper-slide>
+        <ks-swiper-slide class="swiper-slide">
+            <img src="img/slider/1.jpg" class="img-responsive">
+
+        </ks-swiper-slide>
+    </ks-swiper-container>
+
+</div>-->
+
+<section>
+    <div class="slider">
+        <img src="img/slider/1.jpg" class="img-responsive">
+    </div>
+</section>
+<section>
+    <div class="row-flex">
+        <div class="col-flex">
+            <div class="mid-product">
+                <div class="mid-pro-name">
+                    <h4>mobile</h4>
+                    <p>for all</p>
+                </div>
+                <div class="mid-product-img">
+                    <img src="img/product/1.png" class="img-responsive">
+                </div>
+            </div>
+        </div>
+        <div class="col-flex">
+            <div class="mid-product">
+                <div class="mid-pro-name">
+                    <h4>mobile</h4>
+                    <p>for all</p>
+                </div>
+                <div class="mid-product-img">
+                    <img src="img/product/2.png" class="img-responsive">
+                </div>
+            </div>
+        </div>
+        <div class="col-flex">
+            <div class="mid-product">
+                <div class="mid-pro-name">
+                    <h4>mobile</h4>
+                    <p>for all</p>
+                </div>
+                <div class="mid-product-img">
+                    <img src="img/product/3.png" class="img-responsive">
+                </div>
+            </div>
+        </div>
+        <div class="col-flex">
+            <div class="mid-product">
+                <div class="mid-pro-name">
+                    <h4>mobile</h4>
+                    <p>for all</p>
+                </div>
+                <div class="mid-product-img">
+                    <img src="img/product/4.png" class="img-responsive">
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<div class="container">
+    <section>
+
+        <div class="pro-title">
+            <img src="img/mini-logo.png">
+            <h4>Tag Boss Deals</h4>
+        </div>
+        <div class="row-flex">
+            <div class="col-flex" ng-repeat="pro in products track by $index">
+                <div class="product-data">
+                    <div class="img-hold">
+                        <img ng-src="{{pro.image}}" class="img-responsive">
+                    </div>
+                    <div class="product-detail">
+                        <p>{{pro.name}}</p>
+                        <span><i class="fa fa-inr"></i>{{pro.price}}</span>
+                        <button type="button" class="btn btn-default">Buy Now</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </section>
+    <section>
+        <div class="row">
+            <div class="bannerg">
+                <div class="col-md-6" ng-repeat="banner in banners track by $index">
+                    <div class="banner-img">
+                        <img ng-src="{{banner.image}}" class="img-responsive">
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+    <section>
+
+        <div class="pro-title">
+            <img src="img/mini-logo.png">
+            <h4>Mobile Deals Of The Day</h4>
+        </div>
+        <div class="row-flex">
+            <div class="col-flex" ng-repeat="pro in product track by $index">
+                <div class="product-data">
+                    <div class="img-hold">
+                        <img ng-src="{{pro.image}}" class="img-responsive">
+                    </div>
+                    <div class="product-detail">
+                        <p>{{pro.name}}</p>
+                        <span><i class="fa fa-inr"></i>{{pro.price}}</span>
+                        <button type="button" class="btn btn-default">Buy Now</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section>
+        <div class="row">
+            <div class="col-md-12" ng-repeat="ban in banner track by $index">
+                <img ng-src="{{ban.image}}" class="img-responsive">
+            </div>
+        </div>
+    </section>
+</div>
