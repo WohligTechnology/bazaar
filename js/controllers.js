@@ -136,6 +136,24 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         $scope.menutitle = NavigationService.makeactive("About-us");
         TemplateService.title = $scope.menutitle;
         $scope.navigation = NavigationService.getnav();
+    })     
+    .controller('TermsPolicyCtrl', function ($scope, TemplateService, NavigationService) {
+        $scope.template = TemplateService.changecontent("terms-policy");
+        $scope.menutitle = NavigationService.makeactive("Terms-Policy");
+        TemplateService.title = $scope.menutitle;
+        $scope.navigation = NavigationService.getnav();
+    }) 
+    .controller('TermsConditionCtrl', function ($scope, TemplateService, NavigationService) {
+        $scope.template = TemplateService.changecontent("terms-condition");
+        $scope.menutitle = NavigationService.makeactive("Terms-Condition");
+        TemplateService.title = $scope.menutitle;
+        $scope.navigation = NavigationService.getnav();
+    })    
+    .controller('ContactUsCtrl', function ($scope, TemplateService, NavigationService) {
+        $scope.template = TemplateService.changecontent("Contact-us");
+        $scope.menutitle = NavigationService.makeactive("Contact-us");
+        TemplateService.title = $scope.menutitle;
+        $scope.navigation = NavigationService.getnav();
     }) 
     .controller('ProductCtrl', function ($scope, TemplateService, NavigationService) {
         $scope.template = TemplateService.changecontent("product");
