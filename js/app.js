@@ -67,6 +67,11 @@ firstapp.config(function($stateProvider, $urlRouterProvider,$httpProvider) {
         url: "/orders",
         templateUrl: "views/template.html",
         controller: 'OrdersCtrl'
+    }) 
+        .state('history', {
+        url: "/history",
+        templateUrl: "views/template.html",
+        controller: 'HistoryCtrl'
     })  
         .state('buy-back-value', {
         url: "/buy-back-value",
