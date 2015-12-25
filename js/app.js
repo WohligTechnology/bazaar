@@ -52,6 +52,21 @@ firstapp.config(function($stateProvider, $urlRouterProvider,$httpProvider) {
         url: "/contact-us",
         templateUrl: "views/template.html",
         controller: 'ContactUsCtrl'
+    })   
+        .state('compare-product', {
+        url: "/compare-product",
+        templateUrl: "views/template.html",
+        controller: 'CompareProductCtrl'
+    }) 
+        .state('profile', {
+        url: "/profile",
+        templateUrl: "views/template.html",
+        controller: 'ProfileCtrl'
+    })  
+        .state('orders', {
+        url: "/orders",
+        templateUrl: "views/template.html",
+        controller: 'OrdersCtrl'
     })  
         .state('buy-back-value', {
         url: "/buy-back-value",
