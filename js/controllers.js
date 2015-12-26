@@ -166,10 +166,73 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         $scope.menutitle = NavigationService.makeactive("Orders");
         TemplateService.title = $scope.menutitle;
         $scope.navigation = NavigationService.getnav();
+    })      
+    .controller('CartCtrl', function ($scope, TemplateService, NavigationService) {
+        $scope.template = TemplateService.changecontent("cart");
+        $scope.menutitle = NavigationService.makeactive("Cart");
+        TemplateService.title = $scope.menutitle;
+        $scope.navigation = NavigationService.getnav();
+    })    
+    .controller('CheckoutCtrl', function ($scope, TemplateService, NavigationService) {
+        $scope.template = TemplateService.changecontent("checkout");
+        $scope.menutitle = NavigationService.makeactive("Checkout");
+        TemplateService.title = $scope.menutitle;
+        $scope.navigation = NavigationService.getnav();
+    
+    
+        $scope.tab = 'step1';
+        $scope.classa = 'yellow-btn';
+        $scope.classb = '';
+        $scope.classc = '';
+        $scope.classd = '';
+        $scope.tabchange = function (tab, a) {
+            //        console.log(tab);
+            $scope.tab = tab;
+            if (a == 1) {
+
+                $scope.classa = "yellow-btn";
+                $scope.classb = '';
+                $scope.classc = '';
+                $scope.classc = '';
+            } else if (a == 2) {
+
+                $scope.classa = '';
+                $scope.classb = "yellow-btn";
+                $scope.classc = '';
+                $scope.classd = '';
+            } else if (a == 3) {
+
+                $scope.classa = '';
+                $scope.classb = '';
+                $scope.classc = "yellow-btn";
+                $scope.classd = '';
+            } else {
+                $ionicScrollDelegate.scrollTop();
+                $scope.classa = '';
+                $scope.classb = '';
+                $scope.classc = '';
+                $scope.classd = "yellow-btn";
+            }
+        };
     })    
     .controller('HistoryCtrl', function ($scope, TemplateService, NavigationService) {
         $scope.template = TemplateService.changecontent("history");
         $scope.menutitle = NavigationService.makeactive("History");
+        TemplateService.title = $scope.menutitle;
+        $scope.navigation = NavigationService.getnav();
+    
+      $scope.today = function() {
+    $scope.dt = new Date();
+  };
+  $scope.today();
+
+  $scope.clear = function () {
+    $scope.dt = null;
+  };
+    })    
+    .controller('PersonalizedManagerCtrl', function ($scope, TemplateService, NavigationService) {
+        $scope.template = TemplateService.changecontent("personalized-manager");
+        $scope.menutitle = NavigationService.makeactive("Personalized-Manager");
         TemplateService.title = $scope.menutitle;
         $scope.navigation = NavigationService.getnav();
     })  

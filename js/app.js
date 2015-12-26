@@ -72,6 +72,21 @@ firstapp.config(function($stateProvider, $urlRouterProvider,$httpProvider) {
         url: "/history",
         templateUrl: "views/template.html",
         controller: 'HistoryCtrl'
+    })   
+        .state('personalized-manager', {
+        url: "/personalized-manager",
+        templateUrl: "views/template.html",
+        controller: 'PersonalizedManagerCtrl'
+    })  
+        .state('checkout', {
+        url: "/checkout",
+        templateUrl: "views/template.html",
+        controller: 'CheckoutCtrl'
+    })  
+        .state('cart', {
+        url: "/cart",
+        templateUrl: "views/template.html",
+        controller: 'CartCtrl'
     })  
         .state('buy-back-value', {
         url: "/buy-back-value",
