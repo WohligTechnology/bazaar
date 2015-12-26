@@ -10,15 +10,22 @@
 $brand-primary: #ee283c !default;
 $base: #0c0c0c !default;
 $white: #fff !default;
+$grey: #878787 !default;
 $brand-success: #84ce3c !default;
 $brand-warning: #ffec39 !default;
 $brand-danger: #fc483f !default;
 $brand-info: #000072 !default;
-$font-family-sans-serif: "Hind","Helvetica Neue",Helvetica,Arial,sans-serif !default;
-$font-family-serif: "Hind",Georgia,"Times New Roman",Times,serif !default;
-
+$font-family-sans-serif: "Hind",
+"Helvetica Neue",
+Helvetica,
+Arial,
+sans-serif !default;
+$font-family-serif: "Hind",
+Georgia,
+"Times New Roman",
+Times,
+serif !default;
 @import "../bower_components/bootstrap-sass/assets/stylesheets/bootstrap";
-
 @mixin placeholder {
     $placeholders: ":-webkit-input" ":-moz" "-moz" "-ms-input";
     @each $placeholder in $placeholders {
@@ -27,7 +34,6 @@ $font-family-serif: "Hind",Georgia,"Times New Roman",Times,serif !default;
         }
     }
 }
-
 @mixin x-appearance ($value) {
     -webkit-appearance: $value;
     -moz-appearance: $value;
@@ -44,12 +50,17 @@ $font-family-serif: "Hind",Georgia,"Times New Roman",Times,serif !default;
     font-weight: bold;
 }
 body {
-    padding-top: 70px;
+    padding-top: 0px;
     font-family: $font-family-sans-serif;
     color: $base;
 }
 a {
     text-decoration: none;
+    color: $base;
+    &:hover {
+        text-decoration: none;
+        color: $base;
+    }
 }
 p {
     color: $base;
@@ -118,5 +129,122 @@ ul {
     border-radius: 32px;
     color: black;
 }
+.margin0 {
+    margin: 0px;
+}
+.padding0 {
+    padding: 0px;
+}
 
 /* Start writing sass here */
+
+.display-inline {
+    display: inline-block;
+}
+.top-search {
+    .input-group {
+        border: 1px solid grey;
+        border-radius: 4px;
+        padding-top: 1px;
+        .form-control {
+            border: 0px solid;
+            padding: 3px 0px 0px 10px;
+            @include placeholder {
+                color: $base;
+            }
+        }
+    }
+    .input-group-btn {
+        .btn {
+            line-height: 90%;
+            border-left: 1px solid grey !important;
+            border: 0px solid;
+            i {
+                color: #878787;
+            }
+            &:hover {
+                background-color: transparent;
+            }
+        }
+    }
+}
+.top-cart {
+    border: 1px solid #878787;
+    font-size: 14px;
+    padding: 9px 10px 6px 4px;
+    text-transform: uppercase;
+    margin: 0px 5px 0px 0px;
+    ul {
+        li {
+            padding: 0px 3px;
+            i {
+                font-size: 18px;
+                color: $brand-primary;
+                vertical-align: middle;
+            }
+        }
+    }
+    .pl12 {
+        padding-left: 12px;
+    }
+}
+.navbar-default {
+    background-color: #fff;
+    border-color: #fff;
+    padding: 30px 0px 40px 0px;
+    z-index: -9;
+    position: relative;
+}
+.top-login {
+    text-transform: capitalize;
+    ul {
+        li {
+            border-right: 1px solid $base;
+            padding: 0px 6px;
+            line-height: 100%;
+            &:last-child {
+                border-right: none;
+            }
+        }
+    }
+}
+.logo {
+    margin-top: -6px;
+}
+.menu-list {
+    background-color: $brand-primary;
+    z-index: 99;
+    padding: 10px 0px;
+        width: 100%;
+    position: absolute;
+    margin-top: -17px;
+    ul {
+        li {
+            padding: 0px 35px;
+            a {
+                color: $white;
+                text-transform: capitalize;
+                font-weight: 300;
+                img{
+                    height: 18px;
+                }
+            }
+        }
+    }
+}
+.back-red{
+        background-color: $brand-primary;
+    min-height: 300px;
+}
+.mid-pro-name{
+    text-transform: capitalize;
+    color: $white;
+    h4{
+        font-size: 30px;
+    
+    }
+    p{
+        font-size: 23px;
+        font-weight: 300;
+    }
+}
