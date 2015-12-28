@@ -1,6 +1,5 @@
 var jsArray = [
     './bower_components/jquery/dist/jquery.min.js',
-
     './bower_components/bootstrap-sass/assets/javascripts/bootstrap.min.js',
     './bower_components/flexslider/jquery.flexslider-min.js',
     './bower_components/Swiper/dist/js/swiper.js',
@@ -27,7 +26,7 @@ var ftpdetails = {
     host: 'wohlig.co.in',
     user: 'enter your username',
     pass: 'enter your password',
-    remotePath: "public_html/PROJECTNAME"
+    remotePath: "public_html/tagboss"
 };
 
 //Do not change anything below
