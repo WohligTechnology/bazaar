@@ -78,34 +78,40 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     }];
         $scope.footer = [{
             image: "img/icon/f1.png",
-            name: "ALL PRODUCTS INSURED"
+            name: "ALL PRODUCTS",
+            name2: "INSURED"
 
 
 
     }, {
             image: "img/icon/f2.png",
-            name: "Track Your Order"
+            name: "Track Your",
+            name2: "Order"
 
 
 
     }, {
             image: "img/icon/f3.png",
-            name: "PERSONALIZED MANAGER"
+            name: "PERSONALIZED",
+            name2: "MANAGER"
 
 
     }, {
             image: "img/icon/f4.png",
-            name: "Easy Returns"
+            name: "Easy",
+            name2: "Returns"
 
 
     }, {
             image: "img/icon/f5.png",
-            name: "DELIVRY WITHIN 24 HOURS"
+            name: "DELIVRY WITHIN",
+            name2: "24 HOURS"
 
 
     }, {
             image: "img/icon/f6.png",
-            name: "Online Cancellations"
+            name: "Online",
+            name2: "Cancellations"
 
 
     }];

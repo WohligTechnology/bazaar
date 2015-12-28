@@ -12,10 +12,15 @@ $base: #0c0c0c !default;
 $white: #fff !default;
 $grey: #878787 !default;
 $pro-border: #d7d7d7 !default;
+$foot-border: #b5b5b5 !default;
 $brand-success: #84ce3c !default;
 $brand-warning: #ffec39 !default;
 $brand-danger: #fc483f !default;
 $brand-info: #000072 !default;
+$input-form: #7d7d7b !default;
+$facebook: #3a579d !default;
+$google: #dd4d3c !default;
+$twitter: #49c8f5 !default;
 $font-family-sans-serif: "Hind",
 "Helvetica Neue",
 Helvetica,
@@ -35,64 +40,65 @@ serif !default;
         }
     }
 }
-
 @mixin x-appearance ($value) {
     -webkit-appearance: $value;
     -moz-appearance: $value;
     appearance: $value;
 }
-
 @mixin clip-path($clip) {
     -webkit-clip-path: $clip;
     -moz-clip-path: $clip;
     -ms-clip-path: $clip;
     clip-path: $clip;
 }
-
 .font-smart {
     font-family: $font-family-serif;
     font-weight: bold;
 }
-
 body {
     padding-top: 0px;
     font-family: $font-family-sans-serif;
     color: $base;
 }
-
 a {
-    text-decoration: none;
-    color: $base;
+    text-decoration: none !important;
+    color: $base !important;
     &:hover {
         text-decoration: none;
         color: $base;
     }
+    &:focus{
+        outline: 0;
+    }
 }
-
 p {
     color: $base;
 }
-
+.btn-facebook {
+    @include button-variant(white, $facebook, $facebook);
+}
+.btn-google {
+    @include button-variant(white, $google, $google);
+}
+.btn-twitter {
+    @include button-variant(white, $twitter, $twitter);
+}
 img.loading {
     text-align: center;
     opacity: 1;
     width: 32px !important;
     height: auto;
 }
-
 img {
     opacity: 0;
     @include transition(all 300ms ease);
 }
-
 img.doneLoading {
     opacity: 1;
 }
-
 nav li:hover .dropdown-menu {
     display: block;
 }
-
 ul {
     list-style: none;
     display: block;
@@ -101,16 +107,13 @@ ul {
         display: inline-block;
     }
 }
-
 .row-flex {
     @include display(flex);
 }
-
 .col-flex {
     @include flex(1);
     position: relative;
 }
-
 ///* swipper
 //.swiper-container {
 //    width: 100%;
@@ -139,28 +142,23 @@ ul {
     border-radius: 32px;
     color: black;
 }
-
 .partially button span {
     background-color: orange;
     border-radius: 32px;
     color: black;
 }
-
 .margin0 {
     margin: 0px;
 }
-
 .padding0 {
     padding: 0px;
 }
-
 
 /* Start writing sass here */
 
 .display-inline {
     display: inline-block;
 }
-
 .top-search {
     .input-group {
         border: 1px solid grey;
@@ -188,7 +186,6 @@ ul {
         }
     }
 }
-
 .top-cart {
     border: 1px solid #878787;
     font-size: 14px;
@@ -209,15 +206,13 @@ ul {
         padding-left: 12px;
     }
 }
-
 .navbar-default {
     background-color: #fff;
     border-color: #fff;
     padding: 30px 0px 40px 0px;
-    z-index: -9;
+    //    z-index: -9;
     position: relative;
 }
-
 .top-login {
     text-transform: capitalize;
     ul {
@@ -231,11 +226,15 @@ ul {
         }
     }
 }
-
 .logo {
     margin-top: -6px;
 }
-
+.bright {
+    border-right: 2px solid $foot-border;
+}
+.btop {
+    border-top: 2px solid $foot-border;
+}
 .menu-list {
     background-color: $brand-primary;
     z-index: 99;
@@ -247,7 +246,7 @@ ul {
         li {
             padding: 0px 32px;
             a {
-                color: $white;
+                color: $white !important;
                 text-transform: capitalize;
                 font-weight: 300;
                 img {
@@ -260,22 +259,18 @@ ul {
         }
     }
 }
-
 .red-backgound {
     background-color: $brand-primary;
 }
-
 .black-backgound {
     background-color: #000;
 }
-
 .back-red {
     min-height: 250px;
     .mid-product {
         padding: 25px 0px 0px 45px;
     }
 }
-
 .mid-product-img {
     max-width: 100%;
     height: 215px;
@@ -287,13 +282,11 @@ ul {
         max-height: 100%;
     }
 }
-
 .mid-product-img2 {
     @extend .mid-product-img;
     margin: 0px 0px -70px 15px;
     height: 181px;
 }
-
 .mid-pro-name {
     text-transform: capitalize;
     color: $white;
@@ -308,14 +301,13 @@ ul {
         line-height: 100%;
     }
 }
-
 .up-image {
     padding: 0px 1px;
     img {
         height: 8px;
     }
 }
-.pl10{
+.pl10 {
     padding-left: 10px;
 }
 .pro-title {
@@ -329,7 +321,7 @@ ul {
         font-weight: bold;
     }
 }
-.img-hold{
+.img-hold {
     height: 200px;
     text-align: center;
     overflow: hidden;
@@ -337,36 +329,35 @@ ul {
     border: 2px solid $pro-border;
     padding: 20px 0px;
     margin: 0px 20px 0px 20px;
-    
-    img{
+    img {
         max-height: 100%;
         max-width: 100%;
         margin: 0 auto;
     }
 }
-.product-detail{
-    p{
-            margin: 15px 0px 8px 0px;
-    font-size: 15px;
-    text-transform: capitalize;
+.product-detail {
+    p {
+        margin: 15px 0px 8px 0px;
+        font-size: 15px;
+        text-transform: capitalize;
     }
-    span{
+    span {
         font-size: 17px;
-        i{
+        i {
             padding-right: 8px;
         }
     }
 }
-.mt45{
+.mt45 {
     margin-top: 45px;
 }
-.mt8{
+.mt8 {
     margin-top: 8px;
 }
-.pl3{
+.pl3 {
     padding-left: 3px;
 }
-.pr3{
+.pr3 {
     padding-right: 3px;
 }
 .btn-strong {
@@ -374,7 +365,191 @@ ul {
     font-weight: 500;
     font-size: 16px;
     border-radius: 3px;
-    &:focus{
+    &:focus {
         outline: 0 !important;
     }
+}
+.footer-list {
+    ul {
+        list-style: none;
+        display: inherit;
+        li {
+            display: inherit;
+            &:first-child {
+                font-weight: 500;
+            }
+            &:last-child {
+                a {
+                    color: $brand-primary;
+                    text-decoration: underline;
+                }
+            }
+            a {
+                text-transform: capitalize;
+            }
+        }
+    }
+}
+//.toll-number {
+//    padding: 35px 0px 20px 0px;
+//}
+.sec-date {
+    img {
+        height: 24px;
+    }
+    p {
+        line-height: 120%;
+    }
+}
+.pt10 {
+    padding-top: 10px;
+}
+.pr35 {
+    padding: 16px 35px 4px 0px;
+}
+.pl35 {
+    padding-left: 35px;
+}
+.all-data {
+    img {
+        height: 50px;
+    }
+    h5 {
+        text-transform: uppercase;
+        font-weight: 600;
+        margin: 0px;
+    }
+}
+.pt15 {
+    padding-top: 15px;
+}
+.pb15 {
+    padding-bottom: 15px;
+}
+.f12 {
+    font-size: 12px;
+}
+.tall {
+    text-decoration: none !important;
+    color: $base !important;
+}
+.footers {
+    background-color: #dddddd;
+    padding: 20px 0px 20px 0px;
+}
+.mt70 {
+    margin-top: 70px;
+}
+.keep-in-touch {
+    padding-top: 20px;
+    span {
+        font-weight: 600;
+        font-size: 12px;
+    }
+    ul {
+        li {
+            a {
+                i {
+                    background-color: #a9a9a9;
+                    border-radius: 100%;
+                    height: 35px;
+                    width: 35px;
+                    color: #dddddd;
+                    font-size: 22px;
+                    padding: 7px 0px 0px 0px;
+                    margin: 3px 3px;
+                }
+            }
+        }
+    }
+}
+.login-tab {
+    .nav-tabs {
+        border-bottom: 3px solid $brand-primary;
+        li {
+            text-transform: uppercase;
+            font-size: 17px;
+            font-weight: 600;
+            a {
+                border-radius: 0px;
+                border: 0px solid;
+                color: $brand-primary !important;
+                ;
+            }
+        }
+    }
+    .nav-tabs>li.active a {
+        background-color: $brand-primary;
+        color: $white !important;
+        border-color: $brand-primary;
+        &:hover {
+            background-color: $brand-primary;
+            color: $white !important;
+            border-color: $brand-primary;
+        }
+        &:focus {
+            border-color: $brand-primary;
+        }
+    }
+    .content-view {
+        padding: 10px 20px 20px;
+        form {
+            margin: 20px 0 0;
+            .form-group {
+                margin-bottom: 15px;
+            }
+        }
+    }
+}
+.modal-content {
+    border-radius: 0px !important;
+}
+.form-control {
+    background-color: transparent;
+    border-color: $input-form;
+    color: $base;
+    border-radius: 0px;
+    box-shadow: inset 0 0 0;
+    padding: 4px 12px 0px 12px;
+    @include placeholder {
+        color: $base;
+        text-transform: uppercase;
+    }
+    @include selection(true) {
+        background-color: white;
+        color: $brand-primary;
+    }
+    &:focus {
+        box-shadow: inset 0 0 0;
+        border-color: initial;
+        outline: 0;
+    }
+}
+.forget {
+    font-size: 15px;
+    font-weight: 500;
+}
+.button-set {
+    button {
+        height: 40px;
+        width: 40px;
+        padding: 5px 0px 0px 0px
+    }
+    a {
+        color: $white !important;
+        font-size: 20px;
+    }
+}
+.about{
+    img{
+        height: 45px;
+    }
+    h4{
+            font-size: 28px;
+    text-transform: uppercase;
+    font-weight: 600;
+    }
+}
+.marall{
+        margin: -18px 0px 40px 0px;
 }
