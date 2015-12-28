@@ -13,14 +13,17 @@ $white: #fff !default;
 $grey: #878787 !default;
 $pro-border: #d7d7d7 !default;
 $foot-border: #b5b5b5 !default;
+$back: #dddddd !default;
 $brand-success: #84ce3c !default;
 $brand-warning: #ffec39 !default;
 $brand-danger: #fc483f !default;
 $brand-info: #000072 !default;
 $input-form: #7d7d7b !default;
+
 $facebook: #3a579d !default;
 $google: #dd4d3c !default;
 $twitter: #49c8f5 !default;
+
 $font-family-sans-serif: "Hind",
 "Helvetica Neue",
 Helvetica,
@@ -114,29 +117,29 @@ ul {
     @include flex(1);
     position: relative;
 }
-/* swipper
-.swiper-container {
-    width: 100%;
-    height: 100%;
-}
-.swiper-slide {
-    text-align: center;
-    font-size: 18px;
-    background: #fff;
-    /* Center slide text vertically */
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: -webkit-flex;
-    display: flex;
-    -webkit-box-pack: center;
-    -ms-flex-pack: center;
-    -webkit-justify-content: center;
-    justify-content: center;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
-    -webkit-align-items: center;
-    align-items: center;
-}
+///* swipper
+//.swiper-container {
+//    width: 100%;
+//    height: 100%;
+//}
+//.swiper-slide {
+//    text-align: center;
+//    font-size: 18px;
+//    background: #fff;
+//    /* Center slide text vertically */
+//    display: -webkit-box;
+//    display: -ms-flexbox;
+//    display: -webkit-flex;
+//    display: flex;
+//    -webkit-box-pack: center;
+//    -ms-flex-pack: center;
+//    -webkit-justify-content: center;
+//    justify-content: center;
+//    -webkit-box-align: center;
+//    -ms-flex-align: center;
+//    -webkit-align-items: center;
+//    align-items: center;
+//}
 .full button span {
     background-color: limegreen;
     border-radius: 32px;
@@ -354,6 +357,9 @@ ul {
 .mt8 {
     margin-top: 8px;
 }
+.mt50{
+    margin-top: 50px;
+}
 .pl3 {
     padding-left: 3px;
 }
@@ -552,4 +558,73 @@ ul {
 }
 .marall{
         margin: -18px 0px 40px 0px;
+}
+.buy-data {
+    margin: 55px 0px;
+}
+.offer-title{
+    @extend .about;
+    h3{
+        font-size: 30px;
+    }
+}
+.offer-head{
+    h3{
+        font-size: 30px;
+    }
+}
+.offer-price{
+    h1{
+        color:$brand-primary;
+        i{
+            vertical-align: middle;
+    padding-right: 12px;
+
+        }
+    }
+}
+.offer-call{
+    h3{
+            border: 1px solid $brand-primary;
+    padding: 8px 15px;
+    display: inline-block;
+    }
+}
+.offer-foot{
+    h5{
+            font-size: 20px;
+    color: #505050;
+    }
+}
+.offer-content {
+    background-color: $back;
+    padding: 40px 0px 25px 0px;
+}
+.faq-accordian{
+    
+    .panel {
+    border-radius: 0px;
+}
+    .panel-heading {
+    color: $base;
+    background-color: $back;
+    border-color: $back;
+        padding: 16px 30px;
+        h4{
+            font-size: 18px;
+            font-weight: 600;
+                text-align: left;
+            span{
+                display: flex;
+                
+                i{
+                        position: absolute;
+    right: 25px;
+                }
+            }
+        }
+}
+    .panel-body{
+        text-align: left;
+    }
 }
