@@ -6,7 +6,7 @@
         <div class="row">
             <div class="col-md-offset-1 col-md-10">
                 <div class="about">
-                    <div class="text-center">
+                    <div class="text-center marall">
                         <img src="img/mini-logo.png">
                         <h4>CHECKOUT</h4>
                     </div>
@@ -22,359 +22,398 @@
             <div class="col-md-offset-2 col-md-8">
                 <div class="account text-center">
                     <ul>
-                        <li class="tab-item {{classa}}" ng-click="tabchange('step1',1)">STEP 1</li>
-                        <li class="tab-item {{classb}}" ng-click="tabchange('step2',2)">STEP 2</li>
-                        <li class="tab-item {{classc}}" ng-click="tabchange('step3',3)">STEP 3</li>
-                        <li class="tab-item {{classd}}" ng-click="tabchange('step4',4)">STEP 4</li>
+                        <li class="tab-item {{classa}}" ng-click="tabchange('step1',1)">
+                            <a href=""><img src="img/account/s1.png"></a>
+                            </a>
+                        </li>
+                        <li class="tab-item {{classb}}" ng-click="tabchange('step2',2)">
+                            <a href=""><img src="img/account/s2.png"></a>
+                            </a>
+                        </li>
+                        <li class="tab-item {{classc}}" ng-click="tabchange('step3',3)">
+                            <a href=""><img src="img/account/s3.png"></a>
+                            </a>
+                        </li>
+                        <li class="tab-item {{classd}}" ng-click="tabchange('step4',4)">
+                            <a href=""><img src="img/account/s4.png"></a>
+                            </a>
+                        </li>
 
                     </ul>
                 </div>
             </div>
         </div>
-        <hr>
+
     </div>
     <div class="container">
-        <section>
-            <div ng-show="tab=='step1'">
-                <div class="row">
-                    <div class="col-md-offset-2 col-md-3">
-                        <div class="login-form content-view pad0">
-                            <h4 class="login">LOGIN</h4>
-                            <div class="form-group">
-                                <label>EMAIL ADDRESS</label>
-                                <input type="email" class="form-control">
-                            </div>
-                            <div class="form-group">
-                                <label>PASSWORD</label>
-                                <input type="password" class="form-control">
-                            </div>
+        <div class="btop mt8">
+            <section>
 
+                <div ng-show="tab=='step1'" class="mt30">
+                    <div class="row">
+                        <div class="col-md-offset-1 col-md-4">
+                            <div class="login-form content-view pad0">
+                                <h4 class="login">LOGIN</h4>
+                                <div class="form-group info">
 
-                        </div>
-                        <div class="row">
-                            <div class="col-md-6">
-                                <button class="btn btn-danger mar0 con-btn">SIGN IN</button>
-                            </div>
-                            <div class="col-md-6 ">
-                                <div class="class-forget">
-                                    <p>Forgot Password?</p>
+                                    <input type="email" class="form-control" placeholder="EMAIL ADDRESS">
+                                </div>
+                                <div class="form-group info">
+
+                                    <input type="password" class="form-control" placeholder="PASSWORD">
                                 </div>
 
-                            </div>
-                        </div>
-                        <div class="text-center list">
-                            <p class="or">OR</p>
-                            <p>LOGIN VIA</p>
-                            <div class="button-set">
-                                <button class="btn btn-facebook pad-btn">
-                                    <i class="fa fa-facebook social-f"></i>
-                                </button>
-                                <button class="btn btn-google pad-btn">
-                                    <i class="fa fa-google-plus"></i>
-                                </button>
-                                <button class="btn btn-twitter pad-btn">
-                                    <i class="fa fa-twitter"></i>
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-offset-2 col-md-3">
-                        <div class="login-form content-view pad0">
-                            <h4 class="login">SIGN UP</h4>
-                            <div class="form-group">
-                                <label>FIRST NAME</label>
-                                <input type="text" class="form-control">
-                            </div>
-                            <div class="form-group">
-                                <label>LAST NAME</label>
-                                <input type="text" class="form-control">
-                            </div>
-                            <div class="form-group">
-                                <label>EMAIL ADDRESS</label>
-                                <input type="email" class="form-control">
-                            </div>
-                            <div class="form-group">
-                                <label>PASSWORD<span>(Minimum 6 Characters)</span></label>
-                                <input type="password" class="form-control">
-                            </div>
-                            <div class="form-group">
-                                <label>CONFIRM PASSWORD</label>
-                                <input type="password" class="form-control">
-                            </div>
-                            <div class="form-group">
-                                <label>MOBILE NUMBER <span>(Optional)</span></label>
-                                <input type="number" class="form-control">
-                            </div>
-                            <div class="form-group i-check">
 
-                                <input type="checkbox" name="vehicle" value="Bike" class="iagree">I agree with the terms & conditions and privacy policy
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <button class="btn btn-danger mar0 con-btn btn-strong">LOG IN</button>
+                                </div>
+                                <div class="col-md-6 ">
+                                    <div class="class-forget">
+                                        <p>Forgot Password?</p>
+                                    </div>
+
+                                </div>
+                            </div>
+                            <div class="text-center list">
+                                <p class="forget margin0 pt15">OR</p>
+                                <p class="forget">LOGIN VIA</p>
+                                <div class="button-set">
+                                    <button class="btn btn-facebook pad-btn">
+                                        <a href="">
+                                            <i class="fa fa-facebook social-f"></i>
+                                        </a>
+                                    </button>
+                                    <button class="btn btn-google pad-btn">
+                                        <a href="">
+                                            <i class="fa fa-google-plus"></i>
+                                        </a>
+                                    </button>
+                                    <button class="btn btn-twitter pad-btn">
+                                        <a href="">
+                                            <i class="fa fa-twitter"></i>
+                                        </a>
+                                    </button>
+                                </div>
                             </div>
                         </div>
-                        <div class="text-center list mar-btm">
-                            <button class="btn btn-danger mar0 con-btn">REGISTER</button>
-                            <p class="or">OR</p>
-                            <p>LOGIN VIA</p>
-                            <div class="button-set">
-                                <button class="btn btn-facebook pad-btn">
-                                    <i class="fa fa-facebook social-f"></i>
-                                </button>
-                                <button class="btn btn-google pad-btn">
-                                    <i class="fa fa-google-plus"></i>
-                                </button>
-                                <button class="btn btn-twitter pad-btn">
-                                    <i class="fa fa-twitter"></i>
-                                </button>
+                        <div class="col-md-offset-2 col-md-4">
+                            <div class="login-form content-view pad0">
+                                <h4>SIGN UP</h4>
+                                <div class="form-group info">
+
+                                    <input type="text" class="form-control" placeholder="FIRST NAME">
+                                </div>
+                                <div class="form-group info">
+
+                                    <input type="text" class="form-control" placeholder="LAST NAME">
+                                </div>
+                                <div class="form-group info">
+
+                                    <input type="email" class="form-control" placeholder="EMAIL ADDRESS">
+                                </div>
+                                <div class="form-group info">
+
+                                    <input type="password" class="form-control" placeholder="PASSWORD">
+                                </div>
+                                <div class="form-group info">
+
+                                    <input type="password" class="form-control" placeholder="CONFIRM PASSWORD">
+                                </div>
+                                <div class="form-group info">
+
+                                    <input type="number" class="form-control" placeholder="MOBILE NUMBER">
+                                </div>
+                                <div class="form-group i-check">
+
+                                    <input type="checkbox" name="vehicle" value="Bike" class="iagree">I agree with the terms & conditions and privacy policy
+                                </div>
                             </div>
-                            <p class="i-check">Already Registerd? Log In</p>
+                            <div class="text-center list mar-btm">
+                                <button class="btn btn-danger mar0 btn-strong">REGISTER</button>
+                                <p class="forget margin0 pt15">OR</p>
+                                <p class="forget">LOGIN VIA</p>
+                                <div class="button-set">
+                                    <button class="btn btn-facebook pad-btn">
+                                        <a href="">
+                                            <i class="fa fa-facebook social-f"></i>
+                                        </a>
+                                    </button>
+                                    <button class="btn btn-google pad-btn">
+                                        <a href="">
+                                            <i class="fa fa-google-plus"></i>
+                                        </a>
+                                    </button>
+                                    <button class="btn btn-twitter pad-btn">
+                                        <a href="">
+                                            <i class="fa fa-twitter"></i>
+                                        </a>
+                                    </button>
+                                </div>
+                                <p class="already pt15">Already Registerd? Log In</p>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-        </section>
-        <section>
-            <div ng-show="tab=='step2'">
-                <div class="row">
-                    <div class="col-md-12">
-                        <div class="order-table">
-                            <table class="table">
-                                <thead>
-                                    <tr class="text-center">
-                                        <th>ITEM</th>
-                                        <th>QTY</th>
-                                        <th>PRICE</th>
-                                        <th>DELIVERY DETAILS</th>
-                                        <th>SUBTOTAL</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr class="text-center text-bold">
-                                        <td>
-                                            <div class="checkout-img">
-                                                <figure>
-                                                    <img src="img/product/c1.jpg">
+            </section>
+            <section>
+                <div ng-show="tab=='step2'" class="mt30">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="order-table">
+                                <table class="table">
+                                    <thead>
+                                        <tr class="text-center desktop">
+                                            <th>ITEM</th>
+                                            <th>QTY</th>
+                                            <th>PRICE</th>
+                                            <th>DELIVERY DETAILS</th>
+                                            <th>SUBTOTAL</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr class="text-center text-bold t-border-none bord-right">
+                                            <td>
+                                                <table class="table custom-tb t-border-none">
+                                                    <tr>
+                                                        <td>
+                                                            <div class="check-img display-inline">
+                                                                <img src="img/product/c1.jpg" class="img-responsive mauto" >
+                                                            </div>
 
-                                                </figure>
-
+                                                        </td>
+                                                        <td>
+                                                           <div class="w200">
                                                 <p>Nikon D3300 (Body with AF-S 18-55 mm VR II Kit Lens) DSLR Camera</p>
                                                 <p><span>Color:</span> Black</p>
-                                            </div>
-                                        </td>
-                                        <td>01</td>
-                                        <td>
-                                            <div class="check-price">
+                                                </div>  
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+            <div class="return-policy"> <i class="fa fa-check-circle"></i> <span class="applicable-policy">30 Days Replacement</span> </div>
+                                                        </td>
+                                                    </tr>
+                                                </table>
+
+                                            </td>
+                                            <td>01</td>
+                                            <td>
+                                                <div class="check-price">
+                                                    <span><i class="fa fa-inr"></i>24,712.00</span>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="check-price">
+                                                    <span>FREE:</span>
+                                                    <p>Delivered in 2-3 business days</p>
+                                                </div>
+                                            </td>
+
+                                            <td>
                                                 <span><i class="fa fa-inr"></i>24,712.00</span>
-                                            </div>
-                                        </td>
-                                        <td>
-                                            <div class="check-price">
-                                                <span>FREE:</span>
-                                                <p>Delivered in 2-3 business days</p>
-                                            </div>
-                                        </td>
 
-                                        <td>
-                                            <span><i class="fa fa-inr"></i>24,712.00</span>
+                                            </td>
+                                        </tr>
 
-                                        </td>
-                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
 
-                                </tbody>
-                            </table>
                         </div>
 
                     </div>
+                    <div class="row mar-btm">
+                        <div class="col-md-offset-8 col-md-4">
+                            <div class="row">
+                                <div class="col-xs-6">
+                                    <div class="category">
+                                        <p>ESTIMATED TOTAL:</p>
 
-                </div>
-                <div class="row mar-btm">
-                    <div class="col-md-offset-8 col-md-4">
-                        <div class="row">
-                            <div class="col-xs-6">
-                                <div class="category">
-                                    <p>ESTIMATED TOTAL:</p>
+                                    </div>
+                                </div>
+                                <div class="col-xs-6">
+                                    <div class="list ">
+                                        <span><i class="fa fa-inr"></i>24,712.00</span>
 
+                                    </div>
                                 </div>
                             </div>
-                            <div class="col-xs-6">
-                                <div class="list ">
-                                    <span><i class="fa fa-inr"></i>24,712.00</span>
-
+                            <div class="row">
+                                <div class="col-md-offset-2 col-md-4">
+                                    <div class="text-center">
+                                        <button type="submit" class="btn-blue btn btn-danger text-center">NEXT</button>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-offset-2 col-md-4">
-                                <div class="text-center">
-                                    <button type="submit" class="btn-blue btn btn-danger text-center">NEXT</button>
-                                </div>
-                            </div>
-                        </div>
 
-
-
-                    </div>
-                </div>
-            </div>
-        </section>
-        <section>
-            <div ng-show="tab=='step3'">
-                <div class="row">
-                    <div class="col-md-12 content-view paddbtm" style="padding-left:15px;">
-                        <h4 class="login">YOUR DETAILS</h4>
-                    </div>
-
-                </div>
-                <div class="row content-view">
-                    <div class="col-md-3">
-                        <div class="form-group">
-
-                            <input type="email" class="form-control" placeholder="FIRST NAME">
-                        </div>
-                    </div>
-                    <div class="col-md-3">
-                        <div class="form-group">
-
-                            <input type="email" class="form-control" placeholder="LAST NAME">
-                        </div>
-                    </div>
-                    <div class="col-md-3">
-                        <div class="form-group">
-
-                            <input type="email" class="form-control" placeholder="MOBILE NUMBER ">
-                        </div>
-                    </div>
-                    <div class="col-md-3">
-                        <div class="form-group">
-
-                            <input type="email" class="form-control" placeholder="EMAIL ADDRESS">
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-3">
-                        <div class="login-form content-view pad0">
-                            <h4 class="login">BILLING ADDRESS</h4>
-                            <div class="form-group">
-                                <label>LINE 1*</label>
-                                <input type="email" class="form-control">
-                            </div>
-                            <div class="form-group">
-                                <label>LINE 2</label>
-                                <input type="password" class="form-control">
-                            </div>
-                            <div class="form-group">
-                                <label>LINE 3</label>
-                                <input type="password" class="form-control">
-                            </div>
-                            <div class="form-group">
-                                <label>CITY *</label>
-                                <input type="password" class="form-control">
-                            </div>
-                            <div class="form-group">
-                                <label>PINCODE *</label>
-                                <input type="password" class="form-control">
-                            </div>
-                            <div class="form-group">
-                                <label>STATE</label>
-                                <div class="fynx-select">
-                                    <select>
-                                        <option value=""></option>
-                                        <option value="2">2</option>
-                                        <option value="3">3</option>
-                                        <option value="4">4</option>
-                                    </select>
-                                    <span class="only-border"></span>
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label>COUNTRY</label>
-                                <input type="password" class="form-control">
-                            </div>
-
-
-                        </div>
-                    </div>
-                    <div class="col-md-offset-2 col-md-3">
-                        <div class="login-form content-view pad0">
-                            <h4 class="login">SHIPPING ADDRESS</h4>
-                            <div class="form-group i-check">
-
-                                <input type="checkbox" name="vehicle" value="Bike" class="iagree">Same as billing address
-                            </div>
-                            <div class="form-group">
-                                <label>LINE 1*</label>
-                                <input type="email" class="form-control">
-                            </div>
-                            <div class="form-group">
-                                <label>LINE 2</label>
-                                <input type="password" class="form-control">
-                            </div>
-                            <div class="form-group">
-                                <label>LINE 3</label>
-                                <input type="password" class="form-control">
-                            </div>
-                            <div class="form-group">
-                                <label>CITY *</label>
-                                <input type="password" class="form-control">
-                            </div>
-                            <div class="form-group">
-                                <label>PINCODE *</label>
-                                <input type="password" class="form-control">
-                            </div>
-                            <div class="form-group">
-                                <label>STATE</label>
-                                <div class="fynx-select">
-                                    <select>
-                                        <option value=""></option>
-                                        <option value="2">2</option>
-                                        <option value="3">3</option>
-                                        <option value="4">4</option>
-                                    </select>
-                                    <span class="only-border"></span>
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label>COUNTRY</label>
-                                <input type="password" class="form-control">
-                            </div>
 
 
                         </div>
                     </div>
                 </div>
-                <div class="row">
-                    <div class="col-md-12 content-view paddbtm m-45" style="padding-left:15px;">
-                        <h4 class="login">PAYMENT METHOD</h4>
-                    </div>
-                    <div class="payment-method">
-                        <ul>
-                            <li>
-                                <div class="form-group radio-cust">
+            </section>
+            <section>
+                <div ng-show="tab=='step3'" class="mt30">
+                    <div class="row">
+                        <div class="col-md-12 content-view paddbtm" style="padding-left:15px;">
+                            <h4 class="login">YOUR DETAILS</h4>
+                        </div>
 
-                                    <input type="radio" id="radio01" name="radio" />
-                                    <label for="radio01"><span></span>CREDIT CARD</label>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="form-group radio-cust">
-                                    <input type="radio" id="radio02" name="radio" />
-                                    <label for="radio02"><span></span>DEBIT CARD</label>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="form-group radio-cust">
-                                    <input type="radio" id="radio03" name="radio" />
-                                    <label for="radio03"><span></span>NET BANKING</label>
-                                </div>
-                            </li>
-                            <li>
-                                div class="form-group radio-cust">
-                                <input type="radio" id="radio04" name="radio" />
-                                <label for="radio04"><span></span>CASH ON DELIVERY</label>
                     </div>
-                    </li>
-                    </ul>
-                </div>
-                <!--
+                    <div class="row content-view">
+                        <div class="col-md-3">
+                            <div class="form-group">
+
+                                <input type="email" class="form-control" placeholder="FIRST NAME">
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="form-group">
+
+                                <input type="email" class="form-control" placeholder="LAST NAME">
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="form-group">
+
+                                <input type="email" class="form-control" placeholder="MOBILE NUMBER ">
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="form-group">
+
+                                <input type="email" class="form-control" placeholder="EMAIL ADDRESS">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-3">
+                            <div class="login-form content-view pad0">
+                                <h4 class="login">BILLING ADDRESS</h4>
+                                <div class="form-group">
+                                    <label>LINE 1*</label>
+                                    <input type="email" class="form-control">
+                                </div>
+                                <div class="form-group">
+                                    <label>LINE 2</label>
+                                    <input type="password" class="form-control">
+                                </div>
+                                <div class="form-group">
+                                    <label>LINE 3</label>
+                                    <input type="password" class="form-control">
+                                </div>
+                                <div class="form-group">
+                                    <label>CITY *</label>
+                                    <input type="password" class="form-control">
+                                </div>
+                                <div class="form-group">
+                                    <label>PINCODE *</label>
+                                    <input type="password" class="form-control">
+                                </div>
+                                <div class="form-group">
+                                    <label>STATE</label>
+                                    <div class="fynx-select">
+                                        <select>
+                                            <option value=""></option>
+                                            <option value="2">2</option>
+                                            <option value="3">3</option>
+                                            <option value="4">4</option>
+                                        </select>
+                                        <span class="only-border"></span>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label>COUNTRY</label>
+                                    <input type="password" class="form-control">
+                                </div>
+
+
+                            </div>
+                        </div>
+                        <div class="col-md-offset-2 col-md-3">
+                            <div class="login-form content-view pad0">
+                                <h4 class="login">SHIPPING ADDRESS</h4>
+                                <div class="form-group i-check">
+
+                                    <input type="checkbox" name="vehicle" value="Bike" class="iagree">Same as billing address
+                                </div>
+                                <div class="form-group">
+                                    <label>LINE 1*</label>
+                                    <input type="email" class="form-control">
+                                </div>
+                                <div class="form-group">
+                                    <label>LINE 2</label>
+                                    <input type="password" class="form-control">
+                                </div>
+                                <div class="form-group">
+                                    <label>LINE 3</label>
+                                    <input type="password" class="form-control">
+                                </div>
+                                <div class="form-group">
+                                    <label>CITY *</label>
+                                    <input type="password" class="form-control">
+                                </div>
+                                <div class="form-group">
+                                    <label>PINCODE *</label>
+                                    <input type="password" class="form-control">
+                                </div>
+                                <div class="form-group">
+                                    <label>STATE</label>
+                                    <div class="fynx-select">
+                                        <select>
+                                            <option value=""></option>
+                                            <option value="2">2</option>
+                                            <option value="3">3</option>
+                                            <option value="4">4</option>
+                                        </select>
+                                        <span class="only-border"></span>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label>COUNTRY</label>
+                                    <input type="password" class="form-control">
+                                </div>
+
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12 content-view paddbtm m-45" style="padding-left:15px;">
+                            <h4 class="login">PAYMENT METHOD</h4>
+                        </div>
+                        <div class="payment-method">
+                            <ul>
+                                <li>
+                                    <div class="form-group radio-cust">
+
+                                        <input type="radio" id="radio01" name="radio" />
+                                        <label for="radio01"><span></span>CREDIT CARD</label>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="form-group radio-cust">
+                                        <input type="radio" id="radio02" name="radio" />
+                                        <label for="radio02"><span></span>DEBIT CARD</label>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="form-group radio-cust">
+                                        <input type="radio" id="radio03" name="radio" />
+                                        <label for="radio03"><span></span>NET BANKING</label>
+                                    </div>
+                                </li>
+                                <li>
+                                    div class="form-group radio-cust">
+                                    <input type="radio" id="radio04" name="radio" />
+                                    <label for="radio04"><span></span>CASH ON DELIVERY</label>
+                        </div>
+                        </li>
+                        </ul>
+                    </div>
+                    <!--
 		<div class="row content-view paddbtm">
 			<div class="col-md-3">
 				<div class="form-group radio-cust">
@@ -403,42 +442,43 @@
 			</div>
 		</div>
 -->
-                <div class="row">
-                    <div class="text-center">
-                        <button class="btn btn-danger m-30 con-btn" data-toggle="modal" data-target="#myModal">CONTINUE</button>
+                    <div class="row">
+                        <div class="text-center">
+                            <button class="btn btn-danger m-30 con-btn" data-toggle="modal" data-target="#myModal">CONTINUE</button>
+                        </div>
+                    </div>
+
+                </div>
+                <!-- Modal -->
+                <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                <h4 class="modal-title text-center" id="myModalLabel">OTP VERIFICATION</h4>
+                            </div>
+                            <div class="modal-body">
+                                <div class="row">
+                                    <div class="col-md-offset-3 col-md-6">
+                                        <div class="otp text-center">
+                                            <h4>Please enter your OTP number sent to your
+registered mobile number.</h4>
+                                        </div>
+                                        <div class="otp-input">
+                                            <input type="tele" class="form-control">
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="modal-footer">
+                                <!--        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>-->
+                                <button type="button" class="btn btn-primary">Submit</button>
+                            </div>
+                        </div>
                     </div>
                 </div>
-
-            </div>
-            <!-- Modal -->
-<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title text-center" id="myModalLabel">OTP VERIFICATION</h4>
-      </div>
-      <div class="modal-body">
-      <div class="row">
-          <div class="col-md-offset-3 col-md-6">
-                <div class="otp text-center">
-           <h4>Please enter your OTP number sent to your
-registered mobile number.</h4>
-       </div>
-       <div class="otp-input">
-           <input type="tele" class="form-control"> 
-       </div>
-          </div>
-      </div>
-     
-      </div>
-      <div class="modal-footer">
-<!--        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>-->
-        <button type="button" class="btn btn-primary">Submit</button>
-      </div>
+        </div>
+        </section>
     </div>
-  </div>
-</div>
-    </div>
-    </section>
     </div>
