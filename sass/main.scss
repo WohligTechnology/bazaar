@@ -647,6 +647,7 @@ ul {
 .mt30{
     margin-top: 30px;
 }
+
 .pl2{
     padding-left: 2px;
 }
@@ -658,4 +659,56 @@ ul {
 }
 .camera-banner{
 
+}
+.account{
+    ul{
+        li{
+            padding: 0px 20px;
+            a{
+        img{
+            height: 100px;
+        }
+    } 
+        }
+    }
+   
+}
+.edit{
+        background-color: transparent;
+    box-shadow: 0 0 0;
+    border: 1px solid $brand-primary;
+    text-transform: uppercase;
+    padding: 2px 10px 0px 10px;
+}
+.account-name{
+    h4{
+        color:$brand-primary;
+    }
+    p {
+    margin: 0px;
+    line-height: 150%;
+}  
+}
+.desktop {
+    background-color: $foot-border;
+    th{
+        text-align: center;
+        border: 0px solid;
+        
+    }
+   
+}
+.order-table{
+    table{
+        border: 1px solid $foot-border;
+    }
+}
+.t-border{
+      
+            td{
+                border-top: 0px solid !important;
+                vertical-align: middle !important;
+                padding: 20px 0px 20px !important;
+            }
+       
 }

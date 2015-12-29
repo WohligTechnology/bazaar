@@ -39,6 +39,63 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
 
 
     }];
+    
+        $scope.products = [{
+            image: "img/product/5.png",
+            name: "HTC Desire 626G+",
+            price: "11,700.00"
+
+
+    }, {
+            image: "img/product/6.png",
+            name: "Jabra Eclipse Wireless Blueto...",
+            price: "11,700.00"
+
+
+    }, {
+            image: "img/product/7.png",
+            name: "Lenovo G50-80 80E502ULIN ",
+            price: "11,700.00"
+
+    }, {
+            image: "img/product/8.png",
+            name: "Fujifilm C25 12.0 MP",
+            price: "11,700.00"
+
+    }, {
+            image: "img/product/9.png",
+            name: "Microsoft DC – 34 12000 mAh",
+            price: "11,700.00"
+
+    }];
+        $scope.product = [{
+            image: "img/product/14.png",
+            name: "Lava Pixel V1 with Android one",
+            price: "11,700.00"
+
+
+    }, {
+            image: "img/product/15.png",
+            name: "Lava Iris X1 Atom S",
+            price: "11,700.00"
+
+
+    }, {
+            image: "img/product/13.png",
+            name: "Lava Iris X2 Atom S ",
+            price: "13,740.00"
+
+    }, {
+            image: "img/product/12.png",
+            name: "Lava Iris Alfa L",
+            price: "12,540.00"
+
+    }, {
+            image: "img/product/14.png",
+            name: "Lava Pixel V1 with Android one",
+            price: "12,540.00"
+
+    }];
     })
     .controller('LoginCtrl', function ($scope, TemplateService, NavigationService) {
 
@@ -124,6 +181,48 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
 
 
     }];
+    
+
+        $scope.footer = [{
+            image: "img/icon/f1.png",
+            name: "ALL PRODUCTS",
+            name2: "INSURED"
+
+
+
+    }, {
+            image: "img/icon/f2.png",
+            name: "Track Your",
+            name2: "Order"
+
+
+
+    }, {
+            image: "img/icon/f3.png",
+            name: "PERSONALIZED",
+            name2: "MANAGER"
+
+
+    }, {
+            image: "img/icon/f4.png",
+            name: "Easy",
+            name2: "Returns"
+
+
+    }, {
+            image: "img/icon/f5.png",
+            name: "DELIVRY WITHIN",
+            name2: "24 HOURS"
+
+
+    }, {
+            image: "img/icon/f6.png",
+            name: "Online",
+            name2: "Cancellations"
+
+
+    }];
+ 
     })      
     .controller('CartCtrl', function ($scope, TemplateService, NavigationService) {
         $scope.template = TemplateService.changecontent("cart");
