@@ -22,6 +22,10 @@ $input-form: #7d7d7b !default;
 $facebook: #3a579d !default;
 $google: #dd4d3c !default;
 $twitter: #49c8f5 !default;
+
+$DarkBrown: #292321;
+$Orange: #CC3300;
+
 $font-family-sans-serif: "Hind",
 "Helvetica Neue",
 Helvetica,
@@ -204,10 +208,11 @@ ul {
             }
         }
     }
-    .pl12 {
+  
+}
+  .pl12 {
         padding-left: 12px;
     }
-}
 .navbar-default {
     background-color: #fff;
     border-color: #fff;
@@ -261,6 +266,7 @@ ul {
         }
     }
 }
+
 .red-backgound {
     background-color: $brand-primary;
 }
@@ -908,7 +914,8 @@ textarea.form-control {
     }
 }
 .pad-all-side {
-    padding: 0px 20px;
+    padding: 0px 10px;
+    font-weight: 600;
 }
 .pr6 {
     vertical-align: middle;
@@ -920,9 +927,7 @@ textarea.form-control {
         color: $brand-primary;
     }
 }
-.list {
-    span {}
-}
+
 .category {
     p {
          font-weight: 600;
@@ -936,4 +941,67 @@ textarea.form-control {
             @extend .pr6;
         }
     }
+}
+.login{
+    font-weight: 600;
+}
+.radio-cust{
+    label{
+        font-weight:400;
+    }
+    input[type="radio"] {
+    display:none;
+}
+input[type="radio"] + label {
+    color: $DarkBrown;
+    font-family:Arial, sans-serif;
+    font-size:14px;
+}
+input[type="radio"] + label span {
+     display: inline-block;
+    width: 12px;
+    height: 12px;
+    margin: -1px 4px 0 0;
+    vertical-align: baseline;
+    cursor: pointer;
+    -moz-border-radius: 50%;
+    /* border-radius: 50%; */
+    border: 1px solid $base;
+    margin-right: 7px;
+}
+
+input[type="radio"] + label span {
+     background-color:$white;
+}
+
+input[type="radio"]:checked + label span{
+     background-color:$Orange;
+}
+
+input[type="radio"] + label span,
+input[type="radio"]:checked + label span {
+  -webkit-transition:background-color 0.4s linear;
+  -o-transition:background-color 0.4s linear;
+  -moz-transition:background-color 0.4s linear;
+  transition:background-color 0.4s linear;
+}
+}
+.ml8{
+    margin-left: 8px;
+}
+.i-cl{
+        font-size: 10px;
+    background-color: darkgrey;
+    padding: 0px 3px;
+    display: inline;
+    cursor: pointer;
+}
+.uty{
+        margin: 0px 7px;
+    display: inline-block;
+    border: 1px solid grey;
+    padding: 5px 6px;
+}
+.br-col{
+    color: $brand-primary !important;
 }

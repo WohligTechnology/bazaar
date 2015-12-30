@@ -249,7 +249,7 @@
                 <div ng-show="tab=='step3'" class="mt30">
                     <div class="row">
                         <div class="col-md-12 content-view paddbtm" style="padding-left:15px;">
-                            <h4 class="login">YOUR DETAILS</h4>
+                            <h4 class="login ">YOUR DETAILS</h4>
                         </div>
 
                     </div>
@@ -282,8 +282,8 @@
                     <div class="row">
                         <div class="col-md-3">
                           
-                               <div class="login-h">
-                                <h4 class="">BILLING ADDRESS</h4>
+                               <div class="login-h mt30">
+                                <h4 class="login">BILLING ADDRESS</h4>
                                 </div>
                                  <div class="form-group">
                                 
@@ -326,7 +326,9 @@
                         </div>
                         <div class="col-md-offset-2 col-md-3">
                             <div class="login-form content-view pad0">
-                                <h4 class="login">SHIPPING ADDRESS</h4>
+                               <div class="mt30">
+                                <h4 class="login ">SHIPPING ADDRESS</h4>
+                                </div>
                                 <div class="form-group i-check">
 
                                     <input type="checkbox" name="vehicle" value="Bike" class="iagree">Same as billing address
@@ -373,10 +375,10 @@
                         </div>
                     </div>
                     <div class="row">
-                        <div class="col-md-12 content-view paddbtm m-45" style="padding-left:15px;">
+                        <div class="col-md-12 content-view paddbtm m-45">
                             <h4 class="login">PAYMENT METHOD</h4>
                         </div>
-                        <div class="payment-method">
+                        <div class="payment-method renew-content-footer pl12">
                             <ul>
                                 <li>
                                     <div class="form-group radio-cust">
@@ -398,9 +400,10 @@
                                     </div>
                                 </li>
                                 <li>
-                                    div class="form-group radio-cust">
+                                   <div class="form-group radio-cust">
                                     <input type="radio" id="radio04" name="radio" />
                                     <label for="radio04"><span></span>CASH ON DELIVERY</label>
+                                    </div>
                                      </li>
                         </ul>
                         </div>
@@ -408,8 +411,8 @@
                     </div>
 
                     <div class="row">
-                        <div class="text-center">
-                            <button class="btn btn-danger m-30 con-btn" data-toggle="modal" data-target="#myModal">CONTINUE</button>
+                        <div class="pl12">
+                            <button class="btn btn-danger m-30 con-btn btn-strong" data-toggle="modal" data-target="#myModal">CONTINUE</button>
                         </div>
                     </div>
 
@@ -418,9 +421,9 @@
                 <!-- Modal -->
                 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
                     <div class="modal-dialog" role="document">
-                        <div class="modal-content">
+                        <div class="modal-content custom-modal">
                             <div class="modal-header">
-                                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+<!--                                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>-->
                                 <h4 class="modal-title text-center" id="myModalLabel">OTP VERIFICATION</h4>
                             </div>
                             <div class="modal-body">
@@ -439,7 +442,7 @@ registered mobile number.</h4>
                             </div>
                             <div class="modal-footer">
                                 <!--        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>-->
-                                <button type="button" class="btn btn-primary">Submit</button>
+                                <button type="button" class="btn btn-primary btn-strong">SUBMIT</button>
                             </div>
                         </div>
                     </div>
