@@ -20,7 +20,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
 
         // product data
 
- 
+
 
         $scope.banners = [{
             image: "img/product/banner.jpg"
@@ -39,7 +39,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
 
 
     }];
-    
+
         $scope.products = [{
             image: "img/product/5.png",
             name: "HTC Desire 626G+",
@@ -105,42 +105,42 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         $scope.menutitle = NavigationService.makeactive("About-us");
         TemplateService.title = $scope.menutitle;
         $scope.navigation = NavigationService.getnav();
-    })     
+    })
     .controller('TermsPolicyCtrl', function ($scope, TemplateService, NavigationService) {
         $scope.template = TemplateService.changecontent("terms-policy");
         $scope.menutitle = NavigationService.makeactive("Terms-Policy");
         TemplateService.title = $scope.menutitle;
         $scope.navigation = NavigationService.getnav();
-    }) 
+    })
     .controller('TermsConditionCtrl', function ($scope, TemplateService, NavigationService) {
         $scope.template = TemplateService.changecontent("terms-condition");
         $scope.menutitle = NavigationService.makeactive("Terms-Condition");
         TemplateService.title = $scope.menutitle;
         $scope.navigation = NavigationService.getnav();
-    })    
+    })
     .controller('ContactUsCtrl', function ($scope, TemplateService, NavigationService) {
         $scope.template = TemplateService.changecontent("contact-us");
         $scope.menutitle = NavigationService.makeactive("Contact-us");
         TemplateService.title = $scope.menutitle;
         $scope.navigation = NavigationService.getnav();
-    })  
+    })
     .controller('ProfileCtrl', function ($scope, TemplateService, NavigationService) {
         $scope.template = TemplateService.changecontent("profile");
         $scope.menutitle = NavigationService.makeactive("Profile");
         TemplateService.title = $scope.menutitle;
         $scope.navigation = NavigationService.getnav();
-    })  
+    })
     .controller('OrdersCtrl', function ($scope, TemplateService, NavigationService) {
         $scope.template = TemplateService.changecontent("orders");
         $scope.menutitle = NavigationService.makeactive("Orders");
         TemplateService.title = $scope.menutitle;
         $scope.navigation = NavigationService.getnav();
-    })   
+    })
     .controller('FooterCtrl', function ($scope, TemplateService, NavigationService) {
-   
+
         TemplateService.title = $scope.menutitle;
         $scope.navigation = NavigationService.getnav();
-    
+
 
         $scope.footer = [{
             image: "img/icon/f1.png",
@@ -181,7 +181,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
 
 
     }];
-    
+
 
         $scope.footer = [{
             image: "img/icon/f1.png",
@@ -222,21 +222,21 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
 
 
     }];
- 
-    })      
+
+    })
     .controller('CartCtrl', function ($scope, TemplateService, NavigationService) {
         $scope.template = TemplateService.changecontent("cart");
         $scope.menutitle = NavigationService.makeactive("Cart");
         TemplateService.title = $scope.menutitle;
         $scope.navigation = NavigationService.getnav();
-    })    
+    })
     .controller('CheckoutCtrl', function ($scope, TemplateService, NavigationService) {
         $scope.template = TemplateService.changecontent("checkout");
         $scope.menutitle = NavigationService.makeactive("Checkout");
         TemplateService.title = $scope.menutitle;
         $scope.navigation = NavigationService.getnav();
-    
-    
+
+
         $scope.tab = 'step1';
         $scope.classa = 'yellow-btn';
         $scope.classb = '';
@@ -271,57 +271,57 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
                 $scope.classd = "yellow-btn";
             }
         };
-    })    
+    })
     .controller('HistoryCtrl', function ($scope, TemplateService, NavigationService) {
         $scope.template = TemplateService.changecontent("history");
         $scope.menutitle = NavigationService.makeactive("History");
         TemplateService.title = $scope.menutitle;
         $scope.navigation = NavigationService.getnav();
-    
-      $scope.today = function() {
-    $scope.dt = new Date();
-  };
-  $scope.today();
 
-  $scope.clear = function () {
-    $scope.dt = null;
-  };
-    })    
+        $scope.today = function () {
+            $scope.dt = new Date();
+        };
+        $scope.today();
+
+        $scope.clear = function () {
+            $scope.dt = null;
+        };
+    })
     .controller('PersonalizedManagerCtrl', function ($scope, TemplateService, NavigationService) {
         $scope.template = TemplateService.changecontent("personalized-manager");
         $scope.menutitle = NavigationService.makeactive("Personalized-Manager");
         TemplateService.title = $scope.menutitle;
         $scope.navigation = NavigationService.getnav();
-    })  
+    })
     .controller('CompareProductCtrl', function ($scope, TemplateService, NavigationService) {
         $scope.template = TemplateService.changecontent("compare-product");
         $scope.menutitle = NavigationService.makeactive("Compare-product");
         TemplateService.title = $scope.menutitle;
         $scope.navigation = NavigationService.getnav();
-    }) 
+    })
     .controller('ProductCtrl', function ($scope, TemplateService, NavigationService) {
         $scope.template = TemplateService.changecontent("product");
         $scope.menutitle = NavigationService.makeactive("Product");
         TemplateService.title = $scope.menutitle;
         $scope.navigation = NavigationService.getnav();
-    
-    
-      $scope.status4 = {
+
+
+        $scope.status4 = {
             isFirstOpen: true,
             isFirstDisabled: false
         };
-            $scope.product = [{
+        $scope.product = [{
             image: "img/product/c1.jpg",
             name: "Nikon D3300 (Body with AF-S 18-55 mm VR II Kit Lens) DS...",
             price: "11,700.00",
-             spec: ["24.2 MP", "CMOS", "with 3 inch LCD"]
+            spec: ["24.2 MP", "CMOS", "with 3 inch LCD"]
 
 
     }, {
             image: "img/product/c2.jpg",
             name: "Nikon D3300 (Body with AF-S 18-55 mm VR II Kit Lens) DS...",
             price: "11,700.00",
-             spec: ["24.2 MP", "CMOS", "with 3 inch LCD"]
+            spec: ["24.2 MP", "CMOS", "with 3 inch LCD"]
 
 
 
@@ -329,19 +329,19 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
             image: "img/product/c3.jpg",
             name: "Nikon D3300 (Body with AF-S 18-55 mm VR II Kit Lens) DS...",
             price: "13,740.00",
-             spec: ["24.2 MP", "CMOS", "with 3 inch LCD"]
+            spec: ["24.2 MP", "CMOS", "with 3 inch LCD"]
 
     }, {
             image: "img/product/c4.jpg",
             name: "Nikon D3300 (Body with AF-S 18-55 mm VR II Kit Lens) DS...",
             price: "12,540.00",
-             spec: ["24.2 MP", "CMOS", "with 3 inch LCD"]
+            spec: ["24.2 MP", "CMOS", "with 3 inch LCD"]
 
     }, {
             image: "img/product/c1.jpg",
             name: "Nikon D3300 (Body with AF-S 18-55 mm VR II Kit Lens) DS...",
             price: "12,540.00",
-             spec: ["24.2 MP", "CMOS", "with 3 inch LCD"]
+            spec: ["24.2 MP", "CMOS", "with 3 inch LCD"]
 
     }, {
             image: "img/product/c2.jpg",
@@ -363,7 +363,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
 
     }];
 
-    
+
     })
     .controller('CameraCtrl', function ($scope, TemplateService, NavigationService) {
         $scope.template = TemplateService.changecontent("camera");
@@ -408,22 +408,20 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         TemplateService.title = $scope.menutitle;
         $scope.navigation = NavigationService.getnav();
 
-        $scope.status = {
+        $scope.accordian = [];
+        $scope.accordian.push({
             isFirstOpen: true,
             isFirstDisabled: false
-        };
-        $scope.statuss = {
+        });
+        $scope.accordian.push({
             isFirstOpen: true,
             isFirstDisabled: false
-        };
-        $scope.status2 = {
+        });
+        $scope.accordian.push({
             isFirstOpen: true,
             isFirstDisabled: false
-        };
-        $scope.status3 = {
-            isFirstOpen: true,
-            isFirstDisabled: false
-        };
+        });
+
         $scope.product = [{
             image: "img/product/p1.jpg",
             name: "Apple iPhone 6S (silver,16 GB)",

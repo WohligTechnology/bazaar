@@ -6,7 +6,7 @@
         <div class="row">
             <div class="col-md-offset-1 col-md-10">
                 <div class="about">
-                    <div class="text-center">
+                    <div class="text-center marall">
                         <img src="img/mini-logo.png">
                         <h4>BENIFITS OF TAG BOSS INSURANCE</h4>
                     </div>
@@ -15,66 +15,85 @@
                 </div>
             </div>
         </div>
-        <section>
+        <hr>
+        <section class="mt30">
             <div class="row">
                 <div class="col-md-3">
                     <div class="product-acc">
-                        <uib-accordion close-others="oneAtATime">
+                        <uib-accordion close-others="true">
 
-                            <uib-accordion-group is-open="status.open">
+                            <uib-accordion-group is-open="accordian[0].isFirstOpen"> 
                                 <uib-accordion-heading>
-                                    CATEGORY <i class="pull-right fa" ng-class="{'fa-chevron-down': status.open, 'fa-chevron-right': !status.open}"></i>
+                                    CATEGORY <i class="pull-right fa" ng-class="{'fa-chevron-down': accordian[0].isFirstOpen, 'fa-chevron-right': !accordian[0].isFirstOpen}"></i>
                                 </uib-accordion-heading>
                                 <div class="pro-cat">
                                     <form action="demo_form.asp" method="get">
-                                        <input type="checkbox" name="Cellphone" value="Cellphone"> Cellphone
+                                        <input id="checkbox-1" class="checkbox-custom dis-none" name="checkbox-1" type="checkbox">
+                                        <label for="checkbox-1" class="checkbox-custom-label checkbox-custom">Cellphone</label>
                                         <br>
-                                        <input type="checkbox" name="Camera" value="Camera" checked> Camera
+                                        <input id="checkbox-2" class="checkbox-custom dis-none" name="checkbox-2" type="checkbox">
+                                        <label for="checkbox-2" class="checkbox-custom-label checkbox-custom">Camera</label>
                                         <br>
-                                        <input type="checkbox" name="Computer" value="Computer" checked> Computer
+                                        <input id="checkbox-3" class="checkbox-custom dis-none" name="checkbox-3" type="checkbox">
+                                        <label for="checkbox-3" class="checkbox-custom-label checkbox-custom">Computer</label>
                                         <br>
-                                        <input type="checkbox" name="Accessories" value="Accessories" checked> Accessories
+                                        <input id="checkbox-4" class="checkbox-custom dis-none" name="checkbox-4" type="checkbox">
+                                        <label for="checkbox-4" class="checkbox-custom-label checkbox-custom">Accessories</label>
+
                                         <br>
 
                                     </form>
                                 </div>
                             </uib-accordion-group>
-                            <uib-accordion-group is-open="statuss.open">
+                            <uib-accordion-group is-open="accordian[1].isFirstOpen">
                                 <uib-accordion-heading>
-                                    BRAND <i class="pull-right fa" ng-class="{'fa-chevron-down': statuss.open, 'fa-chevron-right': !statuss.open}"></i>
+                                    BRAND <i class="pull-right fa" ng-class="{'fa-chevron-down': accordian[1].isFirstOpen, 'fa-chevron-right': !accordian[1].isFirstOpen}"></i>
                                 </uib-accordion-heading>
-                                        <div class="pro-cat">
+                                <div class="pro-cat">
                                     <form action="demo_form.asp" method="get">
-                                        <input type="checkbox" name="Cellphone" value="Cellphone"> Apple
+                                        <input id="checkbox-5" class="checkbox-custom dis-none" name="checkbox-5" type="checkbox">
+                                        <label for="checkbox-5" class="checkbox-custom-label checkbox-custom">Apple</label>
+                                        <!--                                        <input type="checkbox" name="Cellphone" value="Cellphone"> Apple-->
                                         <br>
-                                        <input type="checkbox" name="Camera" value="Camera" checked> Samsung
+                                        <input id="checkbox-6" class="checkbox-custom dis-none" name="checkbox-6" type="checkbox">
+                                        <label for="checkbox-6" class="checkbox-custom-label checkbox-custom">Samsung</label>
+
                                         <br>
-                                        <input type="checkbox" name="Computer" value="Computer" checked> Lenovo
+                                        <input id="checkbox-7" class="checkbox-custom dis-none" name="checkbox-7" type="checkbox">
+                                        <label for="checkbox-7" class="checkbox-custom-label checkbox-custom">Lenovo</label>
+
                                         <br>
-                                        <input type="checkbox" name="Accessories" value="Accessories" checked> Micromax
+                                        <input id="checkbox-8" class="checkbox-custom dis-none" name="checkbox-8" type="checkbox">
+                                        <label for="checkbox-8" class="checkbox-custom-label checkbox-custom">Micromax</label>
+
                                         <br>
-                                        <input type="checkbox" name="Accessories" value="Accessories" checked> Lava
-                                        
+                                        <input id="checkbox-9" class="checkbox-custom dis-none" name="checkbox-9" type="checkbox">
+                                        <label for="checkbox-9" class="checkbox-custom-label checkbox-custom">Lava</label>
+                                    </form>
+                                </div>
+                            </uib-accordion-group>
+                            <uib-accordion-group is-open="accordian[2].isFirstOpen">
+                                <uib-accordion-heading>
+                                    INSURANCE <i class="pull-right fa" ng-class="{'fa-chevron-down': accordian[2].isFirstOpen, 'fa-chevron-right': !accordian[2].isFirstOpen}"></i>
+                                </uib-accordion-heading>
+                                <div class="pro-cat">
+                                    <form action="demo_form.asp" method="get">
+                                        <input id="checkbox-9" class="checkbox-custom dis-none" name="checkbox-9" type="checkbox">
+                                        <label for="checkbox-1" class="checkbox-custom-label checkbox-custom">Syska</label>
+
+                                        <br>
+                                        <input id="checkbox-9" class="checkbox-custom dis-none" name="checkbox-9" type="checkbox">
+                                        <label for="checkbox-1" class="checkbox-custom-label checkbox-custom">Tagboss</label>
+
+                                        <br>
+                                        <input id="checkbox-9" class="checkbox-custom dis-none" name="checkbox-9" type="checkbox">
+                                        <label for="checkbox-1" class="checkbox-custom-label checkbox-custom">Appsdaily</label>
+
 
                                     </form>
                                 </div>
                             </uib-accordion-group>
-                            <uib-accordion-group is-open="status2.open">
-                                <uib-accordion-heading>
-                                    INSURANCE <i class="pull-right fa" ng-class="{'fa-chevron-down': status2.open, 'fa-chevron-right': !status2.open}"></i>
-                                </uib-accordion-heading>
-                                          <div class="pro-cat">
-                                    <form action="demo_form.asp" method="get">
-                                        <input type="checkbox" name="Cellphone" value="Cellphone"> Syska
-                                        <br>
-                                        <input type="checkbox" name="Camera" value="Camera" checked> Tagboss
-                                        <br>
-                                        <input type="checkbox" name="Computer" value="Computer" checked> Appsdaily
-                                       
-                                    </form>
-                                </div>
-                            </uib-accordion-group>
-                        
+
                         </uib-accordion>
                     </div>
                 </div>
@@ -82,14 +101,14 @@
                     <section>
                         <div class="row">
                             <div class="col-md-3" ng-repeat="pro in product track by $index">
-                                <div class="product-detail">
-                                    <div class="product-img-hold">
-                                       <a href="">
-                                        <img src="{{pro.image}}" class="img-responsive">
+                                <div class="product-detail mb70">
+                                    <div class="check-img">
+                                        <a href="">
+                                            <img ng-src="{{pro.image}}" class="img-responsive mauto">
                                         </a>
                                     </div>
                                     <div class="product-title">
-                                       <a href="">{{pro.name}}</a>
+                                        <a href="">{{pro.name}}</a>
                                     </div>
                                     <div class="product-price">
                                         <div class="pro-border-top">
@@ -101,15 +120,18 @@
                                     <div class="pro-border-top">
                                         <div class="pro-usp">
                                             <ul>
-                                                <li ng-repeat="sp in pro.spec"><span>{{sp}}</span></li>
+                                                <li ng-repeat="sp in pro.spec"><span class="font-12">• {{sp}}</span></li>
                                             </ul>
                                         </div>
                                     </div>
                                     <div class="pro-border-top">
-                                       <input type="checkbox" name="Computer" value="Computer" checked><span>Add to compare </span> 
+                                        <div class="form-group pro-cat">
+                                   <input id="checkbox-10" class="checkbox-custom dis-none" name="checkbox-10" type="checkbox">
+                                        <label for="checkbox-10" class="checkbox-custom-label checkbox-custom font-12">Add to compare</label>
                                     </div>
-                                    <div class="buy-now">
-                                         <button type="button" class="btn btn-default btn-primary btn-strong">Buy Now</button>
+                                    </div>
+                                    <div class="buy-now text-center">
+                                        <button type="button" class="btn btn-default btn-primary btn-strong">Buy Now</button>
                                     </div>
                                 </div>
                             </div>
