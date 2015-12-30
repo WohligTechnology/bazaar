@@ -204,9 +204,9 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
 
 
     }, {
-            image: "img/icon/f2.png",
-            name: "Track Your",
-            name2: "Order"
+            image: "img/icon/f7.png",
+            name: "ASSURED",
+            name2: "BUYBACK"
 
 
 
@@ -228,54 +228,10 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
             name2: "24 HOURS"
 
 
-    }, {
-            image: "img/icon/f6.png",
-            name: "Online",
-            name2: "Cancellations"
-
-
     }];
 
 
-        $scope.footer = [{
-            image: "img/icon/f1.png",
-            name: "ALL PRODUCTS",
-            name2: "INSURED"
-
-
-
-    }, {
-            image: "img/icon/f2.png",
-            name: "Track Your",
-            name2: "Order"
-
-
-
-    }, {
-            image: "img/icon/f3.png",
-            name: "PERSONALIZED",
-            name2: "MANAGER"
-
-
-    }, {
-            image: "img/icon/f4.png",
-            name: "Easy",
-            name2: "Returns"
-
-
-    }, {
-            image: "img/icon/f5.png",
-            name: "DELIVRY WITHIN",
-            name2: "24 HOURS"
-
-
-    }, {
-            image: "img/icon/f6.png",
-            name: "Online",
-            name2: "Cancellations"
-
-
-    }];
+ 
 
     })
     .controller('CartCtrl', function ($scope, TemplateService, NavigationService) {
