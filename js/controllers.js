@@ -99,6 +99,60 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     })
     .controller('LoginCtrl', function ($scope, TemplateService, NavigationService) {
 
+    })  
+    .controller('QuickCtrl', function ($scope, TemplateService, NavigationService) {
+        $scope.product = [{
+            image: "img/product/c1.jpg",
+            name: "Nikon D3300 (Body with AF-S 18-55 mm VR II Kit Lens) DS...",
+            price: "11,700.00",
+            spec: ["24.2 MP", "CMOS", "with 3 inch LCD"]
+
+
+    }, {
+            image: "img/product/c2.jpg",
+            name: "Nikon D3300 (Body with AF-S 18-55 mm VR II Kit Lens) DS...",
+            price: "11,700.00",
+            spec: ["24.2 MP", "CMOS", "with 3 inch LCD"]
+
+
+
+    }, {
+            image: "img/product/c3.jpg",
+            name: "Nikon D3300 (Body with AF-S 18-55 mm VR II Kit Lens) DS...",
+            price: "13,740.00",
+            spec: ["24.2 MP", "CMOS", "with 3 inch LCD"]
+
+    }, {
+            image: "img/product/c4.jpg",
+            name: "Nikon D3300 (Body with AF-S 18-55 mm VR II Kit Lens) DS...",
+            price: "12,540.00",
+            spec: ["24.2 MP", "CMOS", "with 3 inch LCD"]
+
+    }, {
+            image: "img/product/c1.jpg",
+            name: "Nikon D3300 (Body with AF-S 18-55 mm VR II Kit Lens) DS...",
+            price: "12,540.00",
+            spec: ["24.2 MP", "CMOS", "with 3 inch LCD"]
+
+    }, {
+            image: "img/product/c2.jpg",
+            name: "Nikon D3300 (Body with AF-S 18-55 mm VR II Kit Lens) DS...",
+            price: "13,740.00",
+            spec: ["24.2 MP", "CMOS", "with 3 inch LCD"]
+
+    }, {
+            image: "img/product/c3.jpg",
+            name: "Nikon D3300 (Body with AF-S 18-55 mm VR II Kit Lens) DS...",
+            price: "12,540.00",
+            spec: ["24.2 MP", "CMOS", "with 3 inch LCD"]
+
+    }, {
+            image: "img/product/c4.jpg",
+            name: "Nikon D3300 (Body with AF-S 18-55 mm VR II Kit Lens) DS...",
+            price: "12,540.00",
+            spec: ["24.2 MP", "CMOS", "with 3 inch LCD"]
+
+    }];
     })
     .controller('AboutusCtrl', function ($scope, TemplateService, NavigationService) {
         $scope.template = TemplateService.changecontent("about-us");
@@ -299,17 +353,39 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         TemplateService.title = $scope.menutitle;
         $scope.navigation = NavigationService.getnav();
     })
-    .controller('ProductCtrl', function ($scope, TemplateService, NavigationService) {
+    .controller('ProductCtrl', function ($scope, TemplateService, NavigationService, $uibModal) {
         $scope.template = TemplateService.changecontent("product");
         $scope.menutitle = NavigationService.makeactive("Product");
         TemplateService.title = $scope.menutitle;
         $scope.navigation = NavigationService.getnav();
+    
+        $scope.openQuick = function () {
+        $uibModal.open({
+            animation: true,
+            templateUrl: 'views/modal/quick.html',
+            controller: 'QuickCtrl'
+        })
+    };
 
 
-        $scope.status4 = {
+        $scope.accordian = [];
+        $scope.accordian.push({
             isFirstOpen: true,
             isFirstDisabled: false
-        };
+        });
+        $scope.accordian.push({
+            isFirstOpen: true,
+            isFirstDisabled: false
+        });
+        $scope.accordian.push({
+            isFirstOpen: true,
+            isFirstDisabled: false
+        });   
+       $scope.accordian.push({
+            isFirstOpen: true,
+            isFirstDisabled: false
+        });
+    
         $scope.product = [{
             image: "img/product/c1.jpg",
             name: "Nikon D3300 (Body with AF-S 18-55 mm VR II Kit Lens) DS...",
