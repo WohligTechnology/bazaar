@@ -88,6 +88,11 @@ firstapp.config(function($stateProvider, $urlRouterProvider,$httpProvider) {
         templateUrl: "views/template.html",
         controller: 'CartCtrl'
     })  
+        .state('new-product', {
+        url: "/new-product",
+        templateUrl: "views/template.html",
+        controller: 'NewProductCtrl'
+    })  
         .state('buy-back-value', {
         url: "/buy-back-value",
         templateUrl: "views/template.html",

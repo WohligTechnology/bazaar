@@ -99,7 +99,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     })
     .controller('LoginCtrl', function ($scope, TemplateService, NavigationService) {
 
-    })  
+    })
     .controller('QuickCtrl', function ($scope, TemplateService, NavigationService) {
         $scope.product = [{
             image: "img/product/c1.jpg",
@@ -231,7 +231,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     }];
 
 
- 
+
 
     })
     .controller('CartCtrl', function ($scope, TemplateService, NavigationService) {
@@ -239,6 +239,100 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         $scope.menutitle = NavigationService.makeactive("Cart");
         TemplateService.title = $scope.menutitle;
         $scope.navigation = NavigationService.getnav();
+    })
+    .controller('NewProductCtrl', function ($scope, TemplateService, NavigationService) {
+        $scope.template = TemplateService.changecontent("new-product");
+        $scope.menutitle = NavigationService.makeactive("New-Product");
+        TemplateService.title = $scope.menutitle;
+        $scope.navigation = NavigationService.getnav();
+
+        $scope.accordian = [];
+        $scope.accordian.push({
+            isFirstOpen: true,
+            isFirstDisabled: false
+        });
+        $scope.accordian.push({
+            isFirstOpen: true,
+            isFirstDisabled: false
+        });
+        $scope.accordian.push({
+            isFirstOpen: true,
+            isFirstDisabled: false
+        });
+        $scope.accordian.push({
+            isFirstOpen: true,
+            isFirstDisabled: false
+        });
+        $scope.accordian.push({
+            isFirstOpen: true,
+            isFirstDisabled: false
+        });
+        $scope.accordian.push({
+            isFirstOpen: true,
+            isFirstDisabled: false
+        });
+        $scope.accordian.push({
+            isFirstOpen: true,
+            isFirstDisabled: false
+        });
+        $scope.accordian.push({
+            isFirstOpen: true,
+            isFirstDisabled: false
+        });
+
+        $scope.product = [{
+            image: "img/product/c1.jpg",
+            name: "Nikon D3300 (Body with AF-S 18-55 mm VR II Kit Lens) DS...",
+            price: "11,700.00",
+            spec: ["24.2 MP", "CMOS", "with 3 inch LCD"]
+
+
+    }, {
+            image: "img/product/c2.jpg",
+            name: "Nikon D3300 (Body with AF-S 18-55 mm VR II Kit Lens) DS...",
+            price: "11,700.00",
+            spec: ["24.2 MP", "CMOS", "with 3 inch LCD"]
+
+
+
+    }, {
+            image: "img/product/c3.jpg",
+            name: "Nikon D3300 (Body with AF-S 18-55 mm VR II Kit Lens) DS...",
+            price: "13,740.00",
+            spec: ["24.2 MP", "CMOS", "with 3 inch LCD"]
+
+    }, {
+            image: "img/product/c4.jpg",
+            name: "Nikon D3300 (Body with AF-S 18-55 mm VR II Kit Lens) DS...",
+            price: "12,540.00",
+            spec: ["24.2 MP", "CMOS", "with 3 inch LCD"]
+
+    }, {
+            image: "img/product/c1.jpg",
+            name: "Nikon D3300 (Body with AF-S 18-55 mm VR II Kit Lens) DS...",
+            price: "12,540.00",
+            spec: ["24.2 MP", "CMOS", "with 3 inch LCD"]
+
+    }, {
+            image: "img/product/c2.jpg",
+            name: "Nikon D3300 (Body with AF-S 18-55 mm VR II Kit Lens) DS...",
+            price: "13,740.00",
+            spec: ["24.2 MP", "CMOS", "with 3 inch LCD"]
+
+    }, {
+            image: "img/product/c3.jpg",
+            name: "Nikon D3300 (Body with AF-S 18-55 mm VR II Kit Lens) DS...",
+            price: "12,540.00",
+            spec: ["24.2 MP", "CMOS", "with 3 inch LCD"]
+
+    }, {
+            image: "img/product/c4.jpg",
+            name: "Nikon D3300 (Body with AF-S 18-55 mm VR II Kit Lens) DS...",
+            price: "12,540.00",
+            spec: ["24.2 MP", "CMOS", "with 3 inch LCD"]
+
+    }];
+
     })
     .controller('CheckoutCtrl', function ($scope, TemplateService, NavigationService) {
         $scope.template = TemplateService.changecontent("checkout");
@@ -314,14 +408,14 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         $scope.menutitle = NavigationService.makeactive("Product");
         TemplateService.title = $scope.menutitle;
         $scope.navigation = NavigationService.getnav();
-    
+
         $scope.openQuick = function () {
-        $uibModal.open({
-            animation: true,
-            templateUrl: 'views/modal/quick.html',
-            controller: 'QuickCtrl'
-        })
-    };
+            $uibModal.open({
+                animation: true,
+                templateUrl: 'views/modal/quick.html',
+                controller: 'QuickCtrl'
+            })
+        };
 
 
         $scope.accordian = [];
@@ -336,12 +430,12 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         $scope.accordian.push({
             isFirstOpen: true,
             isFirstDisabled: false
-        });   
-       $scope.accordian.push({
+        });
+        $scope.accordian.push({
             isFirstOpen: true,
             isFirstDisabled: false
         });
-    
+
         $scope.product = [{
             image: "img/product/c1.jpg",
             name: "Nikon D3300 (Body with AF-S 18-55 mm VR II Kit Lens) DS...",
