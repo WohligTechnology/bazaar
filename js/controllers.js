@@ -239,6 +239,12 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         $scope.menutitle = NavigationService.makeactive("Cart");
         TemplateService.title = $scope.menutitle;
         $scope.navigation = NavigationService.getnav();
+    }) 
+    .controller('WishlistCtrl', function ($scope, TemplateService, NavigationService) {
+        $scope.template = TemplateService.changecontent("wishlist");
+        $scope.menutitle = NavigationService.makeactive("Wishlist");
+        TemplateService.title = $scope.menutitle;
+        $scope.navigation = NavigationService.getnav();
     })
     .controller('NewProductCtrl', function ($scope, TemplateService, NavigationService) {
         $scope.template = TemplateService.changecontent("new-product");
