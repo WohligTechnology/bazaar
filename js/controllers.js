@@ -287,55 +287,50 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         });
 
         $scope.product = [{
-            image: "img/product/c1.jpg",
+            image: "img/product/2.png",
             name: "Nikon D3300 (Body with AF-S 18-55 mm VR II Kit Lens) DS...",
-            price: "11,700.00",
-            spec: ["24.2 MP", "CMOS", "with 3 inch LCD"]
-
+            price: "11,700.00"
+       
+    }, {
+            image: "img/product/3.png",
+            name: "Nikon D3300 (Body with AF-S 18-55 mm VR II Kit Lens) DS...",
+            price: "11,700.00"
+  
+    }, {
+            image: "img/product/4.png",
+            name: "Nikon D3300 (Body with AF-S 18-55 mm VR II Kit Lens) DS...",
+            price: "13,740.00"
+        
 
     }, {
-            image: "img/product/c2.jpg",
+            image: "img/product/2.png",
             name: "Nikon D3300 (Body with AF-S 18-55 mm VR II Kit Lens) DS...",
-            price: "11,700.00",
-            spec: ["24.2 MP", "CMOS", "with 3 inch LCD"]
-
-
+            price: "12,540.00"
+          
 
     }, {
-            image: "img/product/c3.jpg",
+            image: "img/product/3.png",
+            name: "Nikon D3300 (Body with AF-S 18-55 mm VR II Kit Lens) DS...",
+            price: "12,540.00"
+           
+
+    }, {
+            image: "img/product/4.png",
             name: "Nikon D3300 (Body with AF-S 18-55 mm VR II Kit Lens) DS...",
             price: "13,740.00",
             spec: ["24.2 MP", "CMOS", "with 3 inch LCD"]
 
     }, {
-            image: "img/product/c4.jpg",
+            image: "img/product/2.png",
             name: "Nikon D3300 (Body with AF-S 18-55 mm VR II Kit Lens) DS...",
             price: "12,540.00",
             spec: ["24.2 MP", "CMOS", "with 3 inch LCD"]
 
     }, {
-            image: "img/product/c1.jpg",
+            image: "img/product/3.png",
             name: "Nikon D3300 (Body with AF-S 18-55 mm VR II Kit Lens) DS...",
-            price: "12,540.00",
-            spec: ["24.2 MP", "CMOS", "with 3 inch LCD"]
-
-    }, {
-            image: "img/product/c2.jpg",
-            name: "Nikon D3300 (Body with AF-S 18-55 mm VR II Kit Lens) DS...",
-            price: "13,740.00",
-            spec: ["24.2 MP", "CMOS", "with 3 inch LCD"]
-
-    }, {
-            image: "img/product/c3.jpg",
-            name: "Nikon D3300 (Body with AF-S 18-55 mm VR II Kit Lens) DS...",
-            price: "12,540.00",
-            spec: ["24.2 MP", "CMOS", "with 3 inch LCD"]
-
-    }, {
-            image: "img/product/c4.jpg",
-            name: "Nikon D3300 (Body with AF-S 18-55 mm VR II Kit Lens) DS...",
-            price: "12,540.00",
-            spec: ["24.2 MP", "CMOS", "with 3 inch LCD"]
+            price: "12,540.00"
+         
 
     }];
 

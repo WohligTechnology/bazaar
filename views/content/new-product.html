@@ -77,7 +77,7 @@ Kit Lens) DSLR Camera <span class="grey-col">(Black)</span></h3>
     <section>
         <div class="container">
             <div class="row">
-                <div class="col-md-offset-1 col-md-11">
+                <div class="col-md-offset-1 col-md-11 border-brand">
                     <div class="text-center pt15">
                         <h3 class="txt-dec br-col">PRODUCT DETAILS</h3>
                     </div>
@@ -168,6 +168,35 @@ Kit Lens) DSLR Camera <span class="grey-col">(Black)</span></h3>
                         </uib-accordion>
                     </div>
                 </div>
+            </div>
+        </div>
+    </section>
+    <section>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-offset-1 col-md-10">
+                    <div class="text-center">
+                        <h3>CUSTOMERS WHO VIEWED THIS PRODUCT ALSO VIEWED</h3>
+                    </div>
+                    <div class="slider-new">
+                            <flex-slider class="carousel" flex-slide="s in product track by $index" animation="slide" item-width="200">
+                            <li>
+                               <div class="slide-content">
+                                <div class="his-img-hold">
+                                    <a href=""><img ng-src="{{s.image}}"></a>
+                                </div>
+                                <div class="prod-title">
+                                    <a href=""><p>{{s.name}}</p></a>
+                                </div>
+                                <div class="pro-priz pro-border-top">
+                                    <a href=""><h4><i class="fa fa-inr pr6"></i>{{s.price}}</h4></a>
+                                </div>
+                                </div>
+                            </li>
+                        </flex-slider>
+                    </div>
+                </div>
+
             </div>
         </div>
     </section>
