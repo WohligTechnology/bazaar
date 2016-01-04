@@ -506,6 +506,18 @@ ul {
         &:focus {
             border-color: $brand-primary;
         }
+        &:after{
+            width: 0;
+    height: 0;
+    border-left: 17px solid transparent;
+    border-right: 17px solid transparent;
+    border-top: 16px solid $brand-primary;
+    content: '';
+    position: absolute;
+    top: 47px;
+    left: 50%;
+    transform: translatex(-50%);
+        }
     }
     .content-view {
         padding: 10px 20px 20px;
@@ -1439,4 +1451,33 @@ textarea.form-control {
     min-height: 60px;
     text-align: center;
     padding-top: 20px;
+}
+.home-slider{
+    .flexslider{
+    margin: 0 0 0px; 
+    background: #ffffff;
+    border: 0px solid #ffffff;
+    }
+    .flex-control-nav {
+
+      position: absolute;
+    /* right: 0px; */
+    bottom: inherit;
+    top: 50%;
+    transform: translatey(-50%);
+    text-align: -webkit-right;
+    z-index: 999;
+}
+    .flex-control-nav li {
+    margin: 10px 6px;
+   display: inherit; 
+    zoom: 1;
+}
+    .flex-direction-nav{
+        display: none;
+           
+    }
+    .flex-control-paging li a{
+        color:transparent !important;
+    }
 }

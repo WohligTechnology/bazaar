@@ -23,12 +23,12 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
 
 
         $scope.banners = [{
-            image: "img/product/banner.jpg"
+            image: "img/slider/1.jpg"
 
 
 
     }, {
-            image: "img/product/banner2.jpg"
+            image: "img/slider/1.jpg"
 
 
 

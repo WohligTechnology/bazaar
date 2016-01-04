@@ -108,6 +108,7 @@ firstapp.config(function ($stateProvider, $urlRouterProvider, $httpProvider) {
 
 });
 
+
 firstapp.directive('img', function ($compile, $parse) {
     return {
         restrict: 'E',
