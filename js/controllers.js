@@ -32,7 +32,30 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
 
 
 
+    }, {
+            image: "img/slider/1.jpg"
+
+
+
+    }, {
+            image: "img/slider/1.jpg"
+
+
+
     }];
+    
+    $scope.bannerss = [{
+            image: "img/product/banner.jpg"
+
+
+
+    }, {
+            image: "img/product/banner2.jpg"
+
+
+
+    }];
+    
         $scope.banner = [{
             image: "img/product/big-banner.jpg"
 
