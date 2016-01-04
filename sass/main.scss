@@ -24,6 +24,9 @@ $google: #dd4d3c !default;
 $twitter: #49c8f5 !default;
 $DarkBrown: #292321;
 $Orange: #CC3300;
+$light-grey: #e4e4e4;
+$dark-grey: #c9c9c9;
+$dark-grey-second: #909090;
 $font-family-sans-serif: "Hind",
 "Helvetica Neue",
 Helvetica,
@@ -53,6 +56,12 @@ serif !default;
     -moz-clip-path: $clip;
     -ms-clip-path: $clip;
     clip-path: $clip;
+}
+@mixin border-radius($radius) {
+    -webkit-border-radius: $radius;
+    -moz-border-radius: $radius;
+    -ms-border-radius: $radius;
+    border-radius: $radius;
 }
 .font-smart {
     font-family: $font-family-serif;
@@ -117,37 +126,14 @@ ul {
     @include flex(1);
     position: relative;
 }
-///* swipper
-//.swiper-container {
-//    width: 100%;
-//    height: 100%;
-//}
-//.swiper-slide {
-//    text-align: center;
-//    font-size: 18px;
-//    background: #fff;
-//    /* Center slide text vertically */
-//    display: -webkit-box;
-//    display: -ms-flexbox;
-//    display: -webkit-flex;
-//    display: flex;
-//    -webkit-box-pack: center;
-//    -ms-flex-pack: center;
-//    -webkit-justify-content: center;
-//    justify-content: center;
-//    -webkit-box-align: center;
-//    -ms-flex-align: center;
-//    -webkit-align-items: center;
-//    align-items: center;
-//}
 .full button span {
     background-color: limegreen;
-    border-radius: 32px;
+    @include border-radius(32px);
     color: black;
 }
 .partially button span {
     background-color: orange;
-    border-radius: 32px;
+    @include border-radius(32px);
     color: black;
 }
 .margin0 {
@@ -165,14 +151,14 @@ ul {
 .top-search {
     .input-group {
         border: 1px solid grey;
-        border-radius: 4px;
+        @include border-radius(4px);
         padding-top: 1px;
         .form-control {
             border: 0px solid;
             padding: 3px 0px 0px 10px;
-            color: #909090;
+            color: $dark-grey-second;
             @include placeholder {
-                color: #909090;
+                color: $dark-grey-second;
             }
         }
     }
@@ -182,7 +168,7 @@ ul {
             border-left: 1px solid grey !important;
             border: 0px solid;
             i {
-                color: #878787;
+                color: $grey;
             }
             &:hover {
                 background-color: transparent;
@@ -191,7 +177,7 @@ ul {
     }
 }
 .top-cart {
-    border: 1px solid #878787;
+    border: 1px solid $grey;
     font-size: 14px;
     padding: 9px 10px 6px 4px;
     text-transform: uppercase;
@@ -374,7 +360,7 @@ ul {
     padding: 4px 25px;
     font-weight: 500;
     font-size: 16px;
-    border-radius: 3px;
+    @include border-radius(3px);
     &:focus {
         outline: 0 !important;
     }
@@ -400,9 +386,6 @@ ul {
         }
     }
 }
-//.toll-number {
-//    padding: 35px 0px 20px 0px;
-//}
 .sec-date {
     img {
         height: 24px;
@@ -450,7 +433,7 @@ ul {
     color: $base !important;
 }
 .footers {
-    background-color: #dddddd;
+    background-color: $back;
     padding: 20px 0px 20px 0px;
 }
 .mt70 {
@@ -467,10 +450,10 @@ ul {
             a {
                 i {
                     background-color: #a9a9a9;
-                    border-radius: 100%;
+                    @include border-radius(100%);
                     height: 35px;
                     width: 35px;
-                    color: #dddddd;
+                    color: $back;
                     font-size: 22px;
                     padding: 7px 0px 0px 0px;
                     margin: 3px 3px;
@@ -487,7 +470,7 @@ ul {
             font-size: 17px;
             font-weight: 600;
             a {
-                border-radius: 0px;
+                @include border-radius(0px);
                 border: 0px solid;
                 color: $brand-primary !important;
                 ;
@@ -506,17 +489,17 @@ ul {
         &:focus {
             border-color: $brand-primary;
         }
-        &:after{
+        &:after {
             width: 0;
-    height: 0;
-    border-left: 17px solid transparent;
-    border-right: 17px solid transparent;
-    border-top: 16px solid $brand-primary;
-    content: '';
-    position: absolute;
-    top: 47px;
-    left: 50%;
-    transform: translatex(-50%);
+            height: 0;
+            border-left: 17px solid transparent;
+            border-right: 17px solid transparent;
+            border-top: 16px solid $brand-primary;
+            content: '';
+            position: absolute;
+            top: 47px;
+            left: 50%;
+            transform: translatex(-50%);
         }
     }
     .content-view {
@@ -535,13 +518,12 @@ ul {
 .form-control {
     background-color: transparent;
     border-color: $input-form;
-    color: #909090;
-    ;
-    border-radius: 0px;
+    color: $dark-grey-second;
+    @include border-radius(0px);
     box-shadow: inset 0 0 0;
     padding: 4px 12px 0px 12px;
     @include placeholder {
-        color: #909090;
+        color: $dark-grey-second;
         text-transform: uppercase;
     }
     @include selection(true) {
@@ -626,7 +608,7 @@ ul {
 }
 .faq-accordian {
     .panel {
-        border-radius: 0px;
+        @include border-radius(0px);
     }
     .panel-heading {
         color: $base;
@@ -808,7 +790,7 @@ textarea.form-control {
     resize: none;
 }
 .grey-col {
-    color: #7d7d7b;
+    color: $input-form;
 }
 .renew-select {
     position: relative;
@@ -823,7 +805,7 @@ textarea.form-control {
         width: 100%;
         background-color: transparent;
         outline: 0;
-        color: #909090;
+        color: $dark-grey-second;
         cursor: pointer;
         height: 34px;
         line-height: 34px;
@@ -835,7 +817,7 @@ textarea.form-control {
         content: "\f107";
         height: 34px;
         width: 28px;
-        color: #fff;
+        color: $white;
         position: absolute;
         top: 0;
         right: 0px;
@@ -872,7 +854,7 @@ textarea.form-control {
     padding: 7px 12px;
     font-size: 14px;
     background-color: $input-form;
-    border-radius: 0px;
+    @include border-radius(0px);
     color: $white;
     border-color: $input-form;
 }
@@ -894,7 +876,7 @@ textarea.form-control {
 .class-forget {
     padding-top: 10px;
     font-size: 16px;
-    color: #909090;
+    color: $dark-grey-second;
 }
 .iagree {
     vertical-align: sub;
@@ -954,7 +936,7 @@ textarea.form-control {
         font-weight: 600;
         span {
             font-size: 18px;
-            color: #909090;
+            color: $dark-grey-second;
             padding-right: 16px;
         }
         i {
@@ -984,7 +966,7 @@ textarea.form-control {
         margin: -1px 4px 0 0;
         vertical-align: baseline;
         cursor: pointer;
-        -moz-border-radius: 50%;
+        @include border-radius(50%);
         /* border-radius: 50%; */
         border: 1px solid $base;
         margin-right: 7px;
@@ -1024,12 +1006,12 @@ textarea.form-control {
 }
 .product-acc {
     .panel {
-        background-color: #fff;
+        background-color: $white;
         border: 0px solid transparent;
-        border-radius: 0px;
+        @include border-radius(0px);
         -webkit-box-shadow: 0 0px 0px rgba(0, 0, 0, 0.05);
         box-shadow: 0 0px 0px rgba(0, 0, 0, 0.05);
-        border-bottom: 1px solid #ddd;
+        border-bottom: 1px solid $back;
     }
     .panel-default > .panel-heading {
         color: $base;
@@ -1057,7 +1039,7 @@ textarea.form-control {
         font-weight: 400;
         &:before {
             content: '';
-            background: #fff;
+            background: $white;
             border: 1px solid $base;
             display: inline-block;
             vertical-align: middle;
@@ -1095,13 +1077,13 @@ textarea.form-control {
     }
 }
 .pro-border-top {
-    border-top: 1px solid #c9c9c9;
+    border-top: 1px solid $dark-grey;
 }
 .pro-border-bottom {
-    border-bottom: 1px solid #c9c9c9;
+    border-bottom: 1px solid $dark-grey;
 }
 .pro-border-left {
-    border-left: 1px solid #c9c9c9;
+    border-left: 1px solid $dark-grey;
 }
 .lin-h {
     line-height: 150%;
@@ -1172,8 +1154,8 @@ textarea.form-control {
 }
 .clos-btn {
     background: $brand-primary !important;
-    color: #fff;
-    border-radius: 100%;
+    color: $white;
+    @include border-radius(100%);
     height: 20px;
     width: 20px;
     font-size: 20px;
@@ -1276,7 +1258,7 @@ textarea.form-control {
     width: 65%;
 }
 .new-product {
-    background: #e4e4e4;
+    background: $light-grey;
 }
 .pb60 {
     padding-bottom: 60px;
@@ -1300,13 +1282,13 @@ textarea.form-control {
 }
 .tag-b {
     text-transform: uppercase;
-    color: #e4e4e4;
+    color: $light-grey;
 }
 .know {
     font-size: 26px;
-    background: #e4e4e4;
+    background: $light-grey;
     padding: 2px 14px 0px 14px;
-    border-radius: 2px;
+    @include border-radius(2px);
     color: $brand-primary !important;
 }
 .font-20 {
@@ -1331,7 +1313,7 @@ textarea.form-control {
         border: 0px solid !important;
     }
     .panel-heading {
-        border-top: 1px solid #ddd;
+        border-top: 1px solid $back;
         padding: 18px 0px 9px 0px;
         background: transparent !important;
     }
@@ -1358,8 +1340,8 @@ textarea.form-control {
 .close-btn {
     i {
         background-color: $brand-primary;
-        border-radius: 100%;
-        color: #fff;
+        @include border-radius(100%);
+        color: $white;
         height: 20px;
         width: 20px;
         padding: 5px 0px 0px 1px;
@@ -1375,14 +1357,14 @@ textarea.form-control {
     }
 }
 .bkp-grey {
-    background-color: #d7d7d7;
+    background-color: $pro-border;
 }
 .custom-bord {
-    border: 1px solid #d7d7d7;
+    border: 1px solid $pro-border;
     tr {
         td {
-            border-right: 1px solid #d7d7d7;
-            border-bottom: 1px solid #d7d7d7;
+            border-right: 1px solid $pro-border;
+            border-bottom: 1px solid $pro-border;
             vertical-align: middle !important;
             padding: 8px 20px 8px 20px !important;
         }
@@ -1433,10 +1415,10 @@ textarea.form-control {
     border-style: dotted;
     margin: 0px 5px;
     padding: 7px 8px 7px 0px;
-    background: #fff;
+    background: $white;
 }
 .compare-product {
-    background-color: #dddddd;
+    background-color: $back;
     padding: 14px 14px 14px 14px;
 }
 .btn-righ {
@@ -1444,7 +1426,7 @@ textarea.form-control {
     right: 15px;
     top: -3px;
     i {
-        border-radius: 1px;
+        @include border-radius(1px);
     }
 }
 .add-pro-body {
@@ -1452,32 +1434,30 @@ textarea.form-control {
     text-align: center;
     padding-top: 20px;
 }
-.home-slider{
-    .flexslider{
-    margin: 0 0 0px; 
-    background: #ffffff;
-    border: 0px solid #ffffff;
+.home-slider {
+    .flexslider {
+        margin: 0 0 0px;
+        background: $white;
+        border: 0px solid $white;
     }
     .flex-control-nav {
-
-      position: absolute;
-    /* right: 0px; */
-    bottom: inherit;
-    top: 50%;
-    transform: translatey(-50%);
-    text-align: -webkit-right;
-    z-index: 999;
-}
-    .flex-control-nav li {
-    margin: 10px 6px;
-   display: inherit; 
-    zoom: 1;
-}
-    .flex-direction-nav{
-        display: none;
-           
+        position: absolute;
+        /* right: 0px; */
+        bottom: inherit;
+        top: 50%;
+        transform: translatey(-50%);
+        text-align: -webkit-right;
+        z-index: 999;
     }
-    .flex-control-paging li a{
-        color:transparent !important;
+    .flex-control-nav li {
+        margin: 10px 6px;
+        display: inherit;
+        zoom: 1;
+    }
+    .flex-direction-nav {
+        display: none;
+    }
+    .flex-control-paging li a {
+        color: transparent !important;
     }
 }
