@@ -361,6 +361,9 @@ ul {
 .mt50 {
     margin-top: 50px;
 }
+.mt22 {
+    margin-top: 22px;
+}
 .pl3 {
     padding-left: 3px;
 }
@@ -1380,20 +1383,60 @@ textarea.form-control {
         background: #f2f2f2;
     }
     @extend .slid;
-    
-        .flex-direction-nav a {
+    .flex-direction-nav a {
         width: 50px;
         height: 65px;
-      
         &:before {
             font-size: 50px;
-        
         }
     }
     .slide-content {
-    padding: 20px 12px 13px 23px;
+        padding: 20px 12px 13px 23px;
+    }
 }
-}
-.border-brand{
+.border-brand {
     border-bottom: 1px solid $brand-primary;
+}
+.cmp-close {
+    @extend .close-btn;
+    i {
+        padding: 2px 0px 0px 4px !important;
+        height: 15px;
+        width: 15px;
+        font-size: 9px;
+    }
+    position: absolute;
+    right: 0px;
+    top: -8px;
+}
+.comp1 {
+    @extend .his-img-hold;
+    height: 60px;
+    img {
+        margin: 0 auto;
+    }
+}
+.copm-data {
+    border: 1px solid #000;
+    border-style: dotted;
+    margin: 0px 5px;
+    padding: 7px 8px 7px 0px;
+    background: #fff;
+}
+.compare-product {
+    background-color: #dddddd;
+    padding: 14px 14px 14px 14px;
+}
+.btn-righ {
+    @extend .cmp-close;
+    right: 15px;
+    top: -3px;
+    i {
+        border-radius: 1px;
+    }
+}
+.add-pro-body {
+    min-height: 60px;
+    text-align: center;
+    padding-top: 20px;
 }
