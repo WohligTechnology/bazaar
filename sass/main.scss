@@ -390,8 +390,8 @@ ul {
             }
             &:last-child {
                 a {
-                    color: $brand-primary;
-                    text-decoration: underline;
+                    color: $brand-primary !important;
+                    text-decoration: underline !important;
                 }
             }
             a {
