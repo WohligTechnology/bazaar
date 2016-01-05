@@ -839,6 +839,7 @@ textarea.form-control {
     height: 34px;
     top: 0;
     z-index: -1;
+        left: 0;
 }
 .mr12 {
     margin-right: 12px;
@@ -1460,4 +1461,8 @@ textarea.form-control {
     .flex-control-paging li a {
         color: transparent !important;
     }
+}
+.txt-lf{
+        text-align: left;
+    display: block;
 }
