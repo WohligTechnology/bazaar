@@ -4,9 +4,9 @@
            <div class="pb15">
             <div class="row">
                 <div class="col-md-8">
-                    <div class="bright">
-                        <div class="row-flex">
-                            <div class="col-flex">
+                    <div class="bright bright2">
+                        <div class="row-flex d-flex">
+                            <div class="col-flex c-flex">
                                 <div class="footer-list">
                                     <ul>
                                         <li>CELLPHONE</li>
@@ -21,7 +21,7 @@
 
                                 </div>
                             </div>
-                            <div class="col-flex">
+                            <div class="col-flex c-flex">
                                 <div class="footer-list">
                                     <ul>
                                         <li>CAMERA</li>
@@ -35,7 +35,7 @@
                                     </ul>
                                 </div>
                             </div>
-                            <div class="col-flex">
+                            <div class="col-flex c-flex">
                                 <div class="footer-list">
                                     <ul>
                                         <li>COMPUTER</li>
@@ -50,7 +50,7 @@
 
                                 </div>
                             </div>
-                            <div class="col-flex">
+                            <div class="col-flex c-flex">
                                 <div class="footer-list">
                                     <ul>
                                         <li>ACCESSORIES</li>
@@ -64,7 +64,7 @@
                                     </ul>
                                 </div>
                             </div>
-                            <div class="col-flex">
+                            <div class="col-flex c-flex">
                                 <div class="footer-list">
                                     <ul>
                                         <li>TAGBOSS</li>
@@ -81,8 +81,8 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-md-4">
-                    <div class="toll text-center display-inline pr35 bright">
+                <div class="col-md-4 pl0 txt-center">
+                    <div class="toll text-center display-inline pr35 bright bright2">
                         <div class="toll-number ">
                             <h3 class="margin0">Toll Free No.:</h3>
                             <h3 class="margin0">+919223322999</h3>
@@ -112,17 +112,17 @@
             </div>
              </div>
               <div class="btop pt15">
-            <div class="row" ng-controller="FooterCtrl">
+            <div class="row " ng-controller="FooterCtrl">
                <div class="col-md-1"></div>
-                <div class="col-md-2" ng-repeat="foot in footer track by $index">
+                <div class="col-md-2 col-xs-4" ng-repeat="foot in footer track by $index">
                     <div class="all-data">
-                        <div class="row">
-                            <div class="col-md-4 padding0">
+                        <div class="row pdtop">
+                            <div class="col-md-4 col-xs-5 padding0">
                                 <div class="display-inline">
                                     <img ng-src="{{foot.image}}">
                                 </div>
                             </div>
-                            <div class="col-md-7 padding0">
+                            <div class="col-md-7 col-xs-6 padding0">
                                 <div class="display-inline pt15">
                                     <h5>{{foot.name}}</h5>
                                     <h5>{{foot.name2}}</h5>
@@ -142,17 +142,16 @@
         <div class="row">
             <div class="col-md-2"></div>
             <div class="col-md-10">
-                <div class="f12 display-inline">
-                    <p>© 2015 TagBoss.com</p>
+                    <p class="footer-d">© 2015 TagBoss.com</p>
                 </div>
                 <div class="all-data display-inline">
-                    <img src="img/footer.png">
+                    <img src="img/footer.png" class="img-responsive">
                 </div>
-                <div class="f12 display-inline">
-                    <a href="http://tingdigital.in/" target="_blank">Designed by Ting</a>
+                <div class="f12 display-inline d-block txt-center">
+                    <a href="http://tingdigital.in/" target="_blank" class="footer-d">Designed by Ting</a>
                 </div>
             </div>
-<!--            <div class="col-md-2"></div>-->
+
         </div>
         
     </div>
