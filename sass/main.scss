@@ -1667,4 +1667,11 @@ textarea.form-control {
     left:50%;
     transform: translate(-50%,-50%) !important;
 }
+.compare-table {
+    overflow: auto;
+}
+.comp-wdt {
+    min-width: 994px;
+    max-width: 1000px;
+}
 @import "mobile";
