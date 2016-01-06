@@ -1674,4 +1674,18 @@ textarea.form-control {
     min-width: 994px;
     max-width: 1000px;
 }
+.order-table {
+    overflow-x: auto;
+}
+.tbl-wt {
+    max-width: 580px;
+    min-width: 510px;
+}
+.wt-3{
+    width: 20%;
+}
+.col-pad{
+    color: $brand-primary;
+    padding: 10px;
+}
 @import "mobile";
