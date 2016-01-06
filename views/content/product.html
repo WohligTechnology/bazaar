@@ -18,11 +18,11 @@
 
 
                 <div class="compare-product">
-<div class="btn-righ">
-     <i class="fa fa-times"></i>
-</div>
-                    <div class="row-flex">
-                        <div class="col-flex">
+                    <div class="btn-righ">
+                        <i class="fa fa-times"></i>
+                    </div>
+                    <div class="row-flex f-flex">
+                        <div class="col-flex c-flex">
                             <div class="copm-data">
                                 <div class="cmp-close pull-right">
                                     <i class="fa fa-times"></i>
@@ -43,7 +43,7 @@
 
                             </div>
                         </div>
-                        <div class="col-flex">
+                        <div class="col-flex c-flex">
                             <div class="copm-data">
                                 <div class="cmp-close pull-right">
                                     <i class="fa fa-times"></i>
@@ -64,7 +64,7 @@
 
                             </div>
                         </div>
-                        <div class="col-flex">
+                        <div class="col-flex c-flex">
                             <div class="copm-data">
                                 <div class="cmp-close pull-right">
                                     <i class="fa fa-times"></i>
@@ -85,12 +85,12 @@
 
                             </div>
                         </div>
-                        <div class="col-flex">
+                        <div class="col-flex c-flex">
                             <div class="copm-data">
                                 <div class="cmp-close pull-right">
                                     <i class="fa fa-times"></i>
                                 </div>
-<!--
+                                <!--
                                 <div class="row-flex">
                                     <div class="col-flex text-center">
                                         <div class="comp1 display-inline">
@@ -104,13 +104,13 @@
                                     </div>
                                 </div>
 -->
-<div class="add-pro-body">
-    <span>ADD ANOTHER PRODUCT</span>
-</div>
+                                <div class="add-pro-body">
+                                    <span>ADD ANOTHER PRODUCT</span>
+                                </div>
 
                             </div>
                         </div>
-                        <div class="col-flex">
+                        <div class="col-flex c-flex">
                             <div class="comp-button text-center mt22">
                                 <button type="button" class="btn btn-default btn-primary btn-strong">COMPARE</button>
                             </div>
@@ -122,9 +122,9 @@
 
             </div>
         </div>
-        <div class="row">
+        <div class="row hidden-xs">
 
-            <div class="col-md-offset-6 col-md-6">
+            <div class="col-md-offset-6 col-md-6 ">
                 <div class="filter-type mt30">
                     <ul class="mb8">
                         <li>SORT BY: </li>
@@ -137,10 +137,10 @@
             </div>
 
         </div>
-        <div class="pro-border-bottom"></div>
+        <div class="pro-border-bottom hidden-xs"></div>
         <section class="mt30">
             <div class="row">
-                <div class="col-md-3">
+                <div class="col-md-3 col-sm-4 hidden-xs">
                     <div class="product-acc">
                         <uib-accordion close-others="true">
 
@@ -278,10 +278,166 @@
                         </uib-accordion>
                     </div>
                 </div>
-                <div class="col-md-9">
+                <div class="col-md-9 col-sm-8 col-xs-12">
+                    <section class="hidden-sm hidden-lg visible-xs">
+                        <div class="product-acc">
+                            <uib-accordion close-others="true">
+
+                                <uib-accordion-group is-open="accordian[0].isFirstOpen">
+                                    <uib-accordion-heading>
+                                        BRAND <i class="pull-right fa" ng-class="{'fa-chevron-down': accordian[0].isFirstOpen, 'fa-chevron-right': !accordian[0].isFirstOpen}"></i>
+                                    </uib-accordion-heading>
+                                    <div class="pro-cat">
+                                        <form action="demo_form.asp" method="get">
+                                            <input id="checkbox-1" class="checkbox-custom dis-none" name="checkbox-1" type="checkbox">
+                                            <label for="checkbox-1" class="checkbox-custom-label checkbox-custom">Nikon <span>56</span></label>
+
+                                            <br>
+                                            <input id="checkbox-1" class="checkbox-custom dis-none" name="checkbox-1" type="checkbox">
+                                            <label for="checkbox-1" class="checkbox-custom-label checkbox-custom">Sony <span>56</span></label>
+
+                                            <br>
+                                            <input id="checkbox-1" class="checkbox-custom dis-none" name="checkbox-1" type="checkbox">
+                                            <label for="checkbox-1" class="checkbox-custom-label checkbox-custom">Pentax <span>56</span></label>
+                                            <br>
+                                            <input id="checkbox-1" class="checkbox-custom dis-none" name="checkbox-1" type="checkbox">
+                                            <label for="checkbox-1" class="checkbox-custom-label checkbox-custom">Fujifilms <span>56</span></label>
+
+                                            <br>
+                                            <input id="checkbox-1" class="checkbox-custom dis-none" name="checkbox-1" type="checkbox">
+                                            <label for="checkbox-1" class="checkbox-custom-label checkbox-custom">olympus <span>56</span></label>
+                                            <br>
+                                            <input id="checkbox-1" class="checkbox-custom dis-none" name="checkbox-1" type="checkbox">
+                                            <label for="checkbox-1" class="checkbox-custom-label checkbox-custom">panasonic <span>56</span></label>
+
+                                            <br>
+
+                                        </form>
+                                    </div>
+                                </uib-accordion-group>
+                                <uib-accordion-group is-open="accordian[1].isFirstOpen">
+                                    <uib-accordion-heading>
+                                        PRICE <i class="pull-right fa" ng-class="{'fa-chevron-down': accordian[1].isFirstOpen, 'fa-chevron-right': !accordian[1].isFirstOpen}"></i>
+                                    </uib-accordion-heading>
+                                    <div class="pro-cat">
+                                        <form action="demo_form.asp" method="get">
+                                            <input id="checkbox-1" class="checkbox-custom dis-none" name="checkbox-1" type="checkbox">
+                                            <label for="checkbox-1" class="checkbox-custom-label checkbox-custom">Rs. 10001 - Rs. 15000 <span>2</span></label>
+
+                                            <br>
+                                            <input id="checkbox-1" class="checkbox-custom dis-none" name="checkbox-1" type="checkbox">
+                                            <label for="checkbox-1" class="checkbox-custom-label checkbox-custom">Rs. 10001 - Rs. 15000 <span>2</span></label>
+
+                                            <br>
+                                            <input id="checkbox-1" class="checkbox-custom dis-none" name="checkbox-1" type="checkbox">
+                                            <label for="checkbox-1" class="checkbox-custom-label checkbox-custom">Rs. 10001 - Rs. 15000 <span>2</span></label>
+
+                                            <br>
+                                            <input id="checkbox-1" class="checkbox-custom dis-none" name="checkbox-1" type="checkbox">
+                                            <label for="checkbox-1" class="checkbox-custom-label checkbox-custom">Rs. 10001 - Rs. 15000 <span>2</span></label>
+
+                                            <br>
+                                            <input id="checkbox-1" class="checkbox-custom dis-none" name="checkbox-1" type="checkbox">
+                                            <label for="checkbox-1" class="checkbox-custom-label checkbox-custom">Rs. 10001 - Rs. 15000 <span>2</span></label>
+
+
+                                        </form>
+                                    </div>
+                                </uib-accordion-group>
+                                <uib-accordion-group is-open="accordian[2].isFirstOpen">
+                                    <uib-accordion-heading>
+                                        TYPE <i class="pull-right fa" ng-class="{'fa-chevron-down': accordian[2].isFirstOpen, 'fa-chevron-right': !accordian[2].isFirstOpen}"></i>
+                                    </uib-accordion-heading>
+                                    <div class="pro-cat">
+                                        <form action="demo_form.asp" method="get">
+                                            <input id="checkbox-1" class="checkbox-custom dis-none" name="checkbox-1" type="checkbox">
+                                            <label for="checkbox-1" class="checkbox-custom-label checkbox-custom">Mirrorless<span>24</span></label>
+                                            <!--                                        <input type="checkbox" name="Cellphone" value="Cellphone">  <span>2</span>-->
+                                            <br>
+                                            <input id="checkbox-1" class="checkbox-custom dis-none" name="checkbox-1" type="checkbox">
+                                            <label for="checkbox-1" class="checkbox-custom-label checkbox-custom">DSLR<span>24</span></label>
+                                            <!--                                        <input type="checkbox" name="Camera" value="Camera" checked>  -->
+                                            <br>
+
+
+                                        </form>
+                                    </div>
+                                </uib-accordion-group>
+                                <uib-accordion-group is-open="accordian[3].isFirstOpen">
+                                    <uib-accordion-heading>
+                                        MEGAPIXEL <i class="pull-right fa" ng-class="{'fa-chevron-down': accordian[3].isFirstOpen, 'fa-chevron-right': !accordian[3].isFirstOpen}"></i>
+                                    </uib-accordion-heading>
+                                    <div class="pro-cat">
+                                        <form action="demo_form.asp" method="get">
+                                            <input id="checkbox-1" class="checkbox-custom dis-none" name="checkbox-1" type="checkbox">
+                                            <label for="checkbox-1" class="checkbox-custom-label checkbox-custom">14 to 16 MP <span>24</span></label>
+                                            <!--                                        <input type="checkbox" name="Cellphone" value="Cellphone"> 10 to 14 MP <span>2</span>-->
+                                            <br>
+                                            <input id="checkbox-1" class="checkbox-custom dis-none" name="checkbox-1" type="checkbox">
+                                            <label for="checkbox-1" class="checkbox-custom-label checkbox-custom">14 to 16 MP <span>24</span></label>
+                                            <!--                                        <input type="checkbox" name="Camera" value="Camera" checked> 14 to 16 MP <span>24</span>-->
+                                            <br>
+                                            <input id="checkbox-1" class="checkbox-custom dis-none" name="checkbox-1" type="checkbox">
+                                            <label for="checkbox-1" class="checkbox-custom-label checkbox-custom">Cellphone<span>24</span></label>
+                                            <!--                                        <input type="checkbox" name="Camera" value="Camera" checked> 14 to 16 MP -->
+                                            <br>
+
+
+                                        </form>
+                                    </div>
+                                </uib-accordion-group>
+                                <uib-accordion-group is-open="accordian[4].isFirstOpen">
+                                    <uib-accordion-heading>
+                                        COLOR <i class="pull-right fa" ng-class="{'fa-chevron-down': accordian[4].isFirstOpen, 'fa-chevron-right': !accordian[4].isFirstOpen}"></i>
+                                    </uib-accordion-heading>
+                                    <div class="pro-cat">
+                                        <form action="demo_form.asp" method="get">
+                                            <input id="checkbox-1" class="checkbox-custom dis-none" name="checkbox-1" type="checkbox">
+                                            <label for="checkbox-1" class="checkbox-custom-label checkbox-custom">Black<span>24</span></label>
+                                            <!--                                        <input type="checkbox" name="Cellphone" value="Cellphone"> Black <span>2</span>-->
+                                            <br>
+                                            <input id="checkbox-1" class="checkbox-custom dis-none" name="checkbox-1" type="checkbox">
+                                            <label for="checkbox-1" class="checkbox-custom-label checkbox-custom">Red<span>24</span></label>
+                                            <!--                                        <input type="checkbox" name="Camera" value="Camera" checked> Red <span>24</span>-->
+                                            <br>
+                                            <input id="checkbox-1" class="checkbox-custom dis-none" name="checkbox-1" type="checkbox">
+                                            <label for="checkbox-1" class="checkbox-custom-label checkbox-custom">White<span>24</span></label>
+                                            <!--                                        <input type="checkbox" name="Camera" value="Camera" checked> White-->
+                                            <br>
+                                            <input id="checkbox-1" class="checkbox-custom dis-none" name="checkbox-1" type="checkbox">
+                                            <label for="checkbox-1" class="checkbox-custom-label checkbox-custom">Silver <span>24</span></label>
+                                            <!--                                        <input type="checkbox" name="Camera" value="Camera" checked> Silver<span>24</span>-->
+                                            <br>
+
+
+                                        </form>
+                                    </div>
+                                </uib-accordion-group>
+
+                            </uib-accordion>
+                        </div>
+                    </section>
+                    <section class="hidden-sm hidden-lg visible-xs">
+                        <div class="row">
+
+                            <div class="col-xs-12 ">
+                                <div class="filter-type mt30">
+                                    <ul class="mb8">
+                                        <li>SORT BY: </li>
+                                        <li><a href="">Popular </a></li>
+                                        <li><a href="">Discount </a></li>
+                                        <li><a href="">High Price</a> </li>
+                                        <li><a href="">Low Price </a></li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="pro-border-bottom"></div>
+                    </section>
                     <section>
                         <div class="row">
-                            <div class="col-md-3" ng-repeat="pro in product track by $index">
+                            <div class="col-md-3 col-xs-6" ng-repeat="pro in product track by $index">
                                 <div class="hover-btn">
                                     <div class="product-detail mb70 pos-rel">
                                         <div class="check-img">
