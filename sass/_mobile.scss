@@ -38,6 +38,24 @@ $screen-lg: 1200px !default;
 }
 
 @media (max-width: $screen-xs-min) {
+    .modal-header{
+         h4 {
+   
+    font-size: 14px;
+}
+    }
+    .form-control{
+        font-size: 12px;
+    }
+    .select-list {
+    margin-bottom: 5px;
+        label{
+            font-size: 10px;
+        }
+}
+    .f-10{
+        font-size: 10px;
+    }
     .m-font{
         font-size: 12px;
     }
@@ -121,9 +139,11 @@ $screen-lg: 1200px !default;
             font-size: 25px;
         }
     }
-    .offer-call h3,
-    .offer-call h4 {
+    .offer-call h3 {
         font-size: 12px;
+    }
+    .offer-call h4 {
+        font-size: 10px;
     }
     .offer-foot {
         h5 {
