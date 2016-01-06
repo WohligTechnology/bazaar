@@ -38,6 +38,9 @@ $screen-lg: 1200px !default;
 }
 
 @media (max-width: $screen-xs-min) {
+    .mb7{
+            margin-bottom: 7px;
+    }
         .c-flex {
         -webkit-box-flex: inherit !important;
         -moz-box-flex: inherit !important;
@@ -213,6 +216,17 @@ $screen-lg: 1200px !default;
 }
 
 @media (max-width: $screen-sm-max) {
+    .mb7{
+            margin-bottom: 7px;
+    }
+    .mt16{
+            margin-top: 17px;
+    }
+    .btn-strong {
+
+    font-size: 13px;
+ 
+}
       .cmp-close {
     right: 12px;
     top: 7px;
