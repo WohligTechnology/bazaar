@@ -11,23 +11,30 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
 	$scope.next = function () {
 		$scope.swiper.slideNext();
 	};
+
 	$scope.onReadySwiper = function (swiper) {
 		console.log('onReadySwiper');
 		swiper.on('slideChangeStart', function () {
 			console.log('slideChangeStart');
-		});  
+		});
 	};
 
+	NavigationService.getSlider(function (data) {
+		console.log(data);
+		if (data.value != false)
+			$scope.banners = data[0].image;
+	})
+
 	// product data
-	$scope.banners = [{
-		image: "img/slider/1.jpg"
-    }, {
-		image: "img/slider/1.jpg"
-		}, {
-		image: "img/slider/1.jpg"
-    }, {
-		image: "img/slider/1.jpg"
-    }];
+	// $scope.banners = [{
+	// 	image: "img/slider/1.jpg"
+  //   }, {
+	// 	image: "img/slider/1.jpg"
+	// 	}, {
+	// 	image: "img/slider/1.jpg"
+  //   }, {
+	// 	image: "img/slider/1.jpg"
+  //   }];
 
 	$scope.bannerss = [{
 		image: "img/product/banner.jpg"
@@ -566,8 +573,12 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
 		console.log(data);
 		if (data.email) {
 			$scope.hideLogin = true;
-			$scope.profile.firstname = data.firstname;
-			$scope.profile.lastname = data.lastname;
+			if (data.firstname && data.lastname)
+				$scope.profile.name = data.firstname + " " + data.lastname;
+			else {
+				$scope.profile.name = data.name;
+			}
+
 		}
 	})
 

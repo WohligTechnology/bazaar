@@ -1,5 +1,5 @@
 // var adminurl = "http://localhost:1337/";
-var adminurl = "http://tagboss.com:81/";
+var adminurl = "http://vignesh.com:82/";
 // var adminurl = "http://104.197.50.51/";
 
 var navigationservice = angular.module('navigationservice', [])
@@ -38,6 +38,13 @@ var navigationservice = angular.module('navigationservice', [])
 				method: 'POST',
 				withCredentials: true,
 				data: userData
+			}).success(callback);
+		},
+		getSlider: function (callback) {
+			$http({
+				url: adminurl + 'slider/find',
+				method: 'POST',
+				withCredentials: true
 			}).success(callback);
 		},
 		logout: function (callback) {
