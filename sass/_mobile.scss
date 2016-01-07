@@ -39,6 +39,9 @@ $screen-lg: 1200px !default;
 }
 
 @media (max-width: $screen-xs-max) {
+    .di-mb{
+    display: block;
+}
     .pr35 {
     padding: 16px 0px 4px 0px;
 }
@@ -326,6 +329,12 @@ $screen-lg: 1200px !default;
 }
 
 @media (max-width: $screen-sm-min) {
+     .di-mb{
+    display: block;
+}
+    .m-auto{
+            margin: 0 auto;
+    }
     .d-ffoter{
             display: block;
     max-width: 100%;
