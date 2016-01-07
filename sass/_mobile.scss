@@ -320,6 +320,10 @@ $screen-lg: 1200px !default;
 }
 
 @media (max-width: $screen-sm-min) {
+    .d-ffoter{
+            display: block;
+    max-width: 100%;
+    }
     .pall {
     padding: 30px 0px 0px 0px;
 }
