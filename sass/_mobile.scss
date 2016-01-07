@@ -3,6 +3,7 @@ $screen-sm: 768px !default;
 $screen-md: 992px !default;
 $screen-lg: 1200px !default;
 @media (max-width: $screen-lg) {
+   
     .top-cart {
         font-size: 12px;
         padding: 9px 4px 6px 4px;
@@ -38,6 +39,15 @@ $screen-lg: 1200px !default;
 }
 
 @media (max-width: $screen-xs-min) {
+    .content-view {
+    padding: 10px 0px 20px;
+}
+    .pl20{
+        padding-left: 20px !important;
+    }
+     .pr6{
+        display: inline;
+    }
     .modal-header{
          h4 {
    
@@ -199,6 +209,12 @@ $screen-lg: 1200px !default;
 }
 
 @media (max-width: $screen-md-max) {
+     .pr6{
+        display: inline;
+    }
+    .class-forget{
+        font-size: 12px;
+    }
     .custom-bord tr td {
     padding: 8px 14px 8px 14px !important;
 }
@@ -259,6 +275,14 @@ $screen-lg: 1200px !default;
 }
 
 @media (max-width: $screen-sm-max) {
+        
+.table > thead > tr > th {
+   
+    font-size: 12px;
+}
+    .class-forget {
+    font-size: 15px;
+}
   
    .hist-price h4 {
 
