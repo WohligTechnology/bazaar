@@ -221,6 +221,9 @@ $screen-lg: 1200px !default;
     }
 }
 @media (max-width: $screen-sm-min) {
+    .pt15 {
+    padding-top: 7px;
+}
     .cut-text-center{
         text-align: center;
     }
@@ -367,7 +370,7 @@ $screen-lg: 1200px !default;
     }
     .all-data {
         h5 {
-            font-size: 10px;
+            font-size: 10px !important;
         }
     }
     .mob-wdth {
@@ -390,8 +393,8 @@ $screen-lg: 1200px !default;
         font-size: 17px;
     }
     .mid-product-img {
-        height: 115px;
-        margin: -10px 0px -20px 50px;
+        height: 135px !important;
+        margin: -10px 0px -88px 50px !important;
     }
     .mid-product-img2 {
         margin: 0px 0px 0px 0px !important;
@@ -437,7 +440,7 @@ $screen-lg: 1200px !default;
         }
     }
 }
-@media (max-width: $screen-md-min) {
+@media (max-width: $screen-md-max) {
     .uty {
   
     display: inline;
