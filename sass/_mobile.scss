@@ -2,7 +2,12 @@ $screen-xs: 480px !default;
 $screen-sm: 768px !default;
 $screen-md: 992px !default;
 $screen-lg: 1200px !default;
-@media (max-width: $screen-xs-max) {
+@media (max-width: $screen-xs-min) {
+  .all-data {
+    h5 {
+      font-size: 6px !important;
+  }
+  }
     .di-mb{
     display: block;
 }
@@ -14,7 +19,7 @@ $screen-lg: 1200px !default;
     }
     .forget {
     font-size: 12px;
-   
+
 }
     .mb-font{
         font-size: 14px;
@@ -26,18 +31,18 @@ $screen-lg: 1200px !default;
     .modal-dialog {
     margin: 0 auto;
     width: 80%;
-   
+
 }
     .nav-tabs {
         li {
-  
+
     font-size: 14px !important;
-    
+
 }
     }
     .pro-title {
         h3 {
-   
+
     font-size: 18px;
 }
     }
@@ -47,10 +52,10 @@ $screen-lg: 1200px !default;
     .logo {
     margin-top: 0px !important;
 }
-   
+
       .product-img-hold {
     height: 180px;
-  
+
 }
     .content-view {
     padding: 10px 0px 20px;
@@ -63,7 +68,7 @@ $screen-lg: 1200px !default;
     }
     .modal-header{
          h4 {
-   
+
     font-size: 14px;
 }
     }
@@ -118,10 +123,10 @@ $screen-lg: 1200px !default;
     top: -3px;
 }
     .copm-data {
-   
+
     margin: 15px 5px;
     padding: 7px 8px 7px 15px;
-  
+
 }
     .f-flex{
             flex-flow: wrap;
@@ -202,9 +207,7 @@ $screen-lg: 1200px !default;
     .all-data img {
         height: 30px;
     }
-    .all-data h5 {
-        font-size: 6px !important;
-    }
+  
     .bright2 {
         border-right: 0px solid #b5b5b5 !important;
     }
@@ -220,7 +223,10 @@ $screen-lg: 1200px !default;
         }
     }
 }
-@media (max-width: $screen-sm-min) {
+@media (max-width: $screen-sm-max) {
+    .back-red {
+    min-height: 145px;
+}
     .pt15 {
     padding-top: 7px;
 }
@@ -242,10 +248,10 @@ $screen-lg: 1200px !default;
 }
     .menu-list {
     padding: 0px 0px;
-   
+
 }
     .contact-title h3 {
-   
+
     font-size: 17px;
 }
      .about{
@@ -270,22 +276,22 @@ $screen-lg: 1200px !default;
      .pl20{
         padding-left: 20px !important;
     }
-        
+
 .table > thead > tr > th {
-   
+
     font-size: 12px;
 }
     .class-forget {
     font-size: 15px;
 }
-  
+
    .hist-price h4 {
 
     font-size: 14px;
 }
     .pro-desc{
          span {
-  
+
     font-size: 11px;
 }
     }
@@ -314,7 +320,7 @@ $screen-lg: 1200px !default;
     .btn-strong {
 
     font-size: 13px;
- 
+
 }
       .cmp-close {
     right: 12px;
@@ -325,10 +331,10 @@ $screen-lg: 1200px !default;
     top: -3px;
 }
     .copm-data {
-   
+
     margin: 15px 5px;
     padding: 7px 8px 7px 15px;
-  
+
 }
     .f-flex{
             flex-flow: wrap;
@@ -370,7 +376,7 @@ $screen-lg: 1200px !default;
     }
     .all-data {
         h5 {
-            font-size: 10px !important;
+            font-size: 10px;
         }
     }
     .mob-wdth {
@@ -381,7 +387,7 @@ $screen-lg: 1200px !default;
         }
     }
     .back-red {
-        min-height: 150px;
+        min-height: 135px;
         .mid-product {
             padding: 10px 10px 0px 10px;
         }
@@ -403,7 +409,7 @@ $screen-lg: 1200px !default;
     .padd0 {
         padding: 0px;
     }
-   
+
 
     .navbar-nav {
         margin: 0px -15px;
@@ -442,9 +448,9 @@ $screen-lg: 1200px !default;
 }
 @media (max-width: $screen-md-max) {
     .uty {
-  
+
     display: inline;
-  
+
 }
      .pr6{
         display: inline;
@@ -519,7 +525,7 @@ $screen-lg: 1200px !default;
 // height: 178px;
 //    margin: 10px 0px -35px 70px;
 //}
-//   
+//
     .top-cart {
         font-size: 12px;
         padding: 9px 4px 6px 4px;
@@ -553,7 +559,3 @@ $screen-lg: 1200px !default;
         padding-left: 11px;
     }
 }
-
-
-
-
