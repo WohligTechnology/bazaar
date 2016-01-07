@@ -72,15 +72,23 @@
                            <li ng-hide="hideLogin">
                               <a href="" ng-click="openLogin()">Sign Up</a>
                            </li>
-                           <li ng-hide="hideLogin">
-                              <a href="" ng-click="openLogin()">log in</a>
+                           <li >
+                             <div ng-hide="hideLogin">
+                                 <a href="" ng-click="openLogin()">log in</a>
+                             </div>
+                              <div ng-show="hideLogin" class="off-hover">
+                                   <a href="">{{profile.name}}</a>
+                                   <div class="on-hover">
+                                      <a href="" ng-click="logout()">Logout</a>
+                                   </div>
+                              </div>
                            </li>
-                           <li ng-show="hideLogin">
-                              <a href="">{{profile.name}}</a>
-                           </li>
+                        
+<!--
                            <li ng-show="hideLogin">
                               <a href="" ng-click="logout()">Logout</a>
                            </li>
+-->
                         </ul>
                      </div>
                   </div>
