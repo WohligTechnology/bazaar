@@ -47,6 +47,12 @@ var navigationservice = angular.module('navigationservice', [])
 				withCredentials: true
 			}).success(callback);
 		},
+		getBlocks: function (callback) {
+			$http({
+				url: adminurl + 'blocks/find',
+				method: 'POST'
+			}).success(callback);
+		},
 		logout: function (callback) {
 			$http.get(adminurl + 'user/logout').success(callback);
 		},

@@ -25,6 +25,12 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
 			$scope.banners = data[0].image;
 	})
 
+	NavigationService.getBlocks(function (data) {
+		console.log(data);
+		if (data.value != false)
+			$scope.blocks = data;
+	})
+
 	// product data
 	// $scope.banners = [{
 	// 	image: "img/slider/1.jpg"

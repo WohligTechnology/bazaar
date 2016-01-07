@@ -1,5 +1,4 @@
 <section class="home-slider">
-
    <flex-slider class="carousel" flex-slide="s in banners track by $index" animation="fade">
       <li>
          <a href="#">
@@ -8,46 +7,44 @@
       </li>
    </flex-slider>
 </section>
-
 <section>
    <div class="row-flex d-block2">
-      <div class="col-flex red-backgound back-red txt-center">
-         <div class="mid-product">
-            <div class="left-data display-inline">
-               <div class="up-image">
-                  <img src="img/icon/up.png">
+      <div ng-repeat="block in blocks">
+         <div class="col-flex red-backgound back-red txt-center" ng-if="$index%2==0">
+            <div class="mid-product">
+               <div class="left-data display-inline">
+                  <div class="up-image">
+                     <img src="img/icon/up.png">
+                  </div>
+                  <div class="mid-pro-name">
+                     <h4 class="margin0">{{block.name}}</h4>
+                     <p class="margin0">{{block.content}}</p>
+                  </div>
                </div>
-               <div class="mid-pro-name">
-
-                  <h4 class="margin0">mobiles</h4>
-                  <p class="margin0">for all</p>
+               <div class="mid-product-img">
+                  <img ng-src="{{block.image | uploadpath}}" class="img-responsive">
+                  <!--               <div class="cam-hold" ng-style="{'background-image':'url(img/product/1.png)'}"></div>-->
                </div>
             </div>
-            <div class="mid-product-img">
-               <img src="img/product/1.png" class="img-responsive">
-               <!--               <div class="cam-hold" ng-style="{'background-image':'url(img/product/1.png)'}"></div>-->
+         </div>
+         <div class="col-flex black-backgound back-red txt-center" ng-if="$index%2!=0">
+            <div class="mid-product">
+               <div class="left-data display-inline">
+                  <div class="mid-pro-name">
+                     <p class="margin0">{{block.name}}</p>
+                     <h4 class="margin0">{{block.content}}</h4>
+                  </div>
+                  <div class="up-image">
+                     <img src="img/icon/down.png">
+                  </div>
+               </div>
+               <div class="mid-product-img2">
+                  <img ng-src="{{block.image | uploadpath}}" class="img-responsive">
+               </div>
             </div>
          </div>
       </div>
-      <div class="col-flex black-backgound back-red txt-center">
-         <div class="mid-product">
-            <div class="left-data display-inline">
-               <div class="mid-pro-name">
-
-                  <p class="margin0">Best</p>
-                  <h4 class="margin0">computers</h4>
-
-               </div>
-               <div class="up-image">
-                  <img src="img/icon/down.png">
-               </div>
-            </div>
-            <div class="mid-product-img2">
-               <img src="img/product/2.png" class="img-responsive">
-            </div>
-         </div>
-      </div>
-      <div class="col-flex red-backgound back-red txt-center">
+      <!-- <div class="col-flex red-backgound back-red txt-center">
          <div class="mid-product">
             <div class="left-data display-inline">
                <div class="up-image">
@@ -60,7 +57,6 @@
             </div>
             <div class="mid-product-img2">
                <img src="img/product/3.png" class="img-responsive">
-               <!--               <div class="cam-hold" ng-style="{'background-image':'url(img/product/1.png)'}"></div>-->
             </div>
          </div>
       </div>
@@ -81,12 +77,11 @@
                <img src="img/product/4.png" class="img-responsive">
             </div>
          </div>
-      </div>
+      </div> -->
    </div>
 </section>
 <div class="container">
    <section>
-
       <div class="pro-title">
          <div class="display-inline">
             <img src="img/mini-logo.png">
@@ -124,11 +119,9 @@
                </div>
             </div>
          </div>
-
       </div>
    </section>
    <section>
-
       <div class="pro-title">
          <div class="display-inline">
             <img src="img/mini-logo.png">
