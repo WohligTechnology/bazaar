@@ -9,54 +9,20 @@
 </section>
 <section>
    <div class="row-flex d-block2">
-      <div ng-repeat="block in blocks">
-         <div class="col-flex red-backgound back-red txt-center" ng-if="$index%2==0">
-            <div class="mid-product">
-               <div class="left-data display-inline">
-                  <div class="up-image">
-                     <img src="img/icon/up.png">
-                  </div>
-                  <div class="mid-pro-name">
-                     <h4 class="margin0">{{block.name}}</h4>
-                     <p class="margin0">{{block.content}}</p>
-                  </div>
-               </div>
-               <div class="mid-product-img">
-                  <img ng-src="{{block.image | uploadpath}}" class="img-responsive">
-                  <!--               <div class="cam-hold" ng-style="{'background-image':'url(img/product/1.png)'}"></div>-->
-               </div>
-            </div>
-         </div>
-         <div class="col-flex black-backgound back-red txt-center" ng-if="$index%2!=0">
-            <div class="mid-product">
-               <div class="left-data display-inline">
-                  <div class="mid-pro-name">
-                     <p class="margin0">{{block.name}}</p>
-                     <h4 class="margin0">{{block.content}}</h4>
-                  </div>
-                  <div class="up-image">
-                     <img src="img/icon/down.png">
-                  </div>
-               </div>
-               <div class="mid-product-img2">
-                  <img ng-src="{{block.image | uploadpath}}" class="img-responsive">
-               </div>
-            </div>
-         </div>
-      </div>
-      <!-- <div class="col-flex red-backgound back-red txt-center">
+      <div class="col-flex red-backgound back-red txt-center">
          <div class="mid-product">
             <div class="left-data display-inline">
                <div class="up-image">
-                  <img src="img/icon/white.png">
+                  <img src="img/icon/up.png">
                </div>
                <div class="mid-pro-name">
-                  <p class="margin0">Best</p>
-                  <h4 class="margin0">cameras</h4>
+                  <h4 class="margin0">{{blocks[0].name}}</h4>
+                  <p class="margin0">{{blocks[0].content}}</p>
                </div>
             </div>
-            <div class="mid-product-img2">
-               <img src="img/product/3.png" class="img-responsive">
+            <div class="mid-product-img">
+               <img ng-src="{{blocks[0].image | uploadpath}}" class="img-responsive">
+               <!--               <div class="cam-hold" ng-style="{'background-image':'url(img/product/1.png)'}"></div>-->
             </div>
          </div>
       </div>
@@ -64,20 +30,50 @@
          <div class="mid-product">
             <div class="left-data display-inline">
                <div class="mid-pro-name">
-
-                  <p class="margin0">cool</p>
-                  <h4 class="margin0">Accessories</h4>
-
+                  <p class="margin0">{{blocks[1].name}}</p>
+                  <h4 class="margin0">{{blocks[1].content}}</h4>
                </div>
                <div class="up-image">
                   <img src="img/icon/down.png">
                </div>
             </div>
             <div class="mid-product-img2">
-               <img src="img/product/4.png" class="img-responsive">
+               <img ng-src="{{blocks[1].image | uploadpath}}" class="img-responsive">
             </div>
          </div>
-      </div> -->
+      </div>
+      <div class="col-flex red-backgound back-red txt-center">
+         <div class="mid-product">
+            <div class="left-data display-inline">
+               <div class="up-image">
+                  <img src="img/icon/white.png">
+               </div>
+               <div class="mid-pro-name">
+                  <p class="margin0">{{blocks[2].name}}</p>
+                  <h4 class="margin0">{{blocks[2].content}}</h4>
+               </div>
+            </div>
+            <div class="mid-product-img2">
+               <img ng-src="{{blocks[2].image | uploadpath}}" class="img-responsive">
+            </div>
+         </div>
+      </div>
+      <div class="col-flex black-backgound back-red txt-center">
+         <div class="mid-product">
+            <div class="left-data display-inline">
+               <div class="mid-pro-name">
+                  <p class="margin0">{{blocks[3].name}}</p>
+                  <h4 class="margin0">{{blocks[2].content}}</h4>
+               </div>
+               <div class="up-image">
+                  <img src="img/icon/down.png">
+               </div>
+            </div>
+            <div class="mid-product-img2">
+               <img ng-src="{{blocks[3].image | uploadpath}}" class="img-responsive">
+            </div>
+         </div>
+      </div>
    </div>
 </section>
 <div class="container">
