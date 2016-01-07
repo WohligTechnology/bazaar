@@ -2,42 +2,6 @@ $screen-xs: 480px !default;
 $screen-sm: 768px !default;
 $screen-md: 992px !default;
 $screen-lg: 1200px !default;
-@media (max-width: $screen-lg) {
-   
-    .top-cart {
-        font-size: 12px;
-        padding: 9px 4px 6px 4px;
-        margin: 0px 0px 0px 0px;
-        ul {
-            li {
-                padding: 0px 2px;
-                i {
-                    font-size: 16px;
-                }
-            }
-        }
-    }
-    .top-login {
-        ul {
-            li {
-                font-size: 13px;
-            }
-        }
-    }
-    .pl12 {
-        padding-left: 6px;
-    }
-    .pl0 {
-        padding-left: 0;
-    }
-    .pr35 {
-        padding: 16px 16px 4px 0px;
-    }
-    .pl35 {
-        padding-left: 11px;
-    }
-}
-
 @media (max-width: $screen-xs-max) {
     .di-mb{
     display: block;
@@ -256,79 +220,10 @@ $screen-lg: 1200px !default;
         }
     }
 }
-
-@media (max-width: $screen-md-max) {
-    .uty {
-  
-    display: inline;
-  
-}
-     .pr6{
-        display: inline;
-    }
-    .class-forget{
-        font-size: 12px;
-    }
-    .custom-bord tr td {
-    padding: 8px 14px 8px 14px !important;
-}
-    .add-body {
-    margin: 20px 0px 0px 0px;
-}
-    .menu-list {
-        ul {
-            li {
-                padding: 0px 10px;
-            }
-        }
-    }
-    .menu-list {
-        padding: 10px 22px;
-        width: inherit;
-    }
-    .txt-center {
+@media (max-width: $screen-sm-min) {
+    .cut-text-center{
         text-align: center;
     }
-    .pdtop {
-        padding-top: 10px;
-    }
-    .bright2 {
-        border-right: 0px solid #b5b5b5 !important;
-    }
-    .product-detail {
-        p {
-            font-size: 14px;
-            white-space: nowrap;
-            display: block;
-            overflow: hidden;
-            text-overflow: ellipsis;
-        }
-    }
-    .img-hold {
-        position: relative;
-        img {
-            position: absolute;
-            top: 50%;
-            @include transform( translateY(-50%));
-        }
-    }
-    .back-red {
-        min-height: 200px;
-        .mid-product {
-            padding: 25px 10px 0px 26px;
-        }
-    }
-    .mid-product-img {
-        height: 160px;
-        margin: -25px 0px -42px 70px;
-    }
-    .mid-product-img2 {
-        margin: 7px 0px -79px 15px !important;
-        height: 115px !important;
-    }
-}
-
-@media (max-width: $screen-sm-min) {
      .di-mb{
     display: block;
 }
@@ -542,3 +437,120 @@ $screen-lg: 1200px !default;
         }
     }
 }
+@media (max-width: $screen-md-min) {
+    .uty {
+  
+    display: inline;
+  
+}
+     .pr6{
+        display: inline;
+    }
+    .class-forget{
+        font-size: 12px;
+    }
+    .custom-bord tr td {
+    padding: 8px 14px 8px 14px !important;
+}
+    .add-body {
+    margin: 20px 0px 0px 0px;
+}
+    .menu-list {
+        ul {
+            li {
+                padding: 0px 10px;
+            }
+        }
+    }
+    .menu-list {
+        padding: 10px 22px;
+        width: inherit;
+    }
+    .txt-center {
+        text-align: center;
+    }
+    .pdtop {
+        padding-top: 10px;
+    }
+    .bright2 {
+        border-right: 0px solid #b5b5b5 !important;
+    }
+    .product-detail {
+        p {
+            font-size: 14px;
+            white-space: nowrap;
+            display: block;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+    }
+    .img-hold {
+        position: relative;
+        img {
+            position: absolute;
+            top: 50%;
+            @include transform( translateY(-50%));
+        }
+    }
+    .back-red {
+        min-height: 200px;
+        .mid-product {
+            padding: 25px 10px 0px 26px;
+        }
+    }
+    .mid-product-img {
+        height: 160px;
+        margin: -25px 0px -42px 70px;
+    }
+    .mid-product-img2 {
+        margin: 7px 0px -79px 15px !important;
+        height: 115px !important;
+    }
+}
+
+@media (max-width: $screen-lg) {
+//    .mid-product {
+//        padding: 20px 10px 0px 46px !important;
+//}
+//    .mid-product-img {
+// height: 178px;
+//    margin: 10px 0px -35px 70px;
+//}
+//   
+    .top-cart {
+        font-size: 12px;
+        padding: 9px 4px 6px 4px;
+        margin: 0px 0px 0px 0px;
+        ul {
+            li {
+                padding: 0px 2px;
+                i {
+                    font-size: 16px;
+                }
+            }
+        }
+    }
+    .top-login {
+        ul {
+            li {
+                font-size: 13px;
+            }
+        }
+    }
+    .pl12 {
+        padding-left: 6px;
+    }
+    .pl0 {
+        padding-left: 0;
+    }
+    .pr35 {
+        padding: 16px 16px 4px 0px;
+    }
+    .pl35 {
+        padding-left: 11px;
+    }
+}
+
+
+
+
