@@ -285,6 +285,9 @@ $screen-lg: 1200px !default;
 }
 
 @media (max-width: $screen-sm-max) {
+    .logo {
+    margin-top: 0px;
+}
     .contact-title a {
     font-size: 14px;
 }
