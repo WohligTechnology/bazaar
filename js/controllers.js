@@ -387,17 +387,28 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
 
 	NavigationService.findProduct($stateParams.categoryId, function (data) {
 		console.log(data);
-		if (data.value != false)
+		if (data.value != false) {
 			$scope.products = data;
+			_.each($scope.products, function (n) {
+				n.mainImg = n.image[0];
+			});
+		}
 	})
 
-	$scope.openQuick = function () {
+	$scope.openQuick = function (product) {
+		$scope.quickViewProduct = product;
+		$scope.quickViewProduct.mainImgQuick = product.image[0];
+		console.log($scope.quickViewProduct);
 		$uibModal.open({
 			animation: true,
 			templateUrl: 'views/modal/quick.html',
-			controller: 'QuickCtrl'
+			scope: $scope,
 		})
 	};
+
+	$scope.changeImage = function (index) {
+		$scope.quickViewProduct.mainImgQuick = $scope.quickViewProduct.image[index];
+	}
 
 	$scope.accordian = [];
 	$scope.accordian.push({
