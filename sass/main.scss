@@ -397,17 +397,16 @@ ul {
             &:first-child {
                 font-weight: 500;
             }
-            &:last-child {
-                a {
-                    color: $brand-primary !important;
-                    text-decoration: underline !important;
-                }
-            }
+          
             a {
                 text-transform: capitalize;
             }
         }
     }
+}
+.f-a{
+       color: $brand-primary !important;
+                    text-decoration: underline !important;
 }
 .sec-date {
     img {
