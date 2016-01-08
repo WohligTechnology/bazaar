@@ -264,6 +264,9 @@ $screen-lg: 1200px !default;
     }
 }
 @media (max-width: $screen-sm-max) {
+    .pd-bootm{
+        padding-bottom: 0px !important;
+    }
     .em-pad{
     padding: 10px 20px 20px !important;
     }
