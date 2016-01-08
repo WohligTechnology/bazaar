@@ -42,7 +42,7 @@ firstapp.config(function ($stateProvider, $urlRouterProvider, $httpProvider, cfp
 			controller: 'WishlistCtrl'
 		})
 		.state('product', {
-			url: "/product",
+			url: "/product/:categoryId",
 			templateUrl: "views/template.html",
 			controller: 'ProductCtrl'
 		})
@@ -143,11 +143,30 @@ firstapp.directive('tableresponsive', function ($compile, $parse) {
 	};
 });
 
-firstapp.filter('uploadpath', function() {
-    return function(input) {
-        if (input && input != "") {
-            return adminurl + "uploadfile/resize?file=" + input;
-            // return adminurl + "uploadfile/resize?width=750&file=" + input;
-        }
-    };
+firstapp.filter('uploadpath', function () {
+	return function (input) {
+		if (input && input != "") {
+			return adminurl + "uploadfile/resize?file=" + input;
+			// return adminurl + "uploadfile/resize?width=750&file=" + input;
+		}
+	};
+});
+
+firstapp.filter('cut', function () {
+	return function (value, wordwise, max, tail) {
+		if (!value) return '';
+
+		max = parseInt(max, 10);
+		if (!max) return value;
+		if (value.length <= max) return value;
+
+		value = value.substr(0, max);
+		if (wordwise) {
+			var lastspace = value.lastIndexOf(' ');
+			if (lastspace != -1) {
+				value = value.substr(0, lastspace);
+			}
+		}
+		return value + (tail || ' …');
+	};
 });

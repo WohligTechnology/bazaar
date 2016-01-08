@@ -53,6 +53,16 @@ var navigationservice = angular.module('navigationservice', [])
 				method: 'POST'
 			}).success(callback);
 		},
+		findProduct: function (catId, callback) {
+			$http({
+				url: adminurl + 'product/findProduct',
+				method: 'POST',
+				withCredentials: true,
+				data: {
+					"category": catId
+				}
+			}).success(callback);
+		},
 		logout: function (callback) {
 			$http.get(adminurl + 'user/logout').success(callback);
 		},
