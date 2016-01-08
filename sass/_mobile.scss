@@ -3,6 +3,46 @@ $screen-sm: 768px !default;
 $screen-md: 992px !default;
 $screen-lg: 1200px !default;
 @media (max-width: $screen-xs-min) {
+    .m-font-12{
+        font-size: 12px !important;
+    }
+    .pro-body-content{
+        .panel-title{
+            a{
+                span{
+                    span{
+                       font-size: 16px;  
+                    }
+                }
+            }
+           
+        }
+    }
+    .f-16{
+        font-size: 16px;
+    }
+    .know {
+    font-size: 15px;
+}
+    .tag-b {
+    font-size: 13px;
+}
+    .pt60 {
+    padding-top: 40px;
+}
+    .shape {
+    min-height: 143px;
+}
+    .tag-b {
+    font-size: 13px;
+}
+    .hist-price h3 {
+    font-size: 14px;
+}
+    .break-wrd {
+      font-size: 15px;
+    width: 100%;
+}
   .all-data {
     h5 {
       font-size: 6px !important;
@@ -224,6 +264,15 @@ $screen-lg: 1200px !default;
     }
 }
 @media (max-width: $screen-sm-max) {
+    .em-pad{
+    padding: 10px 20px 20px !important;
+    }
+    .padall{
+        padding-left: 0px !important;
+    }
+    .pro-bo-l{
+        border-left: 0px solid !important;
+    }
     .back-red {
     min-height: 145px;
 }
@@ -447,6 +496,48 @@ $screen-lg: 1200px !default;
     }
 }
 @media (max-width: $screen-md-max) {
+    
+    .pad0{
+        padding: 0 !important;
+    }
+    .know {
+    font-size: 20px;
+}
+    .tag-b {
+
+    font-size: 20px;
+}
+    .pt60 {
+    padding-top: 52px;
+}
+    .shape {
+ 
+    min-height: 160px;
+  
+}
+    .font-18 {
+    font-size: 15px;
+}
+    .font-20 {
+        ul{
+             li {
+    font-size: 16px;
+}
+        }
+    }
+    .hist-price {
+        h3 {
+
+    font-size: 18px;
+}
+    }
+    .break-wrd {
+ 
+    font-size: 20px;
+}
+    .pall {
+    padding: 30px 0px 40px 0px;
+}
     .uty {
 
     display: inline;
