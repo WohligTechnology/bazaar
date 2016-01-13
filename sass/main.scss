@@ -1493,7 +1493,7 @@ textarea.form-control {
 .font-20 {
     ul {
         li {
-            font-size: 20px;
+            font-size: 16px;
         }
     }
 }
@@ -1566,7 +1566,9 @@ textarea.form-control {
 .bkp-grey {
     background-color: $pro-border;
 }
-
+.min500{
+  min-height: 500px;
+}
 .custom-bord {
     border: 1px solid $pro-border;
     tr {
@@ -1757,7 +1759,13 @@ textarea.form-control {
 .img-slide-hold img {
     cursor: pointer;
 }
-
+.thumb{
+  width: 70px;
+height: 75px;
+background-repeat: no-repeat;
+background-position: center;
+background-size: contain;
+}
 #loading-bar .bar {
     background: #ee283c !important;
 }
