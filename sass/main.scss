@@ -1759,6 +1759,12 @@ textarea.form-control {
 .img-slide-hold img {
     cursor: pointer;
 }
+.disable{
+  background: #ccc;
+border-color: #bbb;
+cursor: default;
+text-shadow: none;
+}
 .thumb{
   width: 60px;
 height: 60px;
