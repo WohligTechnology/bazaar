@@ -224,6 +224,24 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     $scope.menutitle = NavigationService.makeactive("Cart");
     TemplateService.title = $scope.menutitle;
     $scope.navigation = NavigationService.getnav();
+
+    $scope.getCart = function() {
+        NavigationService.getUserCart(function(cart) {
+            console.log(cart);
+            $scope.cartItems = cart;
+        })
+    }
+
+    $scope.getCart();
+
+    $scope.removeFromCart = function(id) {
+        NavigationService.removeFromCart(id, function(data) {
+            console.log(data);
+            if (data.value != false)
+                $scope.getCart();
+        })
+    }
+
 })
 
 .controller('WishlistCtrl', function($scope, TemplateService, NavigationService) {

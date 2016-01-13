@@ -10,7 +10,6 @@
                         <img src="img/mini-logo.png">
                         <h4>MY CART</h4>
                     </div>
-
                 </div>
             </div>
         </div>
@@ -18,93 +17,126 @@
 </section>
 <section>
     <div class="container">
-                       <div class="row">
-                        <div class="col-md-12">
-                            <div class="order-table">
-                                <table class="table">
-                                    <thead>
-                                        <tr class="text-center desktop">
-                                            <th>ITEM</th>
-                                            <th>QTY</th>
-                                            <th>PRICE</th>
-                                            <th>DELIVERY DETAILS</th>
-                                            <th>SUBTOTAL</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr class="text-center text-bold t-border-none bord-right">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="order-table">
+                    <table class="table">
+                        <thead>
+                            <tr class="text-center desktop">
+                                <th>ITEM</th>
+                                <th>QTY</th>
+                                <th colspan="2">PRICE</th>
+                                <th>DELIVERY DETAILS</th>
+                                <th>SUBTOTAL</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="text-center text-bold t-border-none bord-right" ng-repeat="cart in cartItems">
+                                <td>
+                                    <table class="table custom-tb t-border-none">
+                                        <tr>
                                             <td>
-                                                <table class="table custom-tb t-border-none">
-                                                    <tr>
-                                                        <td>
-                                                            <div class="check-img display-inline">
-                                                                <img src="img/product/c1.jpg" class="img-responsive mauto" >
-                                                            </div>
-
-                                                        </td>
-                                                        <td>
-                                                           <div class="w200">
-                                                <p>Nikon D3300 (Body with AF-S 18-55 mm VR II Kit Lens) DSLR Camera</p>
-                                                <p><span>Color:</span> Black</p>
-                                                </div>  
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td colspan="2">
-            <div class="return-policy pull-left"> <i class="fa fa-check-circle"></i> <span class="applicable-policy">30 Days Replacement</span> </div>
-                                                       <div class="pull-right">
-                                                           <a href="" class="br-col">REMOVE</a>
-                                                       </div>
-                                                        </td>
-                                                    </tr>
-                                                </table>
-
-                                            </td>
-                                            <td><span class="pad-all-side"><i class="fa fa-minus i-cl"></i><p class="uty">01</p><i class="fa fa-plus i-cl"></i></span></td>
-                                            <td>
-                                                <div class="check-price">
-                                                    <span class="pad-all-side"><i class="fa fa-inr pr6"></i>24,712.00</span>
+                                                <div class="check-img display-inline">
+                                                    <img ng-src="{{cart.image[0]|uploadpath}}" class="img-responsive mauto">
                                                 </div>
                                             </td>
                                             <td>
-                                                <div class="check-price">
-                                                    <span class="col-red">FREE:</span>
-                                                    <p>Delivered in 2-3 business days</p>
+                                                <div class="w200">
+                                                    <p>{{cart.name}}</p>
+                                                    <p><span>Color:</span> Black</p>
                                                 </div>
                                             </td>
-
-                                            <td>
-                                                <span class="pad-all-side"><i class="fa fa-inr pr6"></i>24,712.00</span>
-
+                                        </tr>
+                                        <tr>
+                                            <td colspan="2">
+                                                <div class="return-policy pull-left"> <i class="fa fa-check-circle"></i> <span class="applicable-policy">30 Days Replacement</span> </div>
+                                                <div class="pull-right">
+                                                    <a href="" class="br-col" ng-click="removeFromCart(cart._id);">REMOVE</a>
+                                                </div>
                                             </td>
                                         </tr>
-
-                                    </tbody>
-                                </table>
-                            </div>
-
-                        </div>
-
-                    </div>
-                    <div class="row mar-btm">
-                        <div class="col-md-offset-8 col-md-4">
-                        
-                                    <div class="list pull-right category display-inline">
-                                       <p> <span>ESTIMATED TOTAL:</span><i class="fa fa-inr"></i>24,712.00</p></span>
-
+                                    </table>
+                                </td>
+                                <td><span class="pad-all-side"><i class="fa fa-minus i-cl"></i><p class="uty">01</p><i class="fa fa-plus i-cl"></i></span></td>
+                                <td colspan="2">
+                                    <div class="check-price">
+                                        <span class="pad-all-side"><i class="fa fa-inr pr6 dis-in"></i>{{cart.price|currency:""}}</span>
                                     </div>
-                     
-                        </div>
-                    </div>
-                     <div class="row">
-                               <div class="btop">
-                                <div class="col-md-12">
-                                    <div class="pull-right pt15">
-            <button type="submit" class="btn-blue btn btn-danger text-center btn-strong">CONTINUE SHOPPING</button>
-                                   <button type="submit" class="btn-blue btn btn-danger text-center btn-strong ml8">NEXT</button>
+                                </td>
+                                <td>
+                                    <div class="check-price">
+                                        <span class="col-red">FREE:</span>
+                                        <p>Delivered in 2-3 business days</p>
                                     </div>
-                                </div>
-                                </div>
-                            </div>
+                                </td>
+                                <td>
+                                    <span class="pad-all-side"><i class="fa fa-inr pr6 dis-in"></i>24,712.00</span>
+                                </td>
+                            </tr>
+                            <!-- <tr class="text-center text-bold t-border-none bord-right">
+                                <td>
+                                    <table class="table custom-tb t-border-none">
+                                        <tr>
+                                            <td>
+                                                <div class="check-img display-inline">
+                                                    <img src="img/product/c1.jpg" class="img-responsive mauto">
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="w200">
+                                                    <p>Nikon D3300 (Body with AF-S 18-55 mm VR II Kit Lens) DSLR Camera</p>
+                                                    <p><span>Color:</span> Black</p>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td colspan="2">
+                                                <div class="return-policy pull-left"> <i class="fa fa-check-circle"></i> <span class="applicable-policy">30 Days Replacement</span> </div>
+                                                <div class="pull-right">
+                                                    <a href="" class="br-col">REMOVE</a>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </td>
+                                <td><span class="pad-all-side"><i class="fa fa-minus i-cl"></i><p class="uty">01</p><i class="fa fa-plus i-cl"></i></span></td>
+                                <td>
+                                    <div class="check-price">
+                                        <span class="pad-all-side"><i class="fa fa-inr pr6"></i>24,712.00</span>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="check-price">
+                                        <span class="col-red">FREE:</span>
+                                        <p>Delivered in 2-3 business days</p>
+                                    </div>
+                                </td>
+                                <td>
+                                    <span class="pad-all-side"><i class="fa fa-inr pr6"></i>24,712.00</span>
+                                </td>
+                            </tr> -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="row mar-btm">
+            <div class="col-md-offset-8 col-md-4">
+                <div class="list pull-right category display-inline">
+                    <p> <span>ESTIMATED TOTAL:</span><i class="fa fa-inr"></i>24,712.00</p>
+                    </span>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="btop">
+                <div class="col-md-12">
+                    <div class="pull-right pt15">
+                        <button type="submit" class="btn-blue btn btn-danger text-center btn-strong">CONTINUE SHOPPING</button>
+                        <button type="submit" class="btn-blue btn btn-danger text-center btn-strong ml8">NEXT</button>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 </section>

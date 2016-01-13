@@ -88,6 +88,15 @@ var navigationservice = angular.module('navigationservice', [])
                 }
             }).success(callback);
         },
+        removeFromCart: function(id, callback) {
+            $http({
+                url: adminurl + 'cart/delete',
+                method: 'POST',
+                data: {
+                    'product': id
+                }
+            }).success(callback);
+        },
         getUserCart: function(callback) {
             $http({
                 url: adminurl + 'cart/find',
