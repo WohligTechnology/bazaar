@@ -1,3 +1,5 @@
+var dataNextPre = {};
+
 angular.module('phonecatControllers', ['templateservicemod', 'navigationservice', 'ui.bootstrap', 'ngSanitize', 'angular-flexslider', 'angular-loading-bar'])
 
 .controller('HomeCtrl', function($scope, TemplateService, NavigationService, $timeout) {
@@ -33,13 +35,13 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
 
     // product data
     // $scope.banners = [{
-    // 	image: "img/slider/1.jpg"
+    //  image: "img/slider/1.jpg"
     //   }, {
-    // 	image: "img/slider/1.jpg"
-    // 	}, {
-    // 	image: "img/slider/1.jpg"
+    //  image: "img/slider/1.jpg"
+    //  }, {
+    //  image: "img/slider/1.jpg"
     //   }, {
-    // 	image: "img/slider/1.jpg"
+    //  image: "img/slider/1.jpg"
     //   }];
 
     $scope.bannerss = [{
@@ -237,6 +239,20 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     TemplateService.title = $scope.menutitle;
     $scope.navigation = NavigationService.getnav();
 
+    NavigationService.getOneProduct($stateParams.id, function(data) {
+        console.log(data);
+        $scope.productDetail = data;
+        $scope.productDetail.mainImg = data.image[0];
+    })
+
+    $scope.changeImage = function(index) {
+        $scope.productDetail.mainImg = $scope.productDetail.image[index];
+    }
+
+    $scope.addToCart = function() {
+        dataNextPre.addToCart($stateParams.id);
+    }
+
     $scope.accordian = [];
     $scope.accordian.push({
         isFirstOpen: true,
@@ -406,6 +422,10 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         })
     };
 
+    $scope.addToCart = function(id) {
+        dataNextPre.addToCart(id);
+    }
+
     $scope.changeImage = function(index) {
         $scope.quickViewProduct.mainImgQuick = $scope.quickViewProduct.image[index];
     }
@@ -497,7 +517,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
 
 })
 
-.controller('InsuranceCtrl', function($scope, TemplateService, NavigationService,$uibModal) {
+.controller('InsuranceCtrl', function($scope, TemplateService, NavigationService, $uibModal) {
     $scope.template = TemplateService.changecontent("insurance");
     $scope.menutitle = NavigationService.makeactive("Insurance");
     TemplateService.title = $scope.menutitle;
@@ -517,14 +537,12 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         isFirstDisabled: false
     });
 
-    $scope.openCart = function() {
-        $uibModal.open({
-            animation: true,
-            templateUrl: 'views/modal/addtocart.html',
-
-        })
-    };
-
+    // $scope.openCart = function() {
+    //     $uibModal.open({
+    //         animation: true,
+    //         templateUrl: 'views/modal/addtocart.html',
+    //     })
+    // };
 
     $scope.product = [{
         image: "img/product/p1.jpg",
@@ -594,7 +612,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     };
 })
 
-.controller('headerctrl', function($scope, TemplateService, $uibModal, NavigationService) {
+.controller('headerctrl', function($scope, TemplateService, $uibModal, NavigationService, $timeout) {
     $scope.template = TemplateService;
     $scope.register = {};
     $scope.login = {};
@@ -602,11 +620,50 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     $scope.showAlreadyRegistered = false;
     $scope.hideLogin = false;
     $scope.showInvalidLogin = false;
+    $scope.cartCount = 0;
 
-    NavigationService.getAllCategories(function(data) {
-        console.log(data);
-        $scope.categories = data;
-    })
+    // NavigationService.getAllCategories(function(data) {
+    //     console.log(data);
+    //     $scope.categories = data;
+    // })
+
+    dataNextPre.getUserCart = function() {
+        NavigationService.getUserCart(function(data) {
+            console.log(data);
+            if (data.value != false) {
+                $scope.cartCount = data.length;
+            }
+        })
+    }
+
+    // dataNextPre.getUserCart();
+    dataNextPre.addToCart = function(productId) {
+        NavigationService.addToCart(productId, function(data) {
+            console.log(data);
+            if (data.value == true) {
+                dataNextPre.getUserCart();
+                dataNextPre.messageBox("Congratulation !!", "Added to cart");
+            } else {
+                dataNextPre.messageBox("Thank You !!", "Already in cart");
+            }
+        })
+    }
+
+    dataNextPre.messageBox = function(heading, message) {
+        $scope.message = {};
+        $scope.message.heading = heading;
+        $scope.message.content = message;
+        var myModal = $uibModal.open({
+            animation: true,
+            templateUrl: 'views/modal/addtocart.html',
+            scope: $scope,
+            controller: "headerctrl"
+        })
+
+        $timeout(function() {
+            myModal.dismiss('cancel');
+        }, 2000);
+    }
 
     NavigationService.getUserProfile(function(data) {
         console.log(data);
@@ -617,7 +674,9 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
             else {
                 $scope.profile.name = data.name;
             }
-
+            if (data.cart) {
+                $scope.cartCount = data.cart.length;
+            }
         }
     })
 
@@ -649,7 +708,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
             console.log(data);
             if (data.value == false) {
                 $scope.showInvalidLogin = true;
-            } else if (data.value == true) {
+            } else if (data.value == "http://wohlig.co.in/tagboss") {
                 window.location.reload();
             }
         });

@@ -2,44 +2,51 @@
     <div class="new-product pb60 pt60">
         <div class="container">
             <div class="row">
-
                 <div class="col-md-3 text-center col-sm-4">
                     <div class="h300 product-img-hold display-inline">
-                        <img src="img/product/c1.jpg" class="img-responsive">
+                        <!-- <img src="img/product/c1.jpg" class="img-responsive"> -->
+                        <img ng-src="{{productDetail.mainImg|uploadpath}}" class="img-responsive">
                     </div>
                     <div class="slid">
-                        <flex-slider class="carousel" flex-slide="s in product track by $index" animation="slide" item-width="60">
-                            <li>
+                        <flex-slider class="carousel" flex-slide="s in productDetail.image track by $index" animation="slide" item-width="60">
+                            <li ng-click="changeImage($index);">
                                 <div class="img-slide-hold">
-                                    <img ng-src="{{s.image}}">
+                                    <img ng-src="{{s | uploadpath}}">
                                 </div>
                             </li>
                         </flex-slider>
                     </div>
                 </div>
                 <div class="col-md-9 col-sm-8">
-
                     <div class="renew-content display-inline">
                         <div class="renew-content-title">
-                            <h3 class="break-wrd">Nikon D3300 (Body with AF-S 18-55 mm VR II
-Kit Lens) DSLR Camera <span class="grey-col">(Black)</span></h3>
+                            <!-- <h3 class="break-wrd">Nikon D3300 (Body with AF-S 18-55 mm VR II
+Kit Lens) DSLR Camera <span class="grey-col">(Black)</span></h3> -->
+                            <h3 class="break-wrd">{{productDetail.name}}</span></h3>
                         </div>
                         <div class="hist-price pro-border-top pro-border-bottom">
-                            <h3><i class="fa fa-inr"></i>24,712.00 <span class="font-18 br-col m-font">(This Price is inclusive of 1 year TagBoss insurance)</span></h3>
+                            <h3>
+                            <!-- <i class="fa fa-inr"></i>24,712.00  -->
+                            <i class="fa fa-inr"></i>{{productDetail.price|currency:""}}
+                            <span class="font-18 br-col m-font">(This Price is inclusive of 1 year TagBoss insurance)
+                            </span>
+                            </h3>
                         </div>
                         <div class="row pro-border-bottom">
                             <div class="">
                                 <div class="col-md-4 col-sm-4">
                                     <div class="renew-content-footer pro-usp font-20">
-                                        <ul>
+                                        <!-- <ul>
                                             <li>• 24.2 MP</li>
                                             <li>• CMOS</li>
                                             <li>• with 3 inch LCD</li>
+                                        </ul> -->
+                                        <ul>
+                                            <li ng-repeat="spec in productDetail.keyword">• {{spec.name}}</li>
                                         </ul>
                                     </div>
                                 </div>
                                 <div class="col-md-8 col-sm-8">
-
                                     <div class="new-pro-right display-inline text-center lin-h pro-border-left pl50 pro-bo-l padall">
                                         <span class="font-18">Color</span>
                                         <div class="col-img-box">
@@ -50,15 +57,12 @@ Kit Lens) DSLR Camera <span class="grey-col">(Black)</span></h3>
                                 </div>
                             </div>
                         </div>
-
-
                     </div>
                     <div class="new-pro-btn pt15">
-                        <button type="button" class="btn btn-primary btn-strong" data-dismiss="modal">Add to Cart</button>
+                        <button type="button" class="btn btn-primary btn-strong" data-dismiss="modal" ng-click="addToCart();">Add to Cart</button>
                         <button type="button" class="btn btn-primary btn-strong">Add to Wishlist</button>
                     </div>
                 </div>
-
             </div>
         </div>
     </div>
@@ -82,23 +86,26 @@ Kit Lens) DSLR Camera <span class="grey-col">(Black)</span></h3>
                         <h3 class="txt-dec br-col f-16">PRODUCT DETAILS</h3>
                     </div>
                     <div class="pro-body-title pt15 ">
-                        <h3 class="margin0 f-16">Nikon D3300 (Body with AF-S 18-55 mm VR II Kit Lens) DSLR Camera</h3>
+                        <!-- <h3 class="margin0 f-16">Nikon D3300 (Body with AF-S 18-55 mm VR II Kit Lens) DSLR Camera</h3> -->
+                        <h3 class="margin0 f-16">{{productDetail.name}}</h3>
                         <p class="margin0 font-18 m-font-12">The Nikon D3300 delivers exceptional pictures with its 24.2 megapixels, EXPEED 4 processing engine, and a variety of other features and functions.</p>
                     </div>
                     <div class="pro-body-feature renew-content-footer pt10">
                         <h4>Features</h4>
-                        <ul>
+                        <!-- <ul>
                             <li><span>•</span> 24.2 Megapixel Camera</li>
                             <li><span>•</span> CMOS Image Sensor</li>
                             <li><span>•</span> Full HD Recording</li>
                             <li><span>•</span> 3 inch TFT LCD</li>
                             <li><span>•</span> ISO 200 - ISO 6400 Sensitivity</li>
                             <li><span>•</span> f/3.5 - f/5.6 Aperture</li>
+                        </ul> -->
+                        <ul>
+                            <li ng-repeat="spec in productDetail.keyword"><span>•</span> {{spec.name}}</li>
                         </ul>
                     </div>
                     <div class="pro-body-content">
                         <uib-accordion close-others="true">
-
                             <uib-accordion-group is-open="accordian[0].isFirstOpen">
                                 <uib-accordion-heading>
                                     <i class="fa" ng-class="{'fa-chevron-down': accordian[0].isFirstOpen, 'fa-chevron-right': !accordian[0].isFirstOpen}"></i> DESIGN
@@ -116,49 +123,42 @@ Kit Lens) DSLR Camera <span class="grey-col">(Black)</span></h3>
                                     </div>
                                 </div>
                             </uib-accordion-group>
-                            
                             <uib-accordion-group is-open="accordian[1].isFirstOpen">
                                 <uib-accordion-heading>
                                     <i class="fa" ng-class="{'fa-chevron-down': accordian[1].isFirstOpen, 'fa-chevron-right': !accordian[1].isFirstOpen}"></i> IMAGE & VIDEO QUALITY
                                 </uib-accordion-heading>
                                 This is just some content to illustrate fancy headings.
                             </uib-accordion-group>
-                            
                             <uib-accordion-group is-open="accordian[2].isFirstOpen">
                                 <uib-accordion-heading>
                                     <i class="fa" ng-class="{'fa-chevron-down': accordian[2].isFirstOpen, 'fa-chevron-right': !accordian[2].isFirstOpen}"></i> PERFORMANCE
                                 </uib-accordion-heading>
                                 This is just some content to illustrate fancy headings.
                             </uib-accordion-group>
-                            
                             <uib-accordion-group is-open="accordian[3].isFirstOpen">
                                 <uib-accordion-heading>
                                     <i class="fa" ng-class="{'fa-chevron-down': accordian[3].isFirstOpen, 'fa-chevron-right': !accordian[3].isFirstOpen}"></i> DISPLAY
                                 </uib-accordion-heading>
                                 This is just some content to illustrate fancy headings.
                             </uib-accordion-group>
-                            
                             <uib-accordion-group is-open="accordian[4].isFirstOpen">
                                 <uib-accordion-heading>
                                     <i class="fa" ng-class="{'fa-chevron-down': accordian[4].isFirstOpen, 'fa-chevron-right': !accordian[4].isFirstOpen}"></i> EXPOSURE CONTROL
                                 </uib-accordion-heading>
                                 This is just some content to illustrate fancy headings.
                             </uib-accordion-group>
-                            
                             <uib-accordion-group is-open="accordian[5].isFirstOpen">
                                 <uib-accordion-heading>
                                     <i class="fa" ng-class="{'fa-chevron-down': accordian[5].isFirstOpen, 'fa-chevron-right': !accordian[5].isFirstOpen}"></i> STORAGE
                                 </uib-accordion-heading>
                                 This is just some content to illustrate fancy headings.
                             </uib-accordion-group>
-                            
                             <uib-accordion-group is-open="accordian[6].isFirstOpen">
                                 <uib-accordion-heading>
                                     <i class="fa" ng-class="{'fa-chevron-down': accordian[6].isFirstOpen, 'fa-chevron-right': !accordian[6].isFirstOpen}"></i> POWER
                                 </uib-accordion-heading>
                                 This is just some content to illustrate fancy headings.
                             </uib-accordion-group>
-                            
                             <uib-accordion-group is-open="accordian[7].isFirstOpen">
                                 <uib-accordion-heading>
                                     <i class="fa" ng-class="{'fa-chevron-down': accordian[7].isFirstOpen, 'fa-chevron-right': !accordian[7].isFirstOpen}"></i> SPECIAL FEATURES
@@ -179,24 +179,25 @@ Kit Lens) DSLR Camera <span class="grey-col">(Black)</span></h3>
                         <h3 class="font-18">CUSTOMERS WHO VIEWED THIS PRODUCT ALSO VIEWED</h3>
                     </div>
                     <div class="slider-new">
-                            <flex-slider class="carousel" flex-slide="s in product track by $index" animation="slide" item-width="200">
+                        <flex-slider class="carousel" flex-slide="s in product track by $index" animation="slide" item-width="200">
                             <li>
-                               <div class="slide-content">
-                                <div class="his-img-hold">
-                                    <a href=""><img ng-src="{{s.image}}"></a>
-                                </div>
-                                <div class="prod-title">
-                                    <a href=""><p>{{s.name}}</p></a>
-                                </div>
-                                <div class="pro-priz pro-border-top">
-                                    <a href=""><h4><i class="fa fa-inr pr6"></i>{{s.price}}</h4></a>
-                                </div>
+                                <div class="slide-content">
+                                    <div class="his-img-hold">
+                                        <a href=""><img ng-src="{{s.image}}"></a>
+                                    </div>
+                                    <div class="prod-title">
+                                        <a href="">
+                                            <p>{{s.name}}</p>
+                                        </a>
+                                    </div>
+                                    <div class="pro-priz pro-border-top">
+                                        <a href=""><h4><i class="fa fa-inr pr6"></i>{{s.price}}</h4></a>
+                                    </div>
                                 </div>
                             </li>
                         </flex-slider>
                     </div>
                 </div>
-
             </div>
         </div>
     </section>

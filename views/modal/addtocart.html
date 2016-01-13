@@ -7,11 +7,11 @@
           <img src="img/mini-logo.png">
         </div>
         <div class="cart-text">
-          <h3>
-            Congratulations !!
+          <h3 ng-if="message.heading">
+            {{message.heading}}
           </h3>
           <h4>
-            Your Item Has Successfully Added To Your Cart.
+            {{message.content}}
           </h4>
         </div>
       </div>

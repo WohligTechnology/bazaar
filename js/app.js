@@ -8,9 +8,8 @@ var firstapp = angular.module('firstapp', [
 
 firstapp.config(function ($stateProvider, $urlRouterProvider, $httpProvider, cfpLoadingBarProvider) {
 
-	cfpLoadingBarProvider.includeSpinner = true;
+	cfpLoadingBarProvider.includeSpinner = false;
 	cfpLoadingBarProvider.includeBar = true;
-	cfpLoadingBarProvider.spinnerTemplate = '<div><span class="fa fa-spinner">Loading...</div>';
 	// for http request with session
 	$httpProvider.defaults.withCredentials = true;
 
@@ -97,7 +96,7 @@ firstapp.config(function ($stateProvider, $urlRouterProvider, $httpProvider, cfp
 			controller: 'CartCtrl'
 		})
 		.state('product-detail', {
-			url: "/product-detail",
+			url: "/product-detail/:id",
 			templateUrl: "views/template.html",
 			controller: 'ProductDetailCtrl'
 		})
