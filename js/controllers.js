@@ -451,6 +451,8 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
             _.each($scope.products, function(n) {
                 n.mainImg = n.image[0];
             });
+        } else {
+            $scope.products = [];
         }
     })
 

@@ -16,7 +16,7 @@
     </div>
 </section>
 <section>
-    <div class="container">
+    <div class="container" ng-if="cartItems.length>0">
         <div class="row">
             <div class="col-md-12">
                 <div class="order-table">
@@ -141,6 +141,19 @@
                         <button type="submit" class="btn-blue btn btn-danger text-center btn-strong">CONTINUE SHOPPING</button>
                         <button type="submit" class="btn-blue btn btn-danger text-center btn-strong ml8">NEXT</button>
                     </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container" ng-if="cartItems.length==0">
+        <div class="row">
+            <div class="col-md-12 col-xs-12">
+                <div class="text-center">
+                    <img src="img/mini-logo.png">
+                    <h3>Your Cart Is Empty !!</h3>
+                    <a href="#/home">
+                    <button type="submit" class="btn-blue btn btn-danger text-center btn-strong">CONTINUE SHOPPING</button>
+                    </a>
                 </div>
             </div>
         </div>
