@@ -42,7 +42,7 @@ Kit Lens) DSLR Camera <span class="grey-col">(Black)</span></h3> -->
                                             <li>• with 3 inch LCD</li>
                                         </ul> -->
                                         <ul>
-                                            <li ng-repeat="spec in productDetail.keyword">• {{spec.name}}</li>
+                                            <li ng-repeat="spec in productDetail.keyword">• {{spec.name|cut:false:7:' . . .'}}</li>
                                         </ul>
                                     </div>
                                 </div>
