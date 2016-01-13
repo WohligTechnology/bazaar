@@ -63,6 +63,13 @@ var navigationservice = angular.module('navigationservice', [])
 				}
 			}).success(callback);
 		},
+		getAllCategories: function (callback) {
+			$http({
+				url: adminurl + 'category/find',
+				method: 'POST',
+				withCredentials: true
+			}).success(callback);
+		},
 		logout: function (callback) {
 			$http.get(adminurl + 'user/logout').success(callback);
 		},
