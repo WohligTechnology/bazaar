@@ -3,6 +3,12 @@ $screen-sm: 768px !default;
 $screen-md: 992px !default;
 $screen-lg: 1200px !default;
 @media (max-width: $screen-xs-min) {
+  .pl-l{
+    text-align:center;
+  }
+  .pl-r{
+    text-align: center;
+  }
   .mt135 {
     margin-top: 50px;
 }
