@@ -9,10 +9,13 @@
                     </div>
                     <div class="slid">
                         <flex-slider class="carousel" flex-slide="s in productDetail.image track by $index" animation="slide" item-width="60">
-                            <li ng-click="changeImage($index);">
-                                <div class="img-slide-hold">
-                                    <img ng-src="{{s | uploadpath}}">
-                                </div>
+                            <li ng-click="changeImage($index);" class="ml8">
+                              <div class="thumbContainer">
+                              <div class="thumb" ng-style="{'background-image':'url({{s|uploadpath}})'}"></div>
+                                <!-- <div class="img-slide-hold">
+                                    <img ng-src="">
+                                </div> -->
+                              </div>
                             </li>
                         </flex-slider>
                     </div>

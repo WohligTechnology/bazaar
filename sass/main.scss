@@ -1148,7 +1148,7 @@ textarea.form-control {
 }
 
 .ml8 {
-    margin-left: 8px;
+    margin-left: 8px !important;
 }
 
 .i-cl {
@@ -1760,11 +1760,20 @@ textarea.form-control {
     cursor: pointer;
 }
 .thumb{
-  width: 70px;
-height: 75px;
+  width: 60px;
+height: 60px;
 background-repeat: no-repeat;
 background-position: center;
 background-size: contain;
+}
+.thumbContainer {
+  border: 1px solid #080808;
+    padding: 2px;
+    cursor: pointer;
+    /* margin-left: 5px; */
+    text-align: center;
+    margin: 0 auto;
+    display: flex;
 }
 #loading-bar .bar {
     background: #ee283c !important;
