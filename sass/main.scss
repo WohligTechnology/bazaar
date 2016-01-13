@@ -947,6 +947,7 @@ textarea.form-control {
 .pr6 {
     vertical-align: middle;
     padding-right: 6px;
+      display: inherit !important;
 }
 .check-price {
     text-align: left;
@@ -964,6 +965,7 @@ textarea.form-control {
         }
         i {
             @extend .pr6;
+
         }
     }
 }
