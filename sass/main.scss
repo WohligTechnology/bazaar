@@ -284,7 +284,7 @@ ul {
     max-width: 100%;
     height: 215px;
     overflow: hidden;
-    display: inline-block;
+
     margin: -40px 0px -35px 70px;
     img {
         max-width: 100%;
@@ -397,7 +397,7 @@ ul {
             &:first-child {
                 font-weight: 500;
             }
-          
+
             a {
                 text-transform: capitalize;
             }
@@ -1537,5 +1537,26 @@ textarea.form-control {
             opacity: 1;
         }
     }
+}
+.img-slide-hold img{
+  cursor: pointer;
+}
+#loading-bar .bar {
+  background: #ee283c !important;
+
+}
+#loading-bar-spinner .spinner-icon {
+
+  border-top-color:#ee283c !important;
+  border-left-color: #ee283c !important;
+
+}
+#loading-bar .peg {
+
+  -moz-box-shadow: #ee283c 1px 0 6px 1px !important;
+  -ms-box-shadow: #ee283c 1px 0 6px 1px !important;
+  -webkit-box-shadow: #ee283c 1px 0 6px 1px !important;
+  box-shadow: #ee283c 1px 0 6px 1px !important;
+
 }
 @import "mobile";
