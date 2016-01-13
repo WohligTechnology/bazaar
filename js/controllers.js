@@ -629,6 +629,27 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         isFirstDisabled: false
     };
 })
+.controller('404notfoundCtrl', function($scope, TemplateService, NavigationService) {
+    $scope.template = TemplateService.changecontent("404notfound");
+    $scope.menutitle = NavigationService.makeactive("404NotFound");
+    TemplateService.title = $scope.menutitle;
+    $scope.navigation = NavigationService.getnav();
+
+})
+.controller('ThankyouCtrl', function($scope, TemplateService, NavigationService) {
+    $scope.template = TemplateService.changecontent("thankyou");
+    $scope.menutitle = NavigationService.makeactive("Thankyou");
+    TemplateService.title = $scope.menutitle;
+    $scope.navigation = NavigationService.getnav();
+
+})
+.controller('ErrorCtrl', function($scope, TemplateService, NavigationService) {
+    $scope.template = TemplateService.changecontent("error");
+    $scope.menutitle = NavigationService.makeactive("Error");
+    TemplateService.title = $scope.menutitle;
+    $scope.navigation = NavigationService.getnav();
+
+})
 
 .controller('headerctrl', function($scope, TemplateService, $uibModal, NavigationService, $timeout) {
     $scope.template = TemplateService;

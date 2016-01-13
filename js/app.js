@@ -70,6 +70,21 @@ firstapp.config(function ($stateProvider, $urlRouterProvider, $httpProvider, cfp
 			templateUrl: "views/template.html",
 			controller: 'ProfileCtrl'
 		})
+		.state('404notfound', {
+			url: "/404notfound",
+			templateUrl: "views/template.html",
+			controller: '404notfoundCtrl'
+		})
+		.state('thankyou', {
+			url: "/thankyou",
+			templateUrl: "views/template.html",
+			controller: 'ThankyouCtrl'
+		})
+		.state('error', {
+			url: "/error",
+			templateUrl: "views/template.html",
+			controller: 'ErrorCtrl'
+		})
 		.state('orders', {
 			url: "/orders",
 			templateUrl: "views/template.html",
