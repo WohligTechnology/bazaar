@@ -20,11 +20,12 @@
         <div class="row">
             <div class="col-md-12">
                 <div class="order-table">
+                  	<div class="tbl-wt">
                     <table class="table">
                         <thead>
                             <tr class="text-center desktop">
                                 <th>ITEM</th>
-                                <th>QTY</th>
+                                <th colspan="2">QTY</th>
                                 <th colspan="2">PRICE</th>
                                 <th>DELIVERY DETAILS</th>
                                 <th>SUBTOTAL</th>
@@ -57,11 +58,17 @@
                                         </tr>
                                     </table>
                                 </td>
-                                <td>
-                                    <span class="pad-all-side">
-                                        <i class="fa fa-minus i-cl" ng-click="decreaseQuantity(cart);"></i>
-                                        <p class="uty">{{cart.quantity}}</p>
-                                        <i class="fa fa-plus i-cl" ng-click="increaseQuantity(cart);"></i>
+                                <td colspan="2">
+                                    <span class="pad-all-side pd-zero">
+                                    <!-- <ul>
+                                      <li><i class="fa fa-minus " ng-click="decreaseQuantity(cart);"></i></li>
+                                      <li><p class="">{{cart.quantity}}</p></li>
+                                      <li><i class="fa fa-plus i-cl" ng-click="increaseQuantity(cart);"></i> </li>
+                                    </ul> -->
+
+                                        <i class="fa fa-minus i-cl d-all" ng-click="decreaseQuantity(cart);"></i>
+                                        <p class="uty d-block">{{cart.quantity}}</p>
+                                        <i class="fa fa-plus i-cl d-all" ng-click="increaseQuantity(cart);"></i>
                                     </span>
                                 </td>
                                 <td colspan="2">
@@ -123,6 +130,7 @@
                             </tr> -->
                         </tbody>
                     </table>
+                  </div>
                 </div>
             </div>
         </div>
@@ -158,4 +166,14 @@
             </div>
         </div>
     </div>
+    <!-- <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="text-center">
+              <img src="img/mini-logo.png">
+              <h3>Your Cart is Empty !!</h3>
+          </div>
+        </div>
+      </div>
+    </div> -->
 </section>

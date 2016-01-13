@@ -634,6 +634,15 @@ $screen-lg: 1200px !default;
 }
 
 @media (max-width: $screen-lg) {
+  .pd-zero{
+    padding: 0px 0px;
+  }
+  .d-all{
+    display: inherit;
+  }
+  .d-block{
+    display: block;
+  }
      .img-hold {
         position: relative;
         img {
