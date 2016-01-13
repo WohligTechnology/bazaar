@@ -497,7 +497,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
 
 })
 
-.controller('InsuranceCtrl', function($scope, TemplateService, NavigationService) {
+.controller('InsuranceCtrl', function($scope, TemplateService, NavigationService,$uibModal) {
     $scope.template = TemplateService.changecontent("insurance");
     $scope.menutitle = NavigationService.makeactive("Insurance");
     TemplateService.title = $scope.menutitle;
@@ -516,6 +516,15 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         isFirstOpen: true,
         isFirstDisabled: false
     });
+
+    $scope.openCart = function() {
+        $uibModal.open({
+            animation: true,
+            templateUrl: 'views/modal/addtocart.html',
+
+        })
+    };
+
 
     $scope.product = [{
         image: "img/product/p1.jpg",
