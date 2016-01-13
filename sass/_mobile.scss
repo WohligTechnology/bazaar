@@ -3,6 +3,9 @@ $screen-sm: 768px !default;
 $screen-md: 992px !default;
 $screen-lg: 1200px !default;
 @media (max-width: $screen-xs-min) {
+  .mt135 {
+    margin-top: 50px;
+}
     .mt12{
         margin-top: 50px;
     }
@@ -270,6 +273,9 @@ $screen-lg: 1200px !default;
     }
 }
 @media (max-width: $screen-sm-max) {
+  .mt135 {
+    margin-top: 80px;
+}
     .pd-bootm{
         padding-bottom: 0px !important;
     }
