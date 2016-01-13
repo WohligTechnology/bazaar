@@ -229,6 +229,14 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         NavigationService.getUserCart(function(cart) {
             console.log(cart);
             $scope.cartItems = cart;
+            $scope.totalCartPrice = 0;
+            _.each($scope.cartItems, function(n) {
+                if (n.price) {
+                    n.quantity = 1;
+                    n.subTotal = parseInt(n.price);
+                    $scope.totalCartPrice += parseInt(n.price);
+                }
+            })
         })
     }
 
@@ -237,9 +245,26 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     $scope.removeFromCart = function(id) {
         NavigationService.removeFromCart(id, function(data) {
             console.log(data);
-            if (data.value != false)
+            if (data.value != false) {
+                dataNextPre.getUserCart();
+                dataNextPre.messageBox("", "Removed from cart");
                 $scope.getCart();
+            }
         })
+    }
+
+    $scope.increaseQuantity = function(product) {
+        product.quantity += 1;
+        product.subTotal += parseInt(product.price);
+        $scope.totalCartPrice += parseInt(product.price);
+    }
+
+    $scope.decreaseQuantity = function(product) {
+        if (product.quantity > 1) {
+            product.quantity -= 1;
+            product.subTotal -= parseInt(product.price);
+            $scope.totalCartPrice -= parseInt(product.price);
+        }
     }
 
 })
@@ -607,49 +632,49 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
 })
 
 .controller('BuybackvalueCtrl', function($scope, TemplateService, NavigationService) {
-    $scope.template = TemplateService.changecontent("buy-back-value");
-    $scope.menutitle = NavigationService.makeactive("Buy-Back-Value");
-    TemplateService.title = $scope.menutitle;
-    $scope.navigation = NavigationService.getnav();
-    //      $scope.oneAtATime = true;
-    $scope.status = {
-        isFirstOpen: true,
-        isFirstDisabled: false
-    };
-    $scope.statuss = {
-        isFirstOpen: true,
-        isFirstDisabled: false
-    };
-    $scope.status2 = {
-        isFirstOpen: true,
-        isFirstDisabled: false
-    };
-    $scope.status3 = {
-        isFirstOpen: true,
-        isFirstDisabled: false
-    };
-})
-.controller('404notfoundCtrl', function($scope, TemplateService, NavigationService) {
-    $scope.template = TemplateService.changecontent("404notfound");
-    $scope.menutitle = NavigationService.makeactive("404NotFound");
-    TemplateService.title = $scope.menutitle;
-    $scope.navigation = NavigationService.getnav();
+        $scope.template = TemplateService.changecontent("buy-back-value");
+        $scope.menutitle = NavigationService.makeactive("Buy-Back-Value");
+        TemplateService.title = $scope.menutitle;
+        $scope.navigation = NavigationService.getnav();
+        //      $scope.oneAtATime = true;
+        $scope.status = {
+            isFirstOpen: true,
+            isFirstDisabled: false
+        };
+        $scope.statuss = {
+            isFirstOpen: true,
+            isFirstDisabled: false
+        };
+        $scope.status2 = {
+            isFirstOpen: true,
+            isFirstDisabled: false
+        };
+        $scope.status3 = {
+            isFirstOpen: true,
+            isFirstDisabled: false
+        };
+    })
+    .controller('404notfoundCtrl', function($scope, TemplateService, NavigationService) {
+        $scope.template = TemplateService.changecontent("404notfound");
+        $scope.menutitle = NavigationService.makeactive("404NotFound");
+        TemplateService.title = $scope.menutitle;
+        $scope.navigation = NavigationService.getnav();
 
-})
-.controller('ThankyouCtrl', function($scope, TemplateService, NavigationService) {
-    $scope.template = TemplateService.changecontent("thankyou");
-    $scope.menutitle = NavigationService.makeactive("Thankyou");
-    TemplateService.title = $scope.menutitle;
-    $scope.navigation = NavigationService.getnav();
+    })
+    .controller('ThankyouCtrl', function($scope, TemplateService, NavigationService) {
+        $scope.template = TemplateService.changecontent("thankyou");
+        $scope.menutitle = NavigationService.makeactive("Thankyou");
+        TemplateService.title = $scope.menutitle;
+        $scope.navigation = NavigationService.getnav();
 
-})
-.controller('ErrorCtrl', function($scope, TemplateService, NavigationService) {
-    $scope.template = TemplateService.changecontent("error");
-    $scope.menutitle = NavigationService.makeactive("Error");
-    TemplateService.title = $scope.menutitle;
-    $scope.navigation = NavigationService.getnav();
+    })
+    .controller('ErrorCtrl', function($scope, TemplateService, NavigationService) {
+        $scope.template = TemplateService.changecontent("error");
+        $scope.menutitle = NavigationService.makeactive("Error");
+        TemplateService.title = $scope.menutitle;
+        $scope.navigation = NavigationService.getnav();
 
-})
+    })
 
 .controller('headerctrl', function($scope, TemplateService, $uibModal, NavigationService, $timeout) {
     $scope.template = TemplateService;
@@ -675,13 +700,14 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         })
     }
 
-    // dataNextPre.getUserCart();
+    dataNextPre.getUserCart();
+
     dataNextPre.addToCart = function(productId) {
         NavigationService.addToCart(productId, function(data) {
             console.log(data);
             if (data.value == true) {
                 dataNextPre.getUserCart();
-                dataNextPre.messageBox("Congratulation !!", "Added to cart");
+                dataNextPre.messageBox("Congratulations !!", "Added to cart");
             } else {
                 dataNextPre.messageBox("Thank You !!", "Already in cart");
             }
@@ -701,7 +727,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
 
         $timeout(function() {
             myModal.dismiss('cancel');
-        }, 2000);
+        }, 3000);
     }
 
     NavigationService.getUserProfile(function(data) {
@@ -712,9 +738,6 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
                 $scope.profile.name = data.firstname + " " + data.lastname;
             else {
                 $scope.profile.name = data.name;
-            }
-            if (data.cart) {
-                $scope.cartCount = data.cart.length;
             }
         }
     })
@@ -747,7 +770,8 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
             console.log(data);
             if (data.value == false) {
                 $scope.showInvalidLogin = true;
-            } else if (data.value == "http://wohlig.co.in/tagboss") {
+            } else if (data == "http://wohlig.co.in/tagboss") {
+                // } else if (data.value == "http://wohlig.co.in/tagboss") {
                 window.location.reload();
             }
         });
@@ -758,6 +782,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
             console.log(data);
             if (data.value == true) {
                 $scope.hideLogin = false;
+                window.location.reload();
             }
         })
     }

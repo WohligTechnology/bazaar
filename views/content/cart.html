@@ -57,7 +57,13 @@
                                         </tr>
                                     </table>
                                 </td>
-                                <td><span class="pad-all-side"><i class="fa fa-minus i-cl"></i><p class="uty">01</p><i class="fa fa-plus i-cl"></i></span></td>
+                                <td>
+                                    <span class="pad-all-side">
+                                        <i class="fa fa-minus i-cl" ng-click="decreaseQuantity(cart);"></i>
+                                        <p class="uty">{{cart.quantity}}</p>
+                                        <i class="fa fa-plus i-cl" ng-click="increaseQuantity(cart);"></i>
+                                    </span>
+                                </td>
                                 <td colspan="2">
                                     <div class="check-price">
                                         <span class="pad-all-side"><i class="fa fa-inr pr6 dis-in"></i>{{cart.price|currency:""}}</span>
@@ -70,7 +76,7 @@
                                     </div>
                                 </td>
                                 <td>
-                                    <span class="pad-all-side"><i class="fa fa-inr pr6 dis-in"></i>24,712.00</span>
+                                    <span class="pad-all-side"><i class="fa fa-inr pr6 dis-in"></i>{{cart.subTotal|currency:""}}</span>
                                 </td>
                             </tr>
                             <!-- <tr class="text-center text-bold t-border-none bord-right">
@@ -123,7 +129,7 @@
         <div class="row mar-btm">
             <div class="col-md-offset-8 col-md-4">
                 <div class="list pull-right category display-inline">
-                    <p> <span>ESTIMATED TOTAL:</span><i class="fa fa-inr"></i>24,712.00</p>
+                    <p> <span>ESTIMATED TOTAL:</span><i class="fa fa-inr"></i>{{totalCartPrice|currency:""}}</p>
                     </span>
                 </div>
             </div>
