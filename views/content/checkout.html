@@ -10,7 +10,6 @@
                         <img src="img/mini-logo.png">
                         <h4>CHECKOUT</h4>
                     </div>
-
                 </div>
             </div>
         </div>
@@ -38,60 +37,59 @@
                             <a href=""><img src="img/account/s4.png"></a>
                             </a>
                         </li>
-
                     </ul>
                 </div>
             </div>
         </div>
-
     </div>
     <div class="container">
         <div class="btop mt8">
             <section>
-
                 <div ng-show="tab=='step1'" class="mt30">
                     <div class="row">
                         <div class="col-md-offset-1 col-md-4 col-sm-offset-1 col-sm-5">
-                            <div class="login-form content-view pad0">
-                                <h4 class="login">LOGIN</h4>
-                                <div class="form-group info">
-
-                                    <input type="email" class="form-control" placeholder="EMAIL ADDRESS">
-                                </div>
-                                <div class="form-group info">
-
-                                    <input type="password" class="form-control" placeholder="PASSWORD">
-                                </div>
-
-
-                            </div>
-                            <div class="row">
-                                <div class="col-md-5 col-sm-offset-1 col-sm-4 col-xs-offset-1 col-xs-5">
-                                    <button class="btn btn-danger mar0 con-btn btn-strong">LOG IN</button>
-                                </div>
-                                <div class="col-md-5 col-sm-5 col-xs-6">
-                                    <div class="class-forget">
-                                        <p>Forgot Password?</p>
+                            <form ng-submit="loginUser()">
+                                <div class="login-form content-view pad0">
+                                    <h4 class="login">LOGIN</h4>
+                                    <div class="form-group info">
+                                        <input type="email" class="form-control" placeholder="EMAIL ADDRESS" ng-model="login.email" required>
                                     </div>
-
+                                    <div class="form-group info">
+                                        <input type="password" class="form-control" placeholder="PASSWORD" ng-model="login.password" required>
+                                    </div>
                                 </div>
-                            </div>
+                                <div class="row">
+                                    <div class="col-md-5 col-sm-offset-1 col-sm-4 col-xs-offset-1 col-xs-5">
+                                        <button class="btn btn-danger mar0 con-btn btn-strong" type="submit">LOG IN</button>
+                                    </div>
+                                    <div class="col-md-5 col-sm-5 col-xs-6">
+                                        <div class="class-forget">
+                                            <p>Forgot Password?</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="form-group text-center" ng-if="showInvalidLogin==true">
+                                        <p>Invalid login credentials</p>
+                                    </div>
+                                </div>
+                            </form>
                             <div class="text-center list">
                                 <p class="forget margin0 pt15">OR</p>
                                 <p class="forget">LOGIN VIA</p>
                                 <div class="button-set">
                                     <button class="btn btn-facebook pad-btn">
-                                        <a href="">
+                                        <a href="http://tagboss.wohlig.com/user/loginf">
                                             <i class="fa fa-facebook social-f"></i>
                                         </a>
                                     </button>
                                     <button class="btn btn-google pad-btn">
-                                        <a href="">
+                                        <a href="http://tagboss.wohlig.com/user/loging">
                                             <i class="fa fa-google-plus"></i>
                                         </a>
                                     </button>
                                     <button class="btn btn-twitter pad-btn">
-                                        <a href="">
+                                        <a href="http://tagboss.wohlig.com/user/logint">
                                             <i class="fa fa-twitter"></i>
                                         </a>
                                     </button>
@@ -99,60 +97,60 @@
                             </div>
                         </div>
                         <div class="col-md-offset-1 col-md-5 col-sm-offset-1 col-sm-5">
-                            <div class="login-form content-view pad0 mt12">
-                                <h4>SIGN UP</h4>
-                                <div class="form-group info">
-
-                                    <input type="text" class="form-control" placeholder="FIRST NAME">
+                            <form ng-submit="registerUser()">
+                                <div class="login-form content-view pad0 mt12">
+                                    <h4>SIGN UP</h4>
+                                    <div class="form-group info">
+                                        <input type="text" class="form-control" placeholder="FIRST NAME" ng-model="register.firstname" required>
+                                    </div>
+                                    <div class="form-group info">
+                                        <input type="text" class="form-control" placeholder="LAST NAME" ng-model="register.lastname" required>
+                                    </div>
+                                    <div class="form-group info">
+                                        <input type="email" class="form-control" placeholder="EMAIL ADDRESS" ng-model="register.email" required>
+                                    </div>
+                                    <div class="form-group info">
+                                        <input type="password" class="form-control" placeholder="PASSWORD" ng-model="register.password" required>
+                                    </div>
+                                    <div class="form-group info">
+                                        <input type="password" class="form-control" placeholder="CONFIRM PASSWORD" ng-model="register.confirmpassword" required>
+                                    </div>
+                                    <div class="form-group info">
+                                        <input type="number" class="form-control" placeholder="MOBILE NUMBER" ng-model="register.mobile">
+                                    </div>
+                                    <div class="form-group i-check">
+                                        <input type="checkbox" class="iagree" ng-model="register.check" required>I agree with the terms & conditions and privacy policy
+                                    </div>
+                                    <div class="form-group text-center" ng-if="showAlreadyRegistered==true">
+                                        <p>Email id already registered</p>
+                                    </div>
+                                    <div class="form-group text-center" ng-if="invalidPassword==true">
+                                        <p>Password mismatch</p>
+                                    </div>
                                 </div>
-                                <div class="form-group info">
-
-                                    <input type="text" class="form-control" placeholder="LAST NAME">
+                                <div class="text-center list mar-btm">
+                                    <button class="btn btn-danger mar0 btn-strong" type="submit">REGISTER</button>
+                                    <p class="forget margin0 pt15">OR</p>
+                                    <p class="forget">LOGIN VIA</p>
+                                    <div class="button-set">
+                                        <button class="btn btn-facebook pad-btn">
+                                            <a href="http://tagboss.wohlig.com/user/loginf">
+                                                <i class="fa fa-facebook social-f"></i>
+                                            </a>
+                                        </button>
+                                        <button class="btn btn-google pad-btn">
+                                            <a href="http://tagboss.wohlig.com/user/loging">
+                                                <i class="fa fa-google-plus"></i>
+                                            </a>
+                                        </button>
+                                        <button class="btn btn-twitter pad-btn">
+                                            <a href="http://tagboss.wohlig.com/user/logint">
+                                                <i class="fa fa-twitter"></i>
+                                            </a>
+                                        </button>
+                                    </div>
                                 </div>
-                                <div class="form-group info">
-
-                                    <input type="email" class="form-control" placeholder="EMAIL ADDRESS">
-                                </div>
-                                <div class="form-group info">
-
-                                    <input type="password" class="form-control" placeholder="PASSWORD">
-                                </div>
-                                <div class="form-group info">
-
-                                    <input type="password" class="form-control" placeholder="CONFIRM PASSWORD">
-                                </div>
-                                <div class="form-group info">
-
-                                    <input type="number" class="form-control" placeholder="MOBILE NUMBER">
-                                </div>
-                                <div class="form-group i-check">
-
-                                    <input type="checkbox" name="vehicle" value="Bike" class="iagree">I agree with the terms & conditions and privacy policy
-                                </div>
-                            </div>
-                            <div class="text-center list mar-btm">
-                                <button class="btn btn-danger mar0 btn-strong">REGISTER</button>
-                                <p class="forget margin0 pt15">OR</p>
-                                <p class="forget">LOGIN VIA</p>
-                                <div class="button-set">
-                                    <button class="btn btn-facebook pad-btn">
-                                        <a href="">
-                                            <i class="fa fa-facebook social-f"></i>
-                                        </a>
-                                    </button>
-                                    <button class="btn btn-google pad-btn">
-                                        <a href="">
-                                            <i class="fa fa-google-plus"></i>
-                                        </a>
-                                    </button>
-                                    <button class="btn btn-twitter pad-btn">
-                                        <a href="">
-                                            <i class="fa fa-twitter"></i>
-                                        </a>
-                                    </button>
-                                </div>
-                                <p class="already pt15">Already Registerd? Log In</p>
-                            </div>
+                            </form>
                         </div>
                     </div>
                 </div>
@@ -167,223 +165,187 @@
                                         <tr class="text-center desktop">
                                             <th>ITEM</th>
                                             <th>QTY</th>
-                                            <th colspan="2">PRICE &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  </th>
+                                            <th colspan="2">PRICE &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </th>
                                             <th>DELIVERY DETAILS</th>
                                             <th>SUBTOTAL</th>
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <tr class="text-center text-bold t-border-none bord-right">
+                                        <tr class="text-center text-bold t-border-none bord-right" ng-repeat="cart in cartItems.cartItems">
                                             <td>
                                                 <table class="table custom-tb t-border-none">
                                                     <tr>
                                                         <td>
                                                             <div class="check-img display-inline">
-                                                                <img src="img/product/c1.jpg" class="img-responsive mauto" >
+                                                                <img ng-src="{{cart.image[0]|uploadpath}}" class="img-responsive mauto">
                                                             </div>
-
                                                         </td>
                                                         <td>
-                                                           <div class="w200">
-                                                <p>Nikon D3300 (Body with AF-S 18-55 mm VR II Kit Lens) DSLR Camera</p>
-                                                <p><span>Color:</span> Black</p>
-                                                </div>  
+                                                            <div class="w200">
+                                                                <p>{{cart.name}}</p>
+                                                                <p><span>Color:</span> Black</p>
+                                                            </div>
                                                         </td>
                                                     </tr>
                                                     <tr>
                                                         <td>
-            <div class="return-policy"> <i class="fa fa-check-circle"></i> <span class="applicable-policy">30 Days Replacement</span> </div>
+                                                            <div class="return-policy"> <i class="fa fa-check-circle"></i> <span class="applicable-policy">30 Days Replacement</span> </div>
                                                         </td>
                                                     </tr>
                                                 </table>
-
                                             </td>
-                                            <td><span class="pad-all-side">01</span></td>
+                                            <td><span class="pad-all-side">{{cart.quantity}}</span></td>
                                             <td colspan="2">
                                                 <div class="check-price">
-                                                    <span class="pad-all-side"><i class="fa fa-inr pr6"></i>24,712.00</span>
+                                                    <span class="pad-all-side"><i class="fa fa-inr pr6"></i>{{cart.price|currency:""}}</span>
                                                 </div>
                                             </td>
-                                            <td >
+                                            <td>
                                                 <div class="check-price">
                                                     <span class="col-red">FREE:</span>
                                                     <p>Delivered in 2-3 business days</p>
                                                 </div>
                                             </td>
-
                                             <td>
-                                                <span class="pad-all-side"><i class="fa fa-inr pr6"></i>24,712.00</span>
-
+                                                <span class="pad-all-side"><i class="fa fa-inr pr6"></i>{{cart.subTotal|currency:""}}</span>
                                             </td>
                                         </tr>
-
                                     </tbody>
                                 </table>
                             </div>
-
                         </div>
-
                     </div>
                     <div class="row mar-btm">
                         <div class="col-md-offset-8 col-md-4">
-                        
-                                    <div class="list pull-right category display-inline">
-                                       <p> <span>ESTIMATED TOTAL:</span><i class="fa fa-inr"></i>24,712.00</p></span>
-
-                                    </div>
-                     
+                            <div class="list pull-right category display-inline">
+                                <p> <span>ESTIMATED TOTAL:</span><i class="fa fa-inr"></i>{{cartItems.totalCartPrice|currency:""}}</p>
+                                </span>
+                            </div>
                         </div>
                     </div>
-                     <div class="row">
-                               <div class="btop">
-                                <div class="col-md-12">
-                                    <div class="pull-right pt15">
-                                        <button type="submit" class="btn-blue btn btn-danger text-center btn-strong">NEXT</button>
-                                    </div>
-                                </div>
+                    <div class="row">
+                        <div class="btop">
+                            <div class="col-md-12">
+                                <div class="pull-right pt15">
+                                    <button type="submit" class="btn-blue btn btn-danger text-center btn-strong" ng-click="tabchange('step3',3)">NEXT</button>
                                 </div>
                             </div>
+                        </div>
+                    </div>
                 </div>
             </section>
             <section>
-                <div ng-show="tab=='step3'" class="mt30">
-                    <div class="row">
-                        <div class="col-md-12 content-view paddbtm" style="padding-left:15px;">
-                            <h4 class="login ">YOUR DETAILS</h4>
-                        </div>
-
-                    </div>
-                    <div class="row content-view">
-                        <div class="col-md-3 col-sm-3">
-                            <div class="form-group">
-
-                                <input type="email" class="form-control" placeholder="FIRST NAME">
+                <form ng-submit="placeOrder();">
+                    <div ng-show="tab=='step3'" class="mt30">
+                        <div class="row">
+                            <div class="col-md-12 content-view paddbtm" style="padding-left:15px;">
+                                <h4 class="login ">YOUR DETAILS</h4>
                             </div>
                         </div>
-                        <div class="col-md-3 col-sm-3">
-                            <div class="form-group">
-
-                                <input type="email" class="form-control" placeholder="LAST NAME">
+                        <div class="row content-view">
+                            <div class="col-md-3 col-sm-3">
+                                <div class="form-group">
+                                    <input type="text" class="form-control" placeholder="FIRST NAME" ng-model="userData.firstname" required>
+                                </div>
+                            </div>
+                            <div class="col-md-3 col-sm-3">
+                                <div class="form-group">
+                                    <input type="text" class="form-control" placeholder="LAST NAME" ng-model="userData.lastname" required>
+                                </div>
+                            </div>
+                            <div class="col-md-3 col-sm-3">
+                                <div class="form-group">
+                                    <input type="text" class="form-control" placeholder="MOBILE NUMBER" ng-trim="false" only-digits maxlength="10" ng-model="userData.mobile" required>
+                                </div>
+                            </div>
+                            <div class="col-md-3 col-sm-3">
+                                <div class="form-group">
+                                    <input type="email" class="form-control" placeholder="EMAIL ADDRESS" ng-model="userData.email" required>
+                                </div>
                             </div>
                         </div>
-                        <div class="col-md-3 col-sm-3">
-                            <div class="form-group">
-
-                                <input type="email" class="form-control" placeholder="MOBILE NUMBER ">
-                            </div>
-                        </div>
-                        <div class="col-md-3 col-sm-3">
-                            <div class="form-group">
-
-                                <input type="email" class="form-control" placeholder="EMAIL ADDRESS">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-3 col-sm-4">
-                          
-                               <div class="login-h mt30">
-                                <h4 class="login">BILLING ADDRESS</h4>
+                        <div class="row">
+                            <div class="col-md-3 col-sm-4">
+                                <div class="login-h mt30">
+                                    <h4 class="login">BILLING ADDRESS</h4>
                                 </div>
-                                 <div class="form-group">
-                                
-                                    <input type="text" class="form-control" placeholder="LINE 1*">
+                                <div class="form-group">
+                                    <input type="text" class="form-control" placeholder="LINE 1*" ng-model="userData.billing.line1" required>
                                 </div>
-                                  <div class="form-group">
-                                  
-                                    <input type="text" class="form-control" placeholder="LINE 2">
+                                <div class="form-group">
+                                    <input type="text" class="form-control" placeholder="LINE 2" ng-model="userData.billing.line2">
                                 </div>
-                                  <div class="form-group">
-                                  
-                                    <input type="text" class="form-control" placeholder="LINE 3">
+                                <div class="form-group">
+                                    <input type="text" class="form-control" placeholder="LINE 3" ng-model="userData.billing.line3">
                                 </div>
-                                 <div class="form-group">
-                                  
-                                    <input type="text" class="form-control" placeholder="CITY">
+                                <div class="form-group">
+                                    <input type="text" class="form-control" placeholder="CITY*" ng-model="userData.billing.city" required>
                                 </div>
-                                  <div class="form-group">
-                                    
-                                    <input type="number" class="form-control" placeholder="PINCODE">
+                                <div class="form-group">
+                                    <input type="text" class="form-control" placeholder="PINCODE*" ng-model="userData.billing.pincode" only-digits maxlength="6" ng-trim="false" required>
                                 </div>
-                                          <div class="form-group">
-                                   
+                                <div class="form-group">
+                                    <input type="text" class="form-control" placeholder="STATE*" ng-model="userData.billing.state" required>
+                                </div>
+                                <div class="form-group">
                                     <div class="renew-select gray-select">
-                                        <select class="form-control">
-                                            <option value="">STATE</option>
-                                            <option value="2">2</option>
-                                            <option value="3">3</option>
-                                            <option value="4">4</option>
+                                        <select class="form-control" ng-model="userData.billing.country" required>
+                                            <option value="">Please Select Country*</option>
+                                            <option value="{{country.name}}" ng-repeat="country in allCountries">{{country.name}}</option>
                                         </select>
                                         <span class="only-border"></span>
                                     </div>
                                 </div>
-                                 <div class="form-group">
-                                   
-                                    <input type="password" class="form-control" placeholder="COUNTRY">
-                                </div>
-
-                        
-                        </div>
-                        <div class="col-md-2 hidden-xs"></div>
-                        <div class="col-md-3 col-sm-offset-1 col-sm-5">
-                            <div class="login-form content-view pad0">
-                               <div class="mt30 ">
-                                <h4 class="login ">SHIPPING ADDRESS</h4>
-                                </div>
-                                <div class="form-group i-check">
-
-                                    <input type="checkbox" name="vehicle" value="Bike" class="iagree">Same as billing address
-                                </div>
-                              <div class="form-group">
-                                
-                                    <input type="text" class="form-control" placeholder="LINE 1*">
-                                </div>
-                                  <div class="form-group">
-                                  
-                                    <input type="text" class="form-control" placeholder="LINE 2">
-                                </div>
-                                  <div class="form-group">
-                                  
-                                    <input type="text" class="form-control" placeholder="LINE 3">
-                                </div>
-                                 <div class="form-group">
-                                  
-                                    <input type="text" class="form-control" placeholder="CITY">
-                                </div>
-                                  <div class="form-group">
-                                    
-                                    <input type="number" class="form-control" placeholder="PINCODE">
-                                </div>
-                                          <div class="form-group">
-                                   
-                                    <div class="renew-select gray-select">
-                                        <select class="form-control">
-                                            <option value="">STATE</option>
-                                            <option value="2">2</option>
-                                            <option value="3">3</option>
-                                            <option value="4">4</option>
-                                        </select>
-                                        <span class="only-border"></span>
+                            </div>
+                            <div class="col-md-2 hidden-xs"></div>
+                            <div class="col-md-3 col-sm-offset-1 col-sm-5">
+                                <div class="login-form content-view pad0">
+                                    <div class="mt30 ">
+                                        <h4 class="login ">SHIPPING ADDRESS</h4>
+                                    </div>
+                                    <div class="form-group i-check">
+                                        <input type="checkbox" name="vehicle" class="iagree" ng-model="sameChecked">Same as billing address
+                                    </div>
+                                    <div class="" ng-if="sameChecked==false">
+                                        <div class="form-group">
+                                            <input type="text" class="form-control" placeholder="LINE 1*" ng-model="userData.shipping.line1" required>
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="text" class="form-control" placeholder="LINE 2" ng-model="userData.shipping.line2">
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="text" class="form-control" placeholder="LINE 3" ng-model="userData.shipping.line3">
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="text" class="form-control" placeholder="CITY*" ng-model="userData.shipping.city" required>
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="text" class="form-control" placeholder="PINCODE" ng-model="userData.shipping.pincode" only-digits maxlength="6" ng-trim="false" required>
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="text" class="form-control" placeholder="STATE*" ng-model="userData.shipping.state" required>
+                                        </div>
+                                        <div class="form-group">
+                                            <div class="renew-select gray-select">
+                                                <select class="form-control" ng-model="userData.shipping.country" required>
+                                                    <option value="">Please Select Country*</option>
+                                                    <option value="{{country.name}}" ng-repeat="country in allCountries">{{country.name}}</option>
+                                                </select>
+                                                <span class="only-border"></span>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
-                                 <div class="form-group">
-                                   
-                                    <input type="password" class="form-control" placeholder="COUNTRY">
-                                </div>
-
-
                             </div>
                         </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-12 content-view paddbtm m-45">
-                            <h4 class="login pl20">PAYMENT METHOD</h4>
-                        </div>
-                        <div class="payment-method renew-content-footer pl12 pl20">
-                            <ul>
-                                <li>
+                        <div class="row">
+                            <div class="col-md-12 content-view paddbtm m-45">
+                                <h4 class="login pl20">PAYMENT METHOD</h4>
+                            </div>
+                            <div class="payment-method renew-content-footer pl12 pl20">
+                                <ul>
+                                    <!-- <li>
                                     <div class="form-group radio-cust">
-
                                         <input type="radio" id="radio01" name="radio" />
                                         <label for="radio01"><span></span>CREDIT CARD</label>
                                     </div>
@@ -399,56 +361,53 @@
                                         <input type="radio" id="radio03" name="radio" />
                                         <label for="radio03"><span></span>NET BANKING</label>
                                     </div>
-                                </li>
-                                <li>
-                                   <div class="form-group radio-cust">
-                                    <input type="radio" id="radio04" name="radio" />
-                                    <label for="radio04"><span></span>CASH ON DELIVERY</label>
-                                    </div>
-                                     </li>
-                        </ul>
-                        </div>
-                       
-                    </div>
-
-                    <div class="row">
-                        <div class="pl12 pl20">
-                            <button class="btn btn-danger m-30 con-btn btn-strong" data-toggle="modal" data-target="#myModal">CONTINUE</button>
-                        </div>
-                    </div>
-
-                </div>
-                 </section>
-                <!-- Modal -->
-                <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-                    <div class="modal-dialog" role="document">
-                        <div class="modal-content custom-modal">
-                            <div class="modal-header">
-<!--                                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>-->
-                                <h4 class="modal-title text-center" id="myModalLabel">OTP VERIFICATION</h4>
+                                </li> -->
+                                    <li>
+                                        <div class="form-group radio-cust">
+                                            <input type="radio" id="radio04" name="radio" value="CASH ON DELIVERY" ng-model="cartItems.paymentType" />
+                                            <label for="radio04"><span></span>CASH ON DELIVERY</label>
+                                        </div>
+                                    </li>
+                                </ul>
                             </div>
-                            <div class="modal-body">
-                                <div class="row">
-                                    <div class="col-md-offset-3 col-md-6">
-                                        <div class="otp text-center">
-                                            <h4 class="m-font">Please enter your OTP number sent to your
-registered mobile number.</h4>
-                                        </div>
-                                        <div class="otp-input">
-                                            <input type="tele" class="form-control">
-                                        </div>
+                        </div>
+                        <div class="row">
+                            <div class="pl12 pl20">
+                                <!-- <button class="btn btn-danger m-30 con-btn btn-strong" data-toggle="modal" data-target="#myModal">CONTINUE</button> -->
+                                <button class="btn btn-danger m-30 con-btn btn-strong" type="submit">CONTINUE</button>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </section>
+            <!-- Modal -->
+            <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content custom-modal">
+                        <div class="modal-header">
+                            <!--                                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>-->
+                            <h4 class="modal-title text-center" id="myModalLabel">OTP VERIFICATION</h4>
+                        </div>
+                        <div class="modal-body">
+                            <div class="row">
+                                <div class="col-md-offset-3 col-md-6">
+                                    <div class="otp text-center">
+                                        <h4 class="m-font">Please enter your OTP number sent to your registered mobile number.</h4>
+                                    </div>
+                                    <div class="otp-input">
+                                        <input type="tele" class="form-control">
                                     </div>
                                 </div>
-
                             </div>
-                            <div class="modal-footer">
-                                <!--        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>-->
-                                <button type="button" class="btn btn-primary btn-strong">SUBMIT</button>
-                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <!--        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>-->
+                            <button type="button" class="btn btn-primary btn-strong">SUBMIT</button>
                         </div>
                     </div>
                 </div>
+            </div>
         </div>
-        </section>
-    </div>
-    </div>
+</section>
+</div>
+</div>

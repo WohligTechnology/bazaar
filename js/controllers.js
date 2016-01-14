@@ -189,6 +189,13 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     $scope.menutitle = NavigationService.makeactive("Orders");
     TemplateService.title = $scope.menutitle;
     $scope.navigation = NavigationService.getnav();
+
+    NavigationService.getMyOrders(function(data) {
+        if (data.value != false)
+            $scope.myOrders = data;
+        console.log(data);
+    })
+
 })
 
 .controller('FooterCtrl', function($scope, TemplateService, NavigationService) {
@@ -219,7 +226,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
 
 })
 
-.controller('CartCtrl', function($scope, TemplateService, NavigationService) {
+.controller('CartCtrl', function($scope, TemplateService, NavigationService, $state) {
     $scope.template = TemplateService.changecontent("cart");
     $scope.menutitle = NavigationService.makeactive("Cart");
     TemplateService.title = $scope.menutitle;
@@ -265,6 +272,14 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
             product.subTotal -= parseInt(product.price);
             $scope.totalCartPrice -= parseInt(product.price);
         }
+    }
+
+    $scope.goToCheckout = function() {
+        var myCart = {};
+        myCart.cartItems = $scope.cartItems;
+        myCart.totalCartPrice = $scope.totalCartPrice;
+        $.jStorage.set("myCart", myCart);
+        $state.go("checkout");
     }
 
 })
@@ -368,11 +383,17 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
 
 })
 
-.controller('CheckoutCtrl', function($scope, TemplateService, NavigationService) {
+.controller('CheckoutCtrl', function($scope, TemplateService, NavigationService, $state) {
     $scope.template = TemplateService.changecontent("checkout");
     $scope.menutitle = NavigationService.makeactive("Checkout");
     TemplateService.title = $scope.menutitle;
     $scope.navigation = NavigationService.getnav();
+
+    $scope.allCountries = allCountries;
+    $scope.sameChecked = false;
+    $scope.showInvalidLogin = false;
+    $scope.showAlreadyRegistered = false;
+    $scope.invalidPassword = false;
 
     $scope.tab = 'step1';
     $scope.classa = 'yellow-btn';
@@ -405,6 +426,89 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
             $scope.classd = "yellow-btn";
         }
     };
+
+    NavigationService.getUserProfile(function(data) {
+        if (data.id) {
+            $scope.tab = 'step2';
+            $scope.userData = data;
+            if (data.name) {
+                var name = data.name.split(" ");
+                if (name[0])
+                    $scope.userData.firstname = name[0];
+                if (name[1])
+                    $scope.userData.lastname = name[1];
+            }
+        }
+    })
+
+    if ($.jStorage.get("myCart")) {
+        $scope.cartItems = $.jStorage.get("myCart");
+        $scope.cartItems.paymentType = "CASH ON DELIVERY";
+    } else {
+        $scope.cartItems = {};
+    }
+
+    $scope.placeOrder = function() {
+        console.log("place order");
+        // console.log($scope.userData);
+        // console.log($scope.cartItems);
+        if ($scope.sameChecked == false) {
+            console.log("checked");
+            $scope.userData.shipping = $scope.userData.billing;
+        }
+        var order = {};
+        order.cart = $scope.cartItems.cartItems;
+        order.paymentType = $scope.cartItems.paymentType;
+        order.totalCartPrice = $scope.cartItems.totalCartPrice;
+        order.name = $scope.userData.firstname + " " + $scope.userData.lastname;
+        order.email = $scope.userData.email;
+        order.mobile = $scope.userData.mobile;
+        order.billing = $scope.userData.billing;
+        order.shipping = $scope.userData.shipping;
+        console.log(order);
+
+        NavigationService.placeOrder(order, function(data) {
+            console.log(data);
+            if (data.value == true) {
+                $.jStorage.flush();
+                dataNextPre.messageBox("Congratulations !!", "Your order has been placed");
+                $state.go("home");
+            }
+        })
+    }
+
+    $scope.register = {};
+    $scope.registerUser = function() {
+        if ($scope.register.password === $scope.register.confirmpassword) {
+            delete $scope.register.confirmpassword;
+            delete $scope.register.check;
+            $scope.register.accesslevel = "customer";
+            NavigationService.registerUser($scope.register, function(data) {
+                console.log(data);
+                if (data.value == false) {
+                    $scope.showAlreadyRegistered = true;
+                    $scope.invalidPassword = false;
+                } else if (data.value == true) {
+                    window.location.reload();
+                }
+            });
+        } else {
+            $scope.invalidPassword = true;
+            $scope.showAlreadyRegistered = false;
+        }
+    }
+
+    $scope.login = {};
+    $scope.loginUser = function() {
+        NavigationService.loginUser($scope.login, function(data) {
+            console.log(data);
+            if (data.value == false) {
+                $scope.showInvalidLogin = true;
+            } else if (data.value == true) {
+                window.location.reload();
+            }
+        });
+    }
 
 })
 
@@ -678,7 +782,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
 
     })
 
-.controller('headerctrl', function($scope, TemplateService, $uibModal, NavigationService, $timeout) {
+.controller('headerctrl', function($scope, TemplateService, $uibModal, NavigationService, $timeout, $state) {
     $scope.template = TemplateService;
     $scope.register = {};
     $scope.login = {};
@@ -757,6 +861,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     };
 
     $scope.registerUser = function() {
+        $scope.register.accesslevel = "customer";
         NavigationService.registerUser($scope.register, function(data) {
             console.log(data);
             if (data.value == false) {
@@ -772,8 +877,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
             console.log(data);
             if (data.value == false) {
                 $scope.showInvalidLogin = true;
-            } else if (data == "http://wohlig.co.in/tagboss") {
-                // } else if (data.value == "http://wohlig.co.in/tagboss") {
+            } else if (data.value == true) {
                 window.location.reload();
             }
         });
@@ -783,8 +887,9 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         NavigationService.logout(function(data) {
             console.log(data);
             if (data.value == true) {
+                $.jStorage.flush();
                 $scope.hideLogin = false;
-                window.location.reload();
+                $state.go("home");
             }
         })
     }

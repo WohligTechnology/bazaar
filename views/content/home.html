@@ -1,156 +1,160 @@
 <section class="home-slider">
-   <flex-slider class="carousel" flex-slide="s in banners track by $index" animation="fade">
-      <li>
-         <a href="#">
-            <img ng-src="{{s | uploadpath}}" class="img-responsive">
-         </a>
-      </li>
-   </flex-slider>
+    <flex-slider class="carousel" flex-slide="s in banners track by $index" animation="fade">
+        <li>
+            <a href="#">
+                <img ng-src="{{s | uploadpath}}" class="img-responsive">
+            </a>
+        </li>
+    </flex-slider>
 </section>
 <section>
-   <div class="row-flex d-block2">
-      <div class="col-flex red-backgound back-red cut-text-center">
-         <div class="mid-product">
-            <div class="left-data display-inline pl-left">
-               <div class="up-image">
-                  <img src="img/icon/up.png">
-               </div>
-               <div class="mid-pro-name">
-                  <h4 class="margin0">{{blocks[0].name}}</h4>
-                  <p class="margin0">{{blocks[0].content}}</p>
-               </div>
+    <div class="row-flex d-block2">
+        <div class="col-flex red-backgound back-red cut-text-center">
+            <a href="#/product/568e54cf4f65585410d9c3d8">
+                <div class="mid-product">
+                    <div class="left-data display-inline pl-left">
+                        <div class="up-image">
+                            <img src="img/icon/up.png">
+                        </div>
+                        <div class="mid-pro-name">
+                            <h4 class="margin0">{{blocks[0].name}}</h4>
+                            <p class="margin0">{{blocks[0].content}}</p>
+                        </div>
+                    </div>
+                    <div class="mid-product-img">
+                        <img ng-src="{{blocks[0].image | uploadpath300}}" class="img-responsive">
+                        <!--               <div class="cam-hold" ng-style="{'background-image':'url(img/product/1.png)'}"></div>-->
+                    </div>
+                </div>
+            </a>
+        </div>
+        <div class="col-flex black-backgound back-red cut-text-center">
+            <a href="#/product/568f47cecd05a28c021e651f">
+                <div class="mid-product">
+                    <div class="left-data display-inline pl-left">
+                        <div class="mid-pro-name">
+                            <p class="margin0">{{blocks[1].name}}</p>
+                            <h4 class="margin0">{{blocks[1].content}}</h4>
+                        </div>
+                        <div class="up-image">
+                            <img src="img/icon/down.png">
+                        </div>
+                    </div>
+                    <div class="mid-product-img2">
+                        <img ng-src="{{blocks[1].image | uploadpath300}}" class="img-responsive">
+                    </div>
+                </div>
+            </a>
+        </div>
+        <div class="col-flex red-backgound back-red cut-text-center">
+            <a href="#/camera">
+                <div class="mid-product">
+                    <div class="left-data display-inline pl-left">
+                        <div class="up-image">
+                            <img src="img/icon/white.png">
+                        </div>
+                        <div class="mid-pro-name">
+                            <p class="margin0">{{blocks[2].name}}</p>
+                            <h4 class="margin0">{{blocks[2].content}}</h4>
+                        </div>
+                    </div>
+                    <div class="mid-product-img2">
+                        <img ng-src="{{blocks[2].image | uploadpath300}}" class="img-responsive">
+                    </div>
+                </div>
+            </a>
+        </div>
+        <div class="col-flex black-backgound back-red cut-text-center">
+            <div class="mid-product">
+                <div class="left-data display-inline pl-left">
+                    <div class="mid-pro-name">
+                        <p class="margin0">{{blocks[3].name}}</p>
+                        <h4 class="margin0">{{blocks[3].content}}</h4>
+                    </div>
+                    <div class="up-image">
+                        <img src="img/icon/down.png">
+                    </div>
+                </div>
+                <div class="mid-product-img2">
+                    <img ng-src="{{blocks[3].image | uploadpath300}}" class="img-responsive">
+                </div>
             </div>
-            <div class="mid-product-img">
-               <img ng-src="{{blocks[0].image | uploadpath}}" class="img-responsive">
-               <!--               <div class="cam-hold" ng-style="{'background-image':'url(img/product/1.png)'}"></div>-->
-            </div>
-         </div>
-      </div>
-      <div class="col-flex black-backgound back-red cut-text-center">
-         <div class="mid-product">
-            <div class="left-data display-inline pl-left">
-               <div class="mid-pro-name">
-                  <p class="margin0">{{blocks[1].name}}</p>
-                  <h4 class="margin0">{{blocks[1].content}}</h4>
-               </div>
-               <div class="up-image">
-                  <img src="img/icon/down.png">
-               </div>
-            </div>
-            <div class="mid-product-img2">
-               <img ng-src="{{blocks[1].image | uploadpath}}" class="img-responsive">
-            </div>
-         </div>
-      </div>
-      <div class="col-flex red-backgound back-red cut-text-center">
-         <div class="mid-product">
-            <div class="left-data display-inline pl-left">
-               <div class="up-image">
-                  <img src="img/icon/white.png">
-               </div>
-               <div class="mid-pro-name">
-                  <p class="margin0">{{blocks[2].name}}</p>
-                  <h4 class="margin0">{{blocks[2].content}}</h4>
-               </div>
-            </div>
-            <div class="mid-product-img2">
-               <img ng-src="{{blocks[2].image | uploadpath}}" class="img-responsive">
-            </div>
-         </div>
-      </div>
-      <div class="col-flex black-backgound back-red cut-text-center">
-         <div class="mid-product">
-            <div class="left-data display-inline pl-left">
-               <div class="mid-pro-name">
-                  <p class="margin0">{{blocks[3].name}}</p>
-                  <h4 class="margin0">{{blocks[3].content}}</h4>
-               </div>
-               <div class="up-image">
-                  <img src="img/icon/down.png">
-               </div>
-            </div>
-            <div class="mid-product-img2">
-               <img ng-src="{{blocks[3].image | uploadpath}}" class="img-responsive">
-            </div>
-         </div>
-      </div>
-   </div>
+        </div>
+    </div>
 </section>
 <div class="container">
-   <section>
-      <div class="pro-title">
-         <div class="display-inline">
-            <img src="img/mini-logo.png">
-         </div>
-         <div class="display-inline">
-            <h3 class="pl10">Tag Boss Deals</h3>
-         </div>
-      </div>
-      <div class="mob-wdth">
-         <div class="row-flex max-wdt">
-            <div class="col-flex" ng-repeat="pro in products track by $index">
-               <div class="product-data text-center">
-                  <div class="img-hold">
-                     <img ng-src="{{pro.image}}" class="img-responsive">
-                  </div>
-                  <div class="product-detail">
-                     <p>{{pro.name}}</p>
-                     <span><i class="fa fa-inr"></i>{{pro.price}}</span>
-
-                  </div>
-                  <div class="pro-btn mt8">
-                     <button type="button" class="btn btn-default btn-primary btn-strong">Buy Now</button>
-                  </div>
-               </div>
+    <section>
+        <div class="pro-title">
+            <div class="display-inline">
+                <img src="img/mini-logo.png">
             </div>
-         </div>
-      </div>
-   </section>
-   <section>
-      <div class="row">
-         <div class="mt45">
-            <div class="col-md-6 pl3 pr3" ng-repeat="b in bannerss track by $index">
-               <div class="banner-img pdtop">
-                  <img ng-src="{{b.image}}" class="img-responsive">
-               </div>
+            <div class="display-inline">
+                <h3 class="pl10">Tag Boss Deals</h3>
             </div>
-         </div>
-      </div>
-   </section>
-   <section>
-      <div class="pro-title">
-         <div class="display-inline">
-            <img src="img/mini-logo.png">
-         </div>
-         <div class="display-inline">
-            <h3 class="pl10">Mobile Deals Of The Day</h3>
-         </div>
-      </div>
-      <div class="mob-wdth">
-         <div class="row-flex max-wdt">
-            <div class="col-flex" ng-repeat="pro in product track by $index">
-               <div class="product-data text-center">
-                  <div class="img-hold">
-                     <img ng-src="{{pro.image}}" class="img-responsive">
-                  </div>
-                  <div class="product-detail">
-                     <p>{{pro.name}}</p>
-                     <span><i class="fa fa-inr"></i>{{pro.price}}</span>
-
-                  </div>
-                  <div class="pro-btn mt8">
-                     <button type="button" class="btn btn-default btn-primary btn-strong">Buy Now</button>
-                  </div>
-               </div>
+        </div>
+        <div class="mob-wdth">
+            <div class="row-flex max-wdt">
+                <div class="col-flex" ng-repeat="pro in products track by $index">
+                    <div class="product-data text-center">
+                        <div class="img-hold">
+                            <img ng-src="{{pro.image}}" class="img-responsive">
+                        </div>
+                        <div class="product-detail">
+                            <p>{{pro.name}}</p>
+                            <span><i class="fa fa-inr"></i>{{pro.price}}</span>
+                        </div>
+                        <div class="pro-btn mt8">
+                            <button type="button" class="btn btn-default btn-primary btn-strong">Buy Now</button>
+                        </div>
+                    </div>
+                </div>
             </div>
-         </div>
-      </div>
-   </section>
-   <section class="mt45">
-      <div class="row">
-         <div class="col-md-12" ng-repeat="ban in banner track by $index">
-            <img ng-src="{{ban.image}}" class="img-responsive">
-         </div>
-      </div>
-   </section>
+        </div>
+    </section>
+    <section>
+        <div class="row">
+            <div class="mt45">
+                <div class="col-md-6 pl3 pr3" ng-repeat="b in bannerss track by $index">
+                    <div class="banner-img pdtop">
+                        <img ng-src="{{b.image}}" class="img-responsive">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section>
+        <div class="pro-title">
+            <div class="display-inline">
+                <img src="img/mini-logo.png">
+            </div>
+            <div class="display-inline">
+                <h3 class="pl10">Mobile Deals Of The Day</h3>
+            </div>
+        </div>
+        <div class="mob-wdth">
+            <div class="row-flex max-wdt">
+                <div class="col-flex" ng-repeat="pro in product track by $index">
+                    <div class="product-data text-center">
+                        <div class="img-hold">
+                            <img ng-src="{{pro.image}}" class="img-responsive">
+                        </div>
+                        <div class="product-detail">
+                            <p>{{pro.name}}</p>
+                            <span><i class="fa fa-inr"></i>{{pro.price}}</span>
+                        </div>
+                        <div class="pro-btn mt8">
+                            <button type="button" class="btn btn-default btn-primary btn-strong">Buy Now</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="mt45">
+        <div class="row">
+            <div class="col-md-12" ng-repeat="ban in banner track by $index">
+                <img ng-src="{{ban.image}}" class="img-responsive">
+            </div>
+        </div>
+    </section>
 </div>

@@ -1,6 +1,7 @@
 // var adminurl = "http://localhost:1337/";
-var adminurl = "http://vignesh.com:82/";
-var adminurl = "http://tagboss.wohlig.com/";
+// var adminurl = "http://vignesh.com:82/";
+var adminurl = "http://tagboss.wohlig.com:1337/";
+// var adminurl = "http://tagboss.wohlig.com/";
 
 var navigationservice = angular.module('navigationservice', [])
 
@@ -100,6 +101,19 @@ var navigationservice = angular.module('navigationservice', [])
         getUserCart: function(callback) {
             $http({
                 url: adminurl + 'cart/find',
+                method: 'POST'
+            }).success(callback);
+        },
+        placeOrder: function(order, callback) {
+            $http({
+                url: adminurl + 'order/save',
+                method: 'POST',
+                data: order
+            }).success(callback);
+        },
+        getMyOrders: function(callback) {
+            $http({
+                url: adminurl + 'order/findOrders',
                 method: 'POST'
             }).success(callback);
         },

@@ -20,46 +20,46 @@
         <div class="row">
             <div class="col-md-12">
                 <div class="order-table">
-                  	<div class="tbl-wt">
-                    <table class="table">
-                        <thead>
-                            <tr class="text-center desktop">
-                                <th>ITEM</th>
-                                <th colspan="2">QTY</th>
-                                <th colspan="2">PRICE</th>
-                                <th>DELIVERY DETAILS</th>
-                                <th>SUBTOTAL</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr class="text-center text-bold t-border-none bord-right" ng-repeat="cart in cartItems">
-                                <td>
-                                    <table class="table custom-tb t-border-none">
-                                        <tr>
-                                            <td>
-                                                <div class="check-img display-inline">
-                                                    <img ng-src="{{cart.image[0]|uploadpath}}" class="img-responsive mauto">
-                                                </div>
-                                            </td>
-                                            <td>
-                                                <div class="w200">
-                                                    <p>{{cart.name}}</p>
-                                                    <p><span>Color:</span> Black</p>
-                                                </div>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td colspan="2">
-                                                <div class="return-policy pull-left"> <i class="fa fa-check-circle"></i> <span class="applicable-policy">30 Days Replacement</span> </div>
-                                                <div class="pull-right">
-                                                    <a href="" class="br-col" ng-click="removeFromCart(cart._id);">REMOVE</a>
-                                                </div>
-                                            </td>
-                                        </tr>
-                                    </table>
-                                </td>
-                                <td colspan="2">
-                                    <span class="pad-all-side pd-zero">
+                    <div class="tbl-wt">
+                        <table class="table">
+                            <thead>
+                                <tr class="text-center desktop">
+                                    <th>ITEM</th>
+                                    <th colspan="2">QTY</th>
+                                    <th colspan="2">PRICE</th>
+                                    <th>DELIVERY DETAILS</th>
+                                    <th>SUBTOTAL</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr class="text-center text-bold t-border-none bord-right" ng-repeat="cart in cartItems">
+                                    <td>
+                                        <table class="table custom-tb t-border-none">
+                                            <tr>
+                                                <td>
+                                                    <div class="check-img display-inline">
+                                                        <img ng-src="{{cart.image[0]|uploadpath}}" class="img-responsive mauto">
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="w200">
+                                                        <p>{{cart.name}}</p>
+                                                        <p><span>Color:</span> Black</p>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td colspan="2">
+                                                    <div class="return-policy pull-left"> <i class="fa fa-check-circle"></i> <span class="applicable-policy">30 Days Replacement</span> </div>
+                                                    <div class="pull-right">
+                                                        <a href="" class="br-col" ng-click="removeFromCart(cart._id);">REMOVE</a>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                    <td colspan="2">
+                                        <span class="pad-all-side pd-zero">
                                     <!-- <ul>
                                       <li><i class="fa fa-minus " ng-click="decreaseQuantity(cart);"></i></li>
                                       <li><p class="">{{cart.quantity}}</p></li>
@@ -70,23 +70,23 @@
                                         <p class="uty d-block">{{cart.quantity}}</p>
                                         <i class="fa fa-plus i-cl d-all" ng-click="increaseQuantity(cart);"></i>
                                     </span>
-                                </td>
-                                <td colspan="2">
-                                    <div class="check-price">
-                                        <span class="pad-all-side"><i class="fa fa-inr pr6 dis-in"></i>{{cart.price|currency:""}}</span>
-                                    </div>
-                                </td>
-                                <td>
-                                    <div class="check-price">
-                                        <span class="col-red">FREE:</span>
-                                        <p>Delivered in 2-3 business days</p>
-                                    </div>
-                                </td>
-                                <td>
-                                    <span class="pad-all-side"><i class="fa fa-inr pr6 dis-in"></i>{{cart.subTotal|currency:""}}</span>
-                                </td>
-                            </tr>
-                            <!-- <tr class="text-center text-bold t-border-none bord-right">
+                                    </td>
+                                    <td colspan="2">
+                                        <div class="check-price">
+                                            <span class="pad-all-side"><i class="fa fa-inr pr6 dis-in"></i>{{cart.price|currency:""}}</span>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="check-price">
+                                            <span class="col-red">FREE:</span>
+                                            <p>Delivered in 2-3 business days</p>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <span class="pad-all-side"><i class="fa fa-inr pr6 dis-in"></i>{{cart.subTotal|currency:""}}</span>
+                                    </td>
+                                </tr>
+                                <!-- <tr class="text-center text-bold t-border-none bord-right">
                                 <td>
                                     <table class="table custom-tb t-border-none">
                                         <tr>
@@ -128,9 +128,9 @@
                                     <span class="pad-all-side"><i class="fa fa-inr pr6"></i>24,712.00</span>
                                 </td>
                             </tr> -->
-                        </tbody>
-                    </table>
-                  </div>
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
             </div>
         </div>
@@ -147,7 +147,7 @@
                 <div class="col-md-12">
                     <div class="pull-right pt15">
                         <button type="submit" class="btn-blue btn btn-danger text-center btn-strong">CONTINUE SHOPPING</button>
-                        <button type="submit" class="btn-blue btn btn-danger text-center btn-strong ml8">NEXT</button>
+                        <button type="submit" class="btn-blue btn btn-danger text-center btn-strong ml8" ng-click="goToCheckout();">NEXT</button>
                     </div>
                 </div>
             </div>
@@ -160,11 +160,10 @@
                     <img src="img/mini-logo.png">
                     <h3>Your Cart Is Empty !!</h3>
                     <a href="#/home" class="">
-                    <button type="submit" class="btn-blue btn btn-danger text-center btn-strong mt45">CONTINUE SHOPPING</button>
+                        <button type="submit" class="btn-blue btn btn-danger text-center btn-strong mt45">CONTINUE SHOPPING</button>
                     </a>
                 </div>
             </div>
         </div>
     </div>
-
 </section>
