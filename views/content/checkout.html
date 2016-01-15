@@ -21,11 +21,11 @@
             <div class="col-md-offset-2 col-md-8 col-sm-offset-2 col-sm-8">
                 <div class="account text-center">
                     <ul>
-                        <li class="tab-item {{classa}} mb7" ng-click="tabchange('step1',1)">
-                            <a href=""><img src="img/account/s1.png"></a>
+                        <li class="tab-item {{classa}} mb7" ng-click="tabchange(tab)" ng-repeat="tab in tabs">
+                            <a href=""><img ng-src="{{tab.img}}"></a>
                             </a>
                         </li>
-                        <li class="tab-item {{classb}} mb7" ng-click="tabchange('step2',2)">
+                        <!-- <li class="tab-item {{classb}} mb7" ng-click="tabchange('step2',2)">
                             <a href=""><img src="img/account/s2.png"></a>
                             </a>
                         </li>
@@ -36,7 +36,7 @@
                         <li class="tab-item {{classd}}" ng-click="tabchange('step4',4)">
                             <a href=""><img src="img/account/s4.png"></a>
                             </a>
-                        </li>
+                        </li> -->
                     </ul>
                 </div>
             </div>
