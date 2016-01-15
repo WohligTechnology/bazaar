@@ -160,8 +160,8 @@ firstapp.directive('tableresponsive', function($compile, $parse) {
 firstapp.filter('uploadpath', function() {
     return function(input) {
         if (input && input != "") {
-            return adminurl + "uploadfile/resize?file=" + input;
-            // return adminurl + "uploadfile/resize?width=750&file=" + input;
+            // return adminurl + "uploadfile/resize?file=" + input;
+            return adminurl + "uploadfile/resize?width=750&file=" + input;
         }
     };
 });
@@ -169,8 +169,8 @@ firstapp.filter('uploadpath', function() {
 firstapp.filter('uploadpath300', function() {
     return function(input) {
         if (input && input != "") {
-            return adminurl + "uploadfile/resize?file=" + input;
-            // return adminurl + "uploadfile/resize?width=300&file=" + input;
+            // return adminurl + "uploadfile/resize?file=" + input;
+            return adminurl + "uploadfile/resize?width=300&file=" + input;
         }
     };
 });
