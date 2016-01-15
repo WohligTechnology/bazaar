@@ -184,6 +184,41 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     $scope.navigation = NavigationService.getnav();
 })
 
+.controller('AccountCtrl', function($scope, TemplateService, NavigationService, $state) {
+
+    console.log($state.current.name);
+    $scope.tabs = [{
+        "state": "profile",
+        "img": "img/account/p1g.png"
+    }, {
+        "state": "orders",
+        "img": "img/account/p2g.png"
+    }, {
+        "state": "history",
+        "img": "img/account/p3g.png"
+    }, {
+        "state": "personalized-manager",
+        "img": "img/account/p4g.png"
+    }];
+
+    _.each($scope.tabs, function(n) {
+        if (n.state == "profile" && $state.current.name == "profile") {
+            n.img = "img/account/p1r.png"
+        } else if (n.state == "orders" && $state.current.name == "orders") {
+            n.img = "img/account/p2r.png"
+        } else if (n.state == "history" && $state.current.name == "history") {
+            n.img = "img/account/p3r.png"
+        } else if (n.state == "personalized-manager" && $state.current.name == "personalized-manager") {
+            n.img = "img/account/p4r.png"
+        }
+    })
+
+    $scope.changeContent = function(tab) {
+        $state.go(tab.state);
+    }
+
+})
+
 .controller('OrdersCtrl', function($scope, TemplateService, NavigationService) {
     $scope.template = TemplateService.changecontent("orders");
     $scope.menutitle = NavigationService.makeactive("Orders");
@@ -395,41 +430,49 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     $scope.showAlreadyRegistered = false;
     $scope.invalidPassword = false;
 
-    $scope.tab = 'step1';
-    $scope.classa = 'yellow-btn';
-    $scope.classb = '';
-    $scope.classc = '';
-    $scope.classd = '';
-    $scope.tabchange = function(tab, a) {
-        //        console.log(tab);
-        $scope.tab = tab;
-        if (a == 1) {
-            $scope.classa = "yellow-btn";
-            $scope.classb = '';
-            $scope.classc = '';
-            $scope.classc = '';
-        } else if (a == 2) {
-            $scope.classa = '';
-            $scope.classb = "yellow-btn";
-            $scope.classc = '';
-            $scope.classd = '';
-        } else if (a == 3) {
-            $scope.classa = '';
-            $scope.classb = '';
-            $scope.classc = "yellow-btn";
-            $scope.classd = '';
-        } else {
-            $ionicScrollDelegate.scrollTop();
-            $scope.classa = '';
-            $scope.classb = '';
-            $scope.classc = '';
-            $scope.classd = "yellow-btn";
-        }
-    };
+    $scope.tabs = [{
+        "name": "step1",
+        "img": "img/account/s1g.png"
+    }, {
+        "name": "step2",
+        "img": "img/account/s2g.png"
+    }, {
+        "name": "step3",
+        "img": "img/account/s3g.png"
+    }, {
+        "name": "step4",
+        "img": "img/account/s4g.png"
+    }]
+
+    $scope.tabchange = function(tab) {
+        $scope.tab = tab.name;
+        _.each($scope.tabs, function(n) {
+            if (n.name == "step1" && tab.name == "step1") {
+                n.img = "img/account/s1r.png";
+            } else if (n.name == "step2" && tab.name == "step2") {
+                n.img = "img/account/s2r.png";
+            } else if (n.name == "step3" && tab.name == "step3") {
+                n.img = "img/account/s3r.png";
+            } else if (n.name == "step4" && tab.name == "step4") {
+                n.img = "img/account/s4r.png";
+            } else {
+                n.img = n.img.split("r").join("g");
+            }
+        })
+    }
+
+    $scope.tabchange({
+        "name": "step1",
+        "img": "img/account/s1g.png"
+    });
 
     NavigationService.getUserProfile(function(data) {
         if (data.id) {
             $scope.tab = 'step2';
+            $scope.tabchange({
+                "name": "step2",
+                "img": "img/account/s2g.png"
+            });
             $scope.userData = data;
             if (data.name) {
                 var name = data.name.split(" ");
@@ -469,10 +512,12 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
 
         NavigationService.placeOrder(order, function(data) {
             console.log(data);
-            if (data.value == true) {
+            if (data.value != true) {
                 $.jStorage.flush();
-                dataNextPre.messageBox("Congratulations !!", "Your order has been placed");
-                $state.go("home");
+                // dataNextPre.messageBox("Congratulations !!", "Your order has been placed");
+                $state.go("thankyou", {
+                    "id": data.id
+                });
             }
         })
     }
@@ -767,20 +812,27 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         $scope.navigation = NavigationService.getnav();
 
     })
-    .controller('ThankyouCtrl', function($scope, TemplateService, NavigationService) {
-        $scope.template = TemplateService.changecontent("thankyou");
-        $scope.menutitle = NavigationService.makeactive("Thankyou");
-        TemplateService.title = $scope.menutitle;
-        $scope.navigation = NavigationService.getnav();
 
-    })
-    .controller('ErrorCtrl', function($scope, TemplateService, NavigationService) {
-        $scope.template = TemplateService.changecontent("error");
-        $scope.menutitle = NavigationService.makeactive("Error");
-        TemplateService.title = $scope.menutitle;
-        $scope.navigation = NavigationService.getnav();
+.controller('ThankyouCtrl', function($scope, TemplateService, NavigationService, $stateParams) {
+    $scope.template = TemplateService.changecontent("thankyou");
+    $scope.menutitle = NavigationService.makeactive("Thankyou");
+    TemplateService.title = $scope.menutitle;
+    $scope.navigation = NavigationService.getnav();
 
-    })
+    NavigationService.getOneOrder($stateParams.id, function(data, status) {
+        $scope.order = data; //Add More Array
+        console.log($scope.order);
+    });
+
+})
+
+.controller('ErrorCtrl', function($scope, TemplateService, NavigationService) {
+    $scope.template = TemplateService.changecontent("error");
+    $scope.menutitle = NavigationService.makeactive("Error");
+    TemplateService.title = $scope.menutitle;
+    $scope.navigation = NavigationService.getnav();
+
+})
 
 .controller('headerctrl', function($scope, TemplateService, $uibModal, NavigationService, $timeout, $state) {
     $scope.template = TemplateService;

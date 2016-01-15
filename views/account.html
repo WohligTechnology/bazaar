@@ -1,8 +1,19 @@
-<div class="account">
-  <ul>
-    <li ui-sref="profile" ui-sref-active="yellow-btn" class="mb7"><a href=""><img src="img/account/a1.png"></a></li>
-      <li ui-sref="orders" ui-sref-active="yellow-btn" class="mb7"><a href=""><img src="img/account/a2.png"></a></a></li>
-      <li ui-sref="history" ui-sref-active="yellow-btn" class="mb7"><a href=""><img src="img/account/a3.png"></a></a></li>
-      <li ui-sref="personalized-manager" ui-sref-active="yellow-btn"><a href=""><img src="img/account/a4.png"></a></a></li>
-  </ul>
+<div class="account" ng-controller="AccountCtrl">
+    <ul>
+        <li class="mb7" ng-click="changeContent(tab);" ng-repeat="tab in tabs">
+            <a href=""><img ng-src="{{tab.img}}"></a>
+        </li>
+        <!-- <li ui-sref="orders" ui-sref-active="yellow-btn" class="mb7">
+            <a href=""><img src="img/account/a2.png"></a>
+            </a>
+        </li>
+        <li ui-sref="history" ui-sref-active="yellow-btn" class="mb7">
+            <a href=""><img src="img/account/a3.png"></a>
+            </a>
+        </li>
+        <li ui-sref="personalized-manager" ui-sref-active="yellow-btn">
+            <a href=""><img src="img/account/a4.png"></a>
+            </a>
+        </li> -->
+    </ul>
 </div>
