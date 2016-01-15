@@ -10,10 +10,9 @@
                     <div class="slid">
                         <flex-slider class="carousel" flex-slide="s in productDetail.image track by $index" animation="slide" item-width="60">
                             <li ng-click="changeImage($index);" class="ml8">
-                              <div class="thumbContainer">
-                              <div class="thumb" ng-style="{'background-image':'url({{s|uploadpath}})'}"></div>
-
-                              </div>
+                                <div class="thumbContainer">
+                                    <div class="thumb" ng-style="{'background-image':'url({{s|uploadpath}})'}"></div>
+                                </div>
                             </li>
                         </flex-slider>
                     </div>
@@ -89,7 +88,8 @@ Kit Lens) DSLR Camera <span class="grey-col">(Black)</span></h3> -->
                     <div class="pro-body-title pt15 ">
                         <!-- <h3 class="margin0 f-16">Nikon D3300 (Body with AF-S 18-55 mm VR II Kit Lens) DSLR Camera</h3> -->
                         <h3 class="margin0 f-16">{{productDetail.name}}</h3>
-                        <p class="margin0 font-18 m-font-12">The Nikon D3300 delivers exceptional pictures with its 24.2 megapixels, EXPEED 4 processing engine, and a variety of other features and functions.</p>
+                        <!-- <p class="margin0 font-18 m-font-12">The Nikon D3300 delivers exceptional pictures with its 24.2 megapixels, EXPEED 4 processing engine, and a variety of other features and functions.</p> -->
+                        <p class="margin0 font-18 m-font-12">{{productDetail.description}}</p>
                     </div>
                     <div class="pro-body-feature renew-content-footer pt10">
                         <h4>Features</h4>
@@ -107,6 +107,14 @@ Kit Lens) DSLR Camera <span class="grey-col">(Black)</span></h3> -->
                     </div>
                     <div class="pro-body-content">
                         <uib-accordion close-others="true">
+                            <uib-accordion-group is-open="accordian[$index].isFirstOpen" ng-repeat="features in productDetail.features">
+                                <uib-accordion-heading>
+                                    <i class="fa" ng-class="{'fa-chevron-down': accordian[$index].isFirstOpen, 'fa-chevron-right': !accordian[$index].isFirstOpen}"></i> {{features.Name}}
+                                </uib-accordion-heading>
+                                {{features.Description}}
+                            </uib-accordion-group>
+                        </uib-accordion>
+                        <!-- <uib-accordion close-others="true">
                             <uib-accordion-group is-open="accordian[0].isFirstOpen">
                                 <uib-accordion-heading>
                                     <i class="fa" ng-class="{'fa-chevron-down': accordian[0].isFirstOpen, 'fa-chevron-right': !accordian[0].isFirstOpen}"></i> DESIGN
@@ -166,7 +174,7 @@ Kit Lens) DSLR Camera <span class="grey-col">(Black)</span></h3> -->
                                 </uib-accordion-heading>
                                 This is just some content to illustrate fancy headings.
                             </uib-accordion-group>
-                        </uib-accordion>
+                        </uib-accordion> -->
                     </div>
                 </div>
             </div>

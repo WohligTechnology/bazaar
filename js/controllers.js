@@ -332,10 +332,18 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     TemplateService.title = $scope.menutitle;
     $scope.navigation = NavigationService.getnav();
 
+    $scope.accordian = [];
+
     NavigationService.getOneProduct($stateParams.id, function(data) {
         console.log(data);
         $scope.productDetail = data;
         $scope.productDetail.mainImg = data.image[0];
+        if ($scope.productDetail.features) {
+            $scope.accordian.push({
+                isFirstOpen: true,
+                isFirstDisabled: false
+            });
+        }
     })
 
     $scope.changeImage = function(index) {
@@ -346,39 +354,6 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         dataNextPre.addToCart($stateParams.id);
     }
 
-    $scope.accordian = [];
-    $scope.accordian.push({
-        isFirstOpen: true,
-        isFirstDisabled: false
-    });
-    $scope.accordian.push({
-        isFirstOpen: true,
-        isFirstDisabled: false
-    });
-    $scope.accordian.push({
-        isFirstOpen: true,
-        isFirstDisabled: false
-    });
-    $scope.accordian.push({
-        isFirstOpen: true,
-        isFirstDisabled: false
-    });
-    $scope.accordian.push({
-        isFirstOpen: true,
-        isFirstDisabled: false
-    });
-    $scope.accordian.push({
-        isFirstOpen: true,
-        isFirstDisabled: false
-    });
-    $scope.accordian.push({
-        isFirstOpen: true,
-        isFirstDisabled: false
-    });
-    $scope.accordian.push({
-        isFirstOpen: true,
-        isFirstDisabled: false
-    });
 
     $scope.product = [{
         image: "img/product/2.png",
